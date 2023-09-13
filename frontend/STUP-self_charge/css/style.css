@@ -5,9 +5,13 @@
     font-family: 'Inria Sans', sans-serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 /* roxo 602E9A 
    preto 212121
-   branca EAEAEA*/
+   daanca EAEAEA*/
 
 .line-purple {
     width: 100%;
@@ -21,7 +25,6 @@
     display: flex;
     justify-content:space-between;
     align-items: center;
-    padding: 2%;
     width: 100%;
     height: 50px;
     background-color: #212121;
@@ -29,7 +32,7 @@
 }
 
 .stup-logo {
-    margin: 8%;
+    margin-left: 10%;
     padding: 3px;
     background-color: #602E9A;
     border-radius: 2px;
@@ -46,6 +49,8 @@
 
 .line-white {
     background-color: #eaeaea;
+    height: 1px;
+    padding: 0;
 }
 .menu {
     display: flex;
@@ -90,10 +95,10 @@
 }
 
 .menu-dois {
-    padding: 15px 10% 15px 8%;
+    padding: 15px 10% 15px 10%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: #212121;
 }
 
@@ -104,7 +109,7 @@
 }
 
 
-/* BANNER */
+/* BANNERS (index) */
 
 section {
     position: relative;
@@ -112,40 +117,35 @@ section {
 
 .banner {
     position: relative;
-    display: inline-block;
+    display: flex;
+    width: 100%;
 }
 
 .banner img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
 }
 
 .banner-text {
     position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-
+    height: 100%;
+    display: flex;
+    align-items: center;
+    left:10%;
+    color: #EAEAEA;
 }
 
-.texto h1 {
+.banner-text h1 {
     font-size: 40px;
     margin: 0;
     line-height: 1.2;
 }
 
-.texto h5 {
+.banner-text h5 {
     font-weight: 300;
     font-size: 18px;
     margin: 10px 0 0;
     line-height: 1.4;
 }
-
-/* button */
 
 .pedir-carteirinha {
     margin-top: 25px;
@@ -168,16 +168,234 @@ section {
     transition: 0.7s ease-out;
 }
 
+/* banner (carteirinha) */
+
+.banner-carteirinha {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 640px;
+    display: flex;
+    align-items: center;
+}
+
+.pai-text-carteirinha {
+    float: left;
+    width: 85%;
+}
+
+.text-carteirinha h2{
+    color: #602E9A;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.text-carteirinha h3 {
+    color: #212121;
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.text-carteirinha h4 {
+    color: #212121;
+    font: 24px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+
+.carteirinha-banner {
+    float: right;
+    width: 40%;
+}
+
+.carteirinha-banner img {
+    width: 100%;
+}
+
+
 /* venha ser */
 
 .venha-ser {
     width: 100%;
     padding-left: 10%;
-    padding-right: 10%;
+    padding-right: 8%;
     margin-top: 50px;
 }
 
 .venha-ser h1 {
     text-align: center;
-    font-size: 32px;
+    font-size: 38px;
 }
+
+.passos {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;;
+}
+
+.passos-icons {
+    width: 22%;
+    display: flex;
+}
+
+.circle-purple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    float: left;
+    background-color:#602E9A;
+    border-radius: 360px;
+}
+
+.circle-white {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: #EAEAEA 2px solid;
+    border-radius: 360px;
+}
+
+.text-passos {
+    padding-left: 10px;
+    width: 230px;
+    float: right;
+}
+
+.text-passos h2 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #212121;
+}
+.text-passos h3 {
+    font-size: 15px;
+    font-weight: 300;
+    color: #212121;
+}
+
+.quero-ser {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.quero-ser a {
+    color: #212121;
+}
+
+
+/* hgroup default */
+
+.text-default {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.text-default h2{
+    color: #602E9A;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.text-default h3 {
+    color: #212121;
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.text-default h4 {
+    color: #212121;
+    font: 24px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+/* section facilidades */
+
+.pai-facilidades {
+    width: 100%;
+    display: flex;
+    height: auto;
+}
+.pai-text-facilidade {
+    margin-left: 10%;
+    width: 30%;
+}
+
+.fila {
+    margin-top: 30px;
+}
+
+.black-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 360px;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    border: #212121 1.5px solid;
+}
+
+.facilidades h2 {
+    color: #212121;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.facilidades h3 {
+    color: #212121;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.pedir-carteirinha-facilidades{
+    margin-top: 10px;
+}
+
+.banner-facilidades {
+    width: 50%;
+    margin-left: 10%;
+    float: left;
+}
+
+.banner-facilidades img {
+    width: 100%;
+    height: 100%;
+}
+
+/* section stup é tudo */
+
+.stup-tudo {
+    width: 80%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.stup-tudo h1 {
+    color: #fff;
+    background-color: none;
+    font-size: 120px;
+    font-style: italic;
+    -webkit-text-stroke: 1px #602E9A ;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,31 @@
+* {
+    font-family: 'Inria Sans', sans-serif;
+}
 
+.texto-padrao {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.texto-padrao h2{
+    color: #602E9A;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.texto-padrao h3 {
+    color: #212121;
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.texto-padrao h4 {
+    color: #212121;
+    font: 24px;
+    font-weight: 300;
+    margin-top: 10px;
+}
 
 /* BACKGROUNDS COLORS */
 

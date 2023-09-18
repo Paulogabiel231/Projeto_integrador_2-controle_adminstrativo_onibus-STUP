@@ -50,20 +50,20 @@
 						<li><a href="index.html"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="cadastro-motorista.html" class=""><i class="lnr lnr-pencil"></i> <span>Cadastro de
 									Motorista</span></a></li>
-						<li><a href="cadastro-cliente.html" class="active"><i class="fa fa-credit-card"></i>
+						<li><a href="cadastro-cliente.html" class=""><i class="fa fa-credit-card"></i>
 								<span>Cadastro de
 									Cliente</span></a></li>
-						<li><a href="cadastro-linhas.html" class=""><i class="fa fa-map-marker"></i> <span>Cadastro de
+						<li><a href="motorista.html" class=""><i class="fa fa-map-marker"></i> <span>Cadastro de
 									Linhas</span></a></li>
 						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i
+							<a href="#subPages" data-toggle="collapse" class="active" class="collapsed"><i
 									class="lnr lnr-file-empty"></i> <span>Relatórios</span> <i
 									class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="relatórios-linhas.html" class="">Linhas</a></li>
 									<li><a href="relatórios-motorista.html" class="">Motoristas</a></li>
-									<li><a href="relatórios-clientes.html" class="">Passes</a></li>
+									<li><a href="relatórios-clientes.html" class="active">Passes</a></li>
 								</ul>
 							</div>
 						</li>
@@ -81,87 +81,140 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Cadastro Cliente</h3>
+							<h3 class="panel-title">Relatório de Clientes</h3>
 						</div>
 						<div class="panel-body">
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Foto 3x4</span>
-								<div class="">
-									<img class="" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-										alt="example placeholder" style="width: 300px;" />
-								</div>
-								<div class="col-4"> <br>
-									<label class="form-label text-white " for="customFile1"></label>
-									<input type="file" class="form-control px-0" id="customFile1" />
-								</div>
-							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
-								<input class="form-control" type="text">
-							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*CPF</span>
-								<input class="form-control" type="text">
-							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Uso:</span>
-								<select class="form-control">
-
-									<option value="" disabled selected hidden> </option>
-									<option value="Comum">Comum</option>
-									<option value="Escolar">Escolar</option>
-									<option value="Idoso">Idoso</option>
-									<option value="PCDs">PCDs</option>
-									<option value="Vale-Transpote">Vale Transpote</option>
-								</select>
-							</div>
-
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>RA</span>
-								<input class="form-control" type="text">
-							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i> Atestado de Matrícula ou
-									Deficiência</span>
-								<input class="form-control" type="file" id="formFile">
-							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Data de Nascimento </span>
-								<input class="form-control"  type="date">								
-							</div>
-							<br>
-							<label class="fancy-radio">
-								<input name="gender" value="male" type="radio">
-								<span><i></i>Homem</span>
-							</label>
-							<label class="fancy-radio">
-								<input name="gender" value="female" type="radio">
-								<span><i></i>Mulher</span>
-							</label>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*E-mail</span>
-								<input type="email" class="form-control is-invalid" class="form-control">
-							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*E-mail Secundário</span>
-								<input type="email" class="form-control is-invalid" class="form-control">
-							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Número de Telefone</span>
-								<input class="form-control" type="text">
-							</div>
-							<br>
-							<div class="col text-left"><a href="#" class="btn btn-primary">Enviar</a></div>
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Nome Completo</th>
+										<th>CPF</th>
+										<th>Saldo</th>
+									</tr>
+								</thead>
+								<tbody>
+									
+									<tr>
+										<td>1</td>
+										<td>Steve</td>
+										<td>512.446.818-14</td>
+										<td class="" style="color: #008000;">R$ 126,00</td>
+										
+									</tr> 
+									<tr>
+										<td>2</td>
+										<td>Simon</td>
+										<td>512.446.818-14</td>
+										<td class="" style="color: #008000;">R$ 126,00</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Jane</td>
+										<td>512.446.818-14</td>
+										<td class="" style="color: #008000;">R$ 126,00</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Steve</td>
+										<td>512.446.818-14</td>
+										<td class="" style="color: #008000;">R$ 126,00</td>
+										
+									</tr> 
+									<tr>
+										<td>5</td>
+										<td>Simon</td>
+										<td>512.446.818-14</td>
+										<td class="" style="color: #008000;">R$ 126,00</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>Jane</td>
+										<td>512.446.818-14</td>
+										<td class="" style="color: #008000;">R$ 126,00</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>Steve</td>
+										<td>512.446.818-14</td>
+										<td class="" style="color: #008000;">R$ 126,00</td>
+										
+									</tr> 
+									<tr>
+										<td>8</td>
+										<td>Simon</td>
+										<td>512.446.818-14</td>
+										<td class="bg-danger" style="color: #eaeaea;">R$ 18,00</td>
+									</tr>
+									<tr>
+										<td>9</td>
+										<td>Jane</td>
+										<td>512.446.818-14</td>
+										<td class="bg-success" style="color: #eaeaea;">R$ 126,00</td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>Steve</td>
+										<td>512.446.818-14</td>
+										<td class="bg-success" style="color: #eaeaea;">R$ 126,00</td>
+										
+									</tr> 
+									<tr>
+										<td>11</td>
+										<td>Simon</td>
+										<td>512.446.818-14</td>
+										<td class="" style="color: #FF0000;">R$ 12,00</td>
+									</tr>
+									<tr>
+										<td>12</td>
+										<td>Jane</td>
+										<td>512.446.818-14</td>
+										<td class="" style="color: #FF0000;">R$ 12,00</td>
+									</tr>
+									<tr>
+										<td>13</td>
+										<td>Steve</td>
+										<td>512.446.818-14</td>
+										<td class="bg-success" style="color: #eaeaea;">R$ 126,00</td>
+										
+									</tr> 
+									<tr>
+										<td>14</td>
+										<td>Simon</td>
+										<td>512.446.818-14</td>
+										<td class="" style="color: #FF0000;">R$ 12,00</td>
+									</tr>
+									<tr>
+										<td>15</td>
+										<td>Jane</td>
+										<td>512.446.818-14</td>
+										<td class="" style="color: #FF0000;">R$ 12,00</td>
+									</tr>
+									<tr>
+										<td>16</td>
+										<td>Steve</td>
+										<td>512.446.818-14</td>
+										<td class="bg-success" style="color: #eaeaea;">R$ 126,00</td>
+										
+									</tr> 
+									<tr>
+										<td>17</td>
+										<td>Simon</td>
+										<td>512.446.818-14</td>
+										<td class="bg-success" style="color: #eaeaea;">R$ 126,00</td>
+									</tr>
+									<tr>
+										<td>18</td>
+										<td>Jane</td>
+										<td>512.446.818-14</td>
+										<td class="bg-danger" style="color: #eaeaea;">R$ 18,00</td>
+									</tr>
+									
+								</tbody>
+							</table>
 						</div>
+
+
 
 						<div class="clearfix"></div>
 						<footer>

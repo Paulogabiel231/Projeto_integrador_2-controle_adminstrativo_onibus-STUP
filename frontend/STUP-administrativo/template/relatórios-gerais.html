@@ -47,15 +47,16 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+						<li><a href="index.html"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="cadastro-motorista.html" class=""><i class="lnr lnr-pencil"></i> <span>Cadastro de
 									Motorista</span></a></li>
-						<li><a href="cadastro-cliente.html" class=""><i class="fa fa-credit-card"></i> <span>Cadastro de
+						<li><a href="cadastro-cliente.html" class=""><i class="fa fa-credit-card"></i>
+								<span>Cadastro de
 									Cliente</span></a></li>
 						<li><a href="cadastro-linhas.html" class=""><i class="fa fa-map-marker"></i> <span>Cadastro de
 									Linhas</span></a></li>
 						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i
+							<a href="#subPages" data-toggle="collapse" class="active" class="collapsed"><i
 									class="lnr lnr-file-empty"></i> <span>Relatórios</span> <i
 									class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
@@ -63,7 +64,7 @@
 									<li><a href="relatórios-linhas.html" class="">Linhas</a></li>
 									<li><a href="relatórios-motorista.html" class="">Motoristas</a></li>
 									<li><a href="relatórios-clientes.html" class="">Passes</a></li>
-									<li><a href="relatórios-gerais.html" class="">Gerais</a></li>
+									<li><a href="relatórios-gerais.html" class="active">Gerais</a></li>
 								</ul>
 							</div>
 						</li>
@@ -81,186 +82,62 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Dashboard</h3>
+							<h3 class="panel-title">Relatórios Linhas</h3>
 						</div>
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="metric">
-										<a href="">
-											<span class="icon"><i class="fa fa-user"></i></span>
-											<p>
-												<span class="number">540</span>
-												<span class="title">Clientes Ativos</span>
-											</p>
-										</a>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="metric">
-										<a href="">
-											<span class="icon"><i class="fa fa-credit-card"></i></span>
-											<p>
-												<span class="number">126</span>
-												<span class="title">Motoristas Cadastrados </span>
-											</p>
-										</a>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="metric">
-										<a href="">
-											<span class="icon"><i class="fa fa-bar-chart"></i></span>
-											<p>
-												<span class="number">10%</span>
-												<span class="title">Linhas mais Usadas</span>
-											</p>
-										</a>
 
+						<div class="row">
+							<div class="col-md-12">
+								<!-- RECENT PURCHASES -->
+								<div class="panel">
+									<div class="panel-heading">
+										<h3 class="panel-title">Linha 100 </h3>
 									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-9">
-									<div id="headline-chart" class="ct-chart"></div>
-								</div>
-								<div class="col-md-3">
-									<div class="weekly-summary text-right">
-										<span class="number">320</span> <span class="percentage"><i
-												class="fa fa-caret-up text-success"></i> 12%</span>
-										<span class="info-label">Passes usados</span>
-									</div>
-									<div class="weekly-summary text-right">
-										<span class="number">$5,758</span> <span class="percentage"><i
-												class="fa fa-caret-up text-success"></i> 23%</span>
-										<span class="info-label"> Aumento de lucro</span>
-									</div>
-									<div class="weekly-summary text-right">
-										<span class="number">23</span> <span class="percentage"><i
-												class="fa fa-caret-down text-danger"></i> 8%</span>
-										<span class="info-label">Passes inutilisados</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- END OVERVIEW -->
-					<div class="row">
-						<div class="col-md-6">
-							<!-- RECENT PURCHASES -->
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Informações das linhas/passes</h3>
-									<div class="right">
-									</div>
-								</div>
-								<div class="panel-body">
-									<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th>Nome da linha</th>
-												<th>Numero do ônibus</th>
 
-												<th>Data &amp; Horário</th>
-												<th>Status</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><a href="#">Pegorelli/UPA</a></td>
-												<td>104</td>
-												<td>Oct 21, 2023</td>
-												<td><span class="label label-success">ACEITA</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">Pegorelli/UPA</a></td>
-												<td>104</td>
-												<td>Oct 21, 2023</td>
-												<td><span class="label label-danger">NEGADA</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">Tinga/Olaria</a></td>
-												<td>100</td>
-												<td>Oct 18, 2023</td>
-												<td><span class="label label-danger">NEGADA</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">Baranco alto</a></td>
-												<td>107</td>
-												<td>Oct 17, 2023</td>
-												<td><span class="label label-success">ACEITA</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">Jaragua</a></td>
-												<td>108</td>
-												<td>Oct 16, 2023</td>
-												<td><span class="label label-success">ACEITA</span></td>
-											</tr>
-										</tbody>
-									</table>
-									<div class="row">
-										<div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i>
-												Mais Recentes</span></div>
-										<div class="col-md-6 text-right"><a href="#" class="btn btn-primary">Ver mais</a>
-										</div>
-									</div>
-								</div>
-								
-							</div>
-							<!-- END RECENT PURCHASES -->
-						</div>
-						<div class="col-md-6">
-							<!-- MULTI CHARTS -->
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Últimos cadastros dos passes</h3>
-								</div>
-								<div class="panel-body">
-									<table class="table table-bordered">
+
+									<table class="table table-hover">
 										<thead>
 											<tr>
 												<th>ID</th>
-												<th>Nome Completo</th>
-												<th>CPF</th>
-												<th>Saldo</th>
+												<th>Data/Horário</th>
+												<th>Uso</th>
+												<th>Saldo Atual</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<td>1</td>
-												<td>Steve</td>
-												<td>512.446.818-14</td>
+												<td>10-11-2023 AM 10:54</td>
+												<td>Idoso</td>
 												<td>R$ 120,00</td>
 											</tr>
 											<tr>
 												<td>2</td>
-												<td>Simon</td>
-												<td>512.446.818-14</td>
+												<td>10-11-2023 AM 10:54</td>
+												<td>Escolar</td>
 												<td>R$ 120,00</td>
 											</tr>
 											<tr>
 												<td>3</td>
-												<td>Jane</td>
-												<td>512.446.818-14</td>
+												<td>10-11-2023 AM 10:54</td>
+												<td>Escolar</td>
 												<td>R$ 120,00</td>
 											</tr>
 											<tr>
 												<td>4</td>
-												<td>Jane</td>
-												<td>512.446.818-14</td>
+												<td>J10-11-2023 AM 10:54ane</td>
+												<td>Escolar</td>
 												<td>R$ 120,00</td>
 											</tr>
 											<tr>
 												<td>5</td>
-												<td>Jane</td>
-												<td>512.446.818-14</td>
+												<td>10-11-2023 AM 10:54</td>
+												<td>Escolar</td>
 												<td>R$ 120,00</td>
 											</tr>
-											<tr>
 
-											</tr>
 										</tbody>
 									</table>
+									<br>
 									<div class="row">
 										<div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i>
 												Mais Recentes</span></div>
@@ -268,14 +145,79 @@
 												mais</a></div>
 									</div>
 								</div>
+								<!-- END RECENT PURCHASES -->
+
 							</div>
-							<!-- END MULTI CHARTS -->
 						</div>
+						<hr style="background-color: #676A6D; height: 1px;">
+						<div class="row">
+							<div class="col-md-12">
+								<!-- RECENT PURCHASES -->
+								<div class="panel">
+									<div class="panel-heading">
+										<h3 class="panel-title">Linha 110 </h3>
+									</div>
+
+
+									<table class="table table-hover">
+										<thead>
+											<tr>
+												<th>ID</th>
+												<th>Data/Horário</th>
+												<th>Uso</th>
+												<th>Saldo Atual</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>10-11-2023 AM 10:54</td>
+												<td>Idoso</td>
+												<td>R$ 120,00</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>10-11-2023 AM 10:54</td>
+												<td>Escolar</td>
+												<td>R$ 120,00</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>10-11-2023 AM 10:54</td>
+												<td>Escolar</td>
+												<td>R$ 120,00</td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td>J10-11-2023 AM 10:54ane</td>
+												<td>Escolar</td>
+												<td>R$ 120,00</td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td>10-11-2023 AM 10:54</td>
+												<td>Escolar</td>
+												<td>R$ 120,00</td>
+											</tr>
+
+										</tbody>
+									</table>
+									<br>
+									<div class="row">
+										<div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i>
+												Mais Recentes</span></div>
+										<div class="col-md-6 text-right"><a href="#" class="btn btn-primary">Ver
+												mais</a></div>
+									</div>
+								</div>
+								<!-- END RECENT PURCHASES -->
+
+							</div>
+						</div>
+
 					</div>
 				</div>
-				<!-- END MAIN CONTENT -->
 			</div>
-			<!-- END MAIN -->
 			<div class="clearfix"></div>
 			<footer>
 				<div class="container-fluid">

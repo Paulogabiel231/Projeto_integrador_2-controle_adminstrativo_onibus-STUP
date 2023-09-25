@@ -29,7 +29,8 @@
                     <div class="col ">
                         <img class="rounded-0" src="https://placehold.co/80x40/AAA/31343C" alt="logo" />
                     </div>
-                    <div class="col col-md-5 col-lg-4 col-xl-3 ms-auto d-flex justify-content-between justify-content-end gap-2">
+                    <div
+                        class="col col-md-5 col-lg-4 col-xl-3 ms-auto d-flex justify-content-between justify-content-end gap-2">
                         <button type="button" class="w-100 btn rounded-0 border text-white btn-outline-whitee">
                             Ajuda
                         </button>
@@ -131,8 +132,8 @@
                 <div class="row pb-5">
                     <div class="d-flex justify-content-end">
                         <a class="text-white text-decoration-none text-white align-items-center d-flex fw-light fs-5 "
-                        href="#">PEÇA JÁ O SEU <img class="" src="img/icon-arrow-white.svg" alt=""></a>
-                    </div> 
+                            href="#">PEÇA JÁ O SEU <img class="" src="img/icon-arrow-white.svg" alt=""></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -160,11 +161,27 @@
         </div>
     </div>
     <!-- venha ser -->
-    <section>
-        <div class="container-fluid px-0 w-100 position-relative">
-            <img src="img/carteirinha-linhas-banner5.png" class="img-fluid px-0 w-100" alt="Imagem" />
-            <div class="d-none d-md-block container position-absolute top-50 start-50 translate-middle">
-                <h2 class="text-white fs-3 fw-bold">Venha ser um <br>
+    <style>
+        .parallax-container {
+            background-image: url('img/carteirinha-linhas-banner5.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: auto;
+            /* Adicione o padding necessário para o conteúdo */
+        }
+
+        /* Estilo para o conteúdo dentro do contêiner parallax */
+        .parallax-content {
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+    <section class="parallax-container pt-5 pb-5">
+        <div class="container  pt-5 pb-5">
+            <div class="">
+                <h2 class="text-white fs-3 fw-bold ">Venha ser um <br>
                     usuário STUP</h2>
                 <h3 class="text-white fs-5 fw-light mb-4">Com a gente você só tem a ganhar, junte-se a nós <br>
                     e a todos os nossos parceiros em todo Brasil. <br>
@@ -192,7 +209,8 @@
                     </h4>
                     <ul class="">
                         <li class="text-primary pb-1"><a class="text-decoration-none text-primary fw-medium"
-                            href="img/carteirinha-linhas-olaria.pdf" download>Linha 100 - CÂMPUS-IFSP/OLARIA</a></li>
+                                href="img/carteirinha-linhas-olaria.pdf" download>Linha 100 - CÂMPUS-IFSP/OLARIA</a>
+                        </li>
                         <li class="text-primary pb-1"><a class="text-decoration-none text-primary fw-medium"
                                 href="">Linha 110 - CÂMPUS-IFSP/MASSAGUACU</a></li>
                         <li class="text-primary pb-1"><a class="text-decoration-none text-primary fw-medium"
@@ -231,17 +249,60 @@
                     <h2 class="fs-2 fw-bold text-primary mb-5"> Nós te ajudamos.</h2>
                 </div>
                 <div class="row mb-5">
-                    <h2> caixa</h2>
-                </div>
-                <div class="row">
-                    <div class="text-center fw-bold mb-5">
-                        <p class="">
-                            Ainda sobraram dúvidas? <a class="text-decoration-underline text-primary" href="#">Entre em
-                                contato.</a>
-                        </p>
+                    <div class="accordion accordion-flush rounded-5" id="accordionFlushExample">
+                        <div class="accordion-item rounded-5 mb-4">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded-5" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Como funciona a carteirinha?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">adsad
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-5 mb-4">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded-5" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                    aria-controls="flush-collapseTwo">
+                                    Onde faço minha carteirinha?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">asdadasasdasd</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-5 mb-4">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded-5" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                    aria-expanded="false" aria-controls="flush-collapseThree">
+                                    Como recarregar minhas passagens?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">asdasd</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="text-center fw-bold mb-5">
+                    <p class="">
+                        Ainda sobraram dúvidas? <a class="text-decoration-underline text-primary" href="#">Entre em
+                            contato.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
     <footer class="text-center text-lg-start text-white " style="background-color: #212121">

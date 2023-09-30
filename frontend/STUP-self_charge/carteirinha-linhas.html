@@ -31,12 +31,14 @@
                     <div
                         class="col col-md-5 col-lg-4 col-xl-3 ms-auto d-flex justify-content-between justify-content-end gap-2">
                         <button type="button" class="w-100 btn rounded-0 border text-secondary btn-outline-secondary">
-                            Ajuda
+                            <a class="text-secondary text-decoration-none" href="central-ajuda.html">Ajuda</a>
                         </button>
                         <button type="button" class="w-100 btn rounded-0 border text-secondary btn-outline-secondary">
                             Recarregar
                         </button>
-                        <button type="button" class="w-100 btn rounded-0 btn-primary">Entrar</button>
+                        <button type="button" class="w-100 btn rounded-0 btn-primary fw-bold"><a
+                                class="text-secondary text-decoration-none"
+                                href="../STUP-self_charge/klorofil-dashboard-template-v2.0/template/login.html">Entrar</a></button>
                     </div>
                 </div>
             </div>
@@ -61,13 +63,14 @@
                                             <a class="nav-link text-secondary p-2 bg-primary" href="#">Carteirinha</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link text-secondary w-100" href="#">Consulte Saldo</a>
+                                            <a class="nav-link text-secondary w-100"
+                                                href="consulta-recarga.html">Consulte Saldo</a>
                                         </li>
                                         <li class="nav-item align-items-center justify-content-center">
                                             <a class="nav-link text-secondary p-2 bg-primary" href="#">Linhas</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link text-secondary" href="#">Recarga</a>
+                                            <a class="nav-link text-secondary" href="consulta-recarga.html">Recarga</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link text-secondary" href="#">Aplicativo</a>
@@ -103,7 +106,7 @@
                         Adquira a sua o quanto antes !
                     </h4>
                     <button class="btn bg-primary text-secondary fw-bold btn-light px-5">
-                        QUERO A MINHA
+                        <a class="text-decoration-none text-secondary" href="#atendimento-presencial">QUERO A MINHA</a>
                     </button>
                 </div>
                 <div class="col-0 col-lg-1">
@@ -117,7 +120,7 @@
     </section>
     <!-- Carteirinha -->
     <section>
-        <div style="background-color: #212121;" class="w-100 h-auto pt-5">
+        <div style="background-color: #212121;" class="w-100 h-auto pt-5" id="carteirinhas-modal">
             <div class="container">
                 <div class="row">
                     <h2 class="text-secondary fw-bold fs-2">
@@ -129,14 +132,14 @@
                     <div class="col">
                         <div class="div position-relative" data-bs-toggle="modal" data-bs-target="#modalUsoComum"
                             style="cursor: pointer;">
-                            <img src="img/carteirinha-linhas-quadradro1.png" alt="" class="img-fluid w-100">
+                            <img src="img/carteirinha-linhas-modal1.png" alt="" class="img-fluid w-100 rounded-1">
                             <span class="position-absolute text-secondary fw-bold ps-2 pt-1  top-0 start-0">USO <br>
                                 COMUM</span>
                             <span class="position-absolute bottom-0 start-0 ps-2 pb-1"> <img
                                     src="img/carteirnha-linhas-button.png" alt=""></span>
                         </div>
                     </div>
-                    <div class="modal modal-xl  fade" id="modalUsoComum" tabindex="-1"
+                    <div class="modal modal-xl fade" id="modalUsoComum" tabindex="-1"
                         aria-labelledby="modalUsoComumLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
@@ -176,13 +179,15 @@
                                                 </h2>
                                             </div>
                                             <div class="col-12 col-lg-6 p-0 position-relative ">
-                                                <img src="img/carteirinha-linhas-quadradro1.png" alt=""
+                                                <img src="img/carteirinha-linhas-modal1.png" alt=""
                                                     class="img-fluid w-100">
                                                 <span
                                                     class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
                                                     <button
-                                                        class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5">
-                                                        PEÇA A SUA
+                                                        class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5"
+                                                        data-bs-dismiss="modal">
+                                                        <a class="text-decoration-none text-secondary"
+                                                            href="#atendimento-presencial">QUERO A MINHA</a>
                                                     </button>
                                                 </span>
                                             </div>
@@ -198,14 +203,14 @@
                     <div class="col">
                         <div class="div position-relative" data-bs-toggle="modal" data-bs-target="#modalUsoEscolar"
                             style="cursor: pointer;">
-                            <img src="img/carteirinha-linhas-quadradro2.png" alt="" class="img-fluid w-100">
+                            <img src="img/carteirinha-linhas-modal2.png" alt="" class="img-fluid w-100 rounded-1">
                             <span class="position-absolute text-secondary fw-bold ps-2 pt-1  top-0 start-0">USO <br>
-                                ESCOLAR</span>
+                                Escolar</span>
                             <span class="position-absolute bottom-0 start-0 ps-2 pb-1"> <img
                                     src="img/carteirnha-linhas-button.png" alt=""></span>
                         </div>
                     </div>
-                    <div class="modal modal-lg  fade" id="modalUsoEscolar" tabindex="-1"
+                    <div class="modal modal-xl  fade" id="modalUsoEscolar" tabindex="-1"
                         aria-labelledby="modalUsoEscolarLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
@@ -217,11 +222,13 @@
                                     <div class="container-fluid ">
                                         <div class="row ">
                                             <div class="col-12 col-lg-6 ">
-                                                <h2 class="fw-bold fs-3 tex-dark pb-3 "> Uso Comum</h2>
-                                                <h2 class="fw-light tex-dark fs-5 pb-3"> Carteirinha destinada a
-                                                    usuários comuns, cidadãos que utilizam o
-                                                    ônibus no cotidiano e que pretendem transitar sobre a área urbana de
-                                                    maneira segura, confortável e ágil.</h2>
+                                                <h2 class="fw-bold fs-3 tex-dark pb-3 "> Uso Escolar</h2>
+                                                <h2 class="fw-light tex-dark fs-5 pb-3"> A carteirinha de uso escolar é
+                                                    voltada para estudantes que dependem do transporte público para
+                                                    chegar à escola
+                                                    diariamente. Ela garante que os alunos tenham acesso fácil e
+                                                    econômico ao transporte, contribuindo para a educação e
+                                                    promovendo a mobilidade segura dos jovens.</h2>
                                                 <h2 class="fw-bold tex-dark fs-5 pb-2">
                                                     Solicite sua Carteirinha STUP, é fácil!
                                                 </h2>
@@ -245,13 +252,15 @@
                                                 </h2>
                                             </div>
                                             <div class="col-12 col-lg-6 p-0 position-relative ">
-                                                <img src="img/carteirinha-linhas-quadradro1.png" alt=""
+                                                <img src="img/carteirinha-linhas-modal2.png" alt=""
                                                     class="img-fluid w-100">
                                                 <span
                                                     class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
                                                     <button
-                                                        class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5">
-                                                        PEÇA A SUA
+                                                        class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5"
+                                                        data-bs-dismiss="modal">
+                                                        <a class="text-decoration-none text-secondary"
+                                                            href="#atendimento-presencial">QUERO A MINHA</a>
                                                     </button>
                                                 </span>
                                             </div>
@@ -267,14 +276,14 @@
                     <div class="col">
                         <div class="div position-relative" data-bs-toggle="modal" data-bs-target="#modalUsoIdoso"
                             style="cursor: pointer;">
-                            <img src="img/carteirinha-linhas-quadradro3.png" alt="" class="img-fluid w-100">
+                            <img src="img/carteirinha-linhas-modal3.png" alt="" class="img-fluid w-100 rounded-1">
                             <span class="position-absolute text-secondary fw-bold ps-2 pt-1  top-0 start-0">USO <br>
                                 IDOSO</span>
                             <span class="position-absolute bottom-0 start-0 ps-2 pb-1"> <img
                                     src="img/carteirnha-linhas-button.png" alt=""></span>
                         </div>
                     </div>
-                    <div class="modal modal-lg  fade" id="modalUsoIdoso" tabindex="-1"
+                    <div class="modal modal-xl  fade" id="modalUsoIdoso" tabindex="-1"
                         aria-labelledby="modalUsoIdosoLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
@@ -286,11 +295,13 @@
                                     <div class="container-fluid ">
                                         <div class="row ">
                                             <div class="col-12 col-lg-6 ">
-                                                <h2 class="fw-bold fs-3 tex-dark pb-3 "> Uso Comum</h2>
-                                                <h2 class="fw-light tex-dark fs-5 pb-3"> Carteirinha destinada a
-                                                    usuários comuns, cidadãos que utilizam o
-                                                    ônibus no cotidiano e que pretendem transitar sobre a área urbana de
-                                                    maneira segura, confortável e ágil.</h2>
+                                                <h2 class="fw-bold fs-3 tex-dark pb-3 "> Uso Idoso</h2>
+                                                <h2 class="fw-light tex-dark fs-5 pb-3">A carteirinha destinada aos
+                                                    idosos é uma ferramenta essencial para garantir a acessibilidade e a
+                                                    dignidade dos cidadãos
+                                                    mais experientes. Ela oferece descontos e benefícios especiais no
+                                                    transporte público, permitindo que os idosos se
+                                                    desloquem de maneira conveniente e econômica pela cidade.</h2>
                                                 <h2 class="fw-bold tex-dark fs-5 pb-2">
                                                     Solicite sua Carteirinha STUP, é fácil!
                                                 </h2>
@@ -314,13 +325,15 @@
                                                 </h2>
                                             </div>
                                             <div class="col-12 col-lg-6 p-0 position-relative ">
-                                                <img src="img/carteirinha-linhas-quadradro1.png" alt=""
+                                                <img src="img/carteirinha-linhas-modal3.png" alt=""
                                                     class="img-fluid w-100">
                                                 <span
                                                     class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
                                                     <button
-                                                        class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5">
-                                                        PEÇA A SUA
+                                                        class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5"
+                                                        data-bs-dismiss="modal">
+                                                        <a class="text-decoration-none text-secondary"
+                                                            href="#atendimento-presencial">QUERO A MINHA</a>
                                                     </button>
                                                 </span>
                                             </div>
@@ -336,14 +349,14 @@
                     <div class="col">
                         <div class="div position-relative" data-bs-toggle="modal" data-bs-target="#modalUsoPcds"
                             style="cursor: pointer;">
-                            <img src="img/carteirinha-linhas-quadradro4.png" alt="" class="img-fluid w-100">
+                            <img src="img/carteirinha-linhas-modal4.png" alt="" class="img-fluid w-100 rounded-1">
                             <span class="position-absolute text-secondary fw-bold ps-2 pt-1  top-0 start-0">USO <br>
                                 PCDs</span>
                             <span class="position-absolute bottom-0 start-0 ps-2 pb-1"> <img
                                     src="img/carteirnha-linhas-button.png" alt=""></span>
                         </div>
                     </div>
-                    <div class="modal modal-lg  fade" id="modalUsoPcds" tabindex="-1"
+                    <div class="modal modal-xl  fade" id="modalUsoPcds" tabindex="-1"
                         aria-labelledby="modalUsoPcdsLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
@@ -355,11 +368,13 @@
                                     <div class="container-fluid ">
                                         <div class="row ">
                                             <div class="col-12 col-lg-6 ">
-                                                <h2 class="fw-bold fs-3 tex-dark pb-3 pt-3"> Uso Comum</h2>
-                                                <h2 class="fw-light tex-dark fs-5 pb-3"> Carteirinha destinada a
-                                                    usuários comuns, cidadãos que utilizam o
-                                                    ônibus no cotidiano e que pretendem transitar sobre a área urbana de
-                                                    maneira segura, confortável e ágil.</h2>
+                                                <h2 class="fw-bold fs-3 tex-dark pb-3 pt-3"> Uso PCDs</h2>
+                                                <h2 class="fw-light tex-dark fs-5 pb-3">A carteirinha de uso para
+                                                    pessoas com deficiência (PCDs) é uma medida inclusiva que visa
+                                                    facilitar a mobilidade desses
+                                                    indivíduos na área urbana. Ela oferece recursos como assentos
+                                                    reservados e acesso prioritário, tornando o transporte
+                                                    público mais acessível e adaptado às necessidades das PCDs.</h2>
                                                 <h2 class="fw-bold tex-dark fs-5 pb-2">
                                                     Solicite sua Carteirinha STUP, é fácil!
                                                 </h2>
@@ -383,13 +398,15 @@
                                                 </h2>
                                             </div>
                                             <div class="col-12 col-lg-6 p-0 position-relative ">
-                                                <img src="img/carteirinha-linhas-quadradro1.png" alt=""
+                                                <img src="img/carteirinha-linhas-modal4.png" alt=""
                                                     class="img-fluid w-100">
                                                 <span
                                                     class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
                                                     <button
-                                                        class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5">
-                                                        PEÇA A SUA
+                                                        class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5"
+                                                        data-bs-dismiss="modal">
+                                                        <a class="text-decoration-none text-secondary"
+                                                            href="#atendimento-presencial">QUERO A MINHA</a>
                                                     </button>
                                                 </span>
                                             </div>
@@ -405,14 +422,14 @@
                     <div class="col">
                         <div class="div position-relative" data-bs-toggle="modal"
                             data-bs-target="#modalUsoValeTransporte" style="cursor: pointer;">
-                            <img src="img/carteirinha-linhas-quadradro5.png" alt="" class="img-fluid w-100">
+                            <img src="img/carteirinha-linhas-modal5.png" alt="" class="img-fluid w-100 rounded-1">
                             <span class="position-absolute text-secondary fw-bold ps-2 pt-1  top-0 start-0">USO <br>
                                 VALE TRANSPORTE</span>
                             <span class="position-absolute bottom-0 start-0 ps-2 pb-1"> <img
                                     src="img/carteirnha-linhas-button.png" alt=""></span>
                         </div>
                     </div>
-                    <div class="modal modal-lg  fade" id="modalUsoValeTransporte" tabindex="-1"
+                    <div class="modal modal-xl  fade" id="modalUsoValeTransporte" tabindex="-1"
                         aria-labelledby="modalUsoValeTransporteLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
@@ -424,11 +441,15 @@
                                     <div class="container-fluid ">
                                         <div class="row ">
                                             <div class="col-12 col-lg-6 ">
-                                                <h2 class="fw-bold fs-3 tex-dark pb-3 pt-3"> Uso Comum</h2>
-                                                <h2 class="fw-light tex-dark fs-5 pb-3"> Carteirinha destinada a
-                                                    usuários comuns, cidadãos que utilizam o
-                                                    ônibus no cotidiano e que pretendem transitar sobre a área urbana de
-                                                    maneira segura, confortável e ágil.</h2>
+                                                <h2 class="fw-bold fs-3 tex-dark pb-3 pt-3"> Uso Vale Transporte</h2>
+                                                <h2 class="fw-light tex-dark fs-5 pb-3">O vale transporte é uma
+                                                    carteirinha fornecida pelas empresas aos seus funcionários como
+                                                    parte dos benefícios
+                                                    trabalhistas. Esse cartão permite que os trabalhadores tenham acesso
+                                                    ao transporte público de forma subsidiada,
+                                                    garantindo que possam se deslocar de casa para o trabalho.
+
+                                                </h2>
                                                 <h2 class="fw-bold tex-dark fs-5 pb-2">
                                                     Solicite sua Carteirinha STUP, é fácil!
                                                 </h2>
@@ -452,13 +473,15 @@
                                                 </h2>
                                             </div>
                                             <div class="col-12 col-lg-6 p-0 position-relative ">
-                                                <img src="img/carteirinha-linhas-quadradro1.png" alt=""
+                                                <img src="img/carteirinha-linhas-modal5.png" alt=""
                                                     class="img-fluid w-100">
                                                 <span
                                                     class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
                                                     <button
-                                                        class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5">
-                                                        PEÇA A SUA
+                                                        class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5"
+                                                        data-bs-dismiss="modal">
+                                                        <a class="text-decoration-none text-secondary"
+                                                            href="#atendimento-presencial">QUERO A MINHA</a>
                                                     </button>
                                                 </span>
                                             </div>
@@ -474,7 +497,8 @@
                     <div class="col justify-content-center align-items-center d-flex">
                         <div class="d-flex justify-content-center align-items-center d-flex d-lg-none">
                             <a class="text-secondary text-decoration-none text-secondary align-items-center d-flex fw-light fs-5 "
-                                href="#">PEÇA JÁ O SEU <img class="" src="img/icon-arrow-white.svg" alt=""></a>
+                                href="#atendimento-presencial">PEÇA JÁ O SEU <img class=""
+                                    src="img/icon-arrow-white.svg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -483,7 +507,8 @@
                 <div class="row pb-0 pb-lg-5">
                     <div class="d-flex justify-content-end d-none d-lg-flex">
                         <a class="text-secondary text-decoration-none text-secondary align-items-center d-flex fw-light fs-5 "
-                            href="#">PEÇA JÁ O SEU <img class="" src="img/icon-arrow-white.svg" alt=""></a>
+                            href="#atendimento-presencial">PEÇA JÁ O SEU <img class="" src="img/icon-arrow-white.svg"
+                                alt=""></a>
                     </div>
                 </div>
             </div>
@@ -545,8 +570,39 @@
                 </button>
             </div>
         </div>
-
     </section>
+    <section class="bg-secondary">
+        <div class="container" id="atendimento-presencial">
+            <div class="row pt-5 pb-5">
+                <div class="col-12 col-lg-5 d-flex flex-column justify-content-center">
+                    <h2 class="fs-2 fw-bold text text-primary">
+                        Atendimento Presencial:
+                    </h2>
+                    <p class="fs-5 fw-light mt-3">
+                        Clique no botão abaixo e encontre uma unidade STUP
+                        mais próxima de você, lá você pode fornecer seus dados e uma foto, e com isso criamos sua
+                        carteirinha para você, apenas consulte o horário de cada unidade, pode variar
+                        então é importante checar por qual delas você sera atendido,
+                        também verifique os serviços que cada uma oferece, lembrando
+                        que até o momento só criamos as carteirinhas via local físico.
+                    </p>
+                    <button class="btn btn-primary px-5 mt-3">
+                        ACHAR SUA UNIDADE
+                    </button>
+                </div>
+                <div class="col-0 col-lg-1">
+
+                </div>
+                <div class="d-none d-lg-block col-lg-6 mt-lg-0">
+                    <img class="img-fluid float-end" src="img/atendimento-banner5.png" alt="banner">
+                </div>
+                <div class="d-block d-lg-none">
+                    <img class="mt-5 img-fluid" src="img/atendimento-banner6.png" alt="banner">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- linhas -->
     <section>
         <div class="container mt-5 mb-5">
@@ -612,8 +668,15 @@
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">adsad
-
+                                <div class="accordion-body">A carteirinha da STUP é um cartão de transporte recarregável
+                                    que os passageiros adquirem em nossos postos de emissão
+                                    autorizados. Ela é utilizada para entrar nos ônibus, bastando aproximá-la do leitor
+                                    de cartões próximo à catraca. A
+                                    carteirinha pode ser recarregada com créditos ou passes mensais, tem validade
+                                    determinada e oferece benefícios, como
+                                    descontos para estudantes e idosos, conforme as políticas da STUP. Além disso, os
+                                    clientes também podem recarregá-la de
+                                    forma conveniente através do nosso site oficial.
                                 </div>
                             </div>
                         </div>
@@ -627,7 +690,16 @@
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">asdadasasdasd</div>
+                                <div class="accordion-body">Você pode fazer sua carteirinha da STUP em Caraguatatuba,
+                                    especificamente no posto de emissão autorizado localizado no
+                                    CEP 11665-071. Basta se dirigir a esse posto, fornecer as informações necessárias e
+                                    tirar uma foto para obter sua
+                                    carteirinha. Certifique-se de verificar o horário de funcionamento e quaisquer
+                                    requisitos específicos no site oficial da
+                                    STUP ou entrando em contato com nosso serviço de atendimento ao cliente para obter
+                                    informações atualizadas sobre o ponto
+                                    de emissão em Caraguatatuba.
+                                </div>
                             </div>
                         </div>
                         <div class="accordion-item rounded-5 mb-4">
@@ -640,7 +712,10 @@
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">asdasd</div>
+                                <div class="accordion-body">Para recarregar suas passagens na STUP em Caraguatatuba (CEP
+                                    11665-071), dirija-se ao único ponto de atendimento
+                                    autorizado no local ou recarregue online através do nosso site oficial.
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -649,7 +724,8 @@
             <div class="row">
                 <div class="text-center fw-bold mb-5">
                     <p class=" ">
-                        Ainda sobraram dúvidas? <a class="text-decoration-underline text-primary" href="#">Entre em
+                        Ainda sobraram dúvidas? <a class="text-decoration-underline text-primary"
+                            href="atendimento.html">Entre em
                             contato.</a>
                     </p>
                 </div>
@@ -693,10 +769,12 @@
                             <a href="carteirinha-linhas.html" class="text-primary fw-light ">Carteirinha</a>
                         </p>
                         <p>
-                            <a href="#" class="text-secondary fw-light text-decoration-none">Consulte Saldo</a>
+                            <a href="consulta-recarga.html"
+                                class="text-secondary fw-light text-decoration-none">Consulte Saldo</a>
                         </p>
                         <p>
-                            <a href="#" class="text-secondary fw-light text-decoration-none">Recarga</a>
+                            <a href="consulta-recarga.html"
+                                class="text-secondary fw-light text-decoration-none">Recarga</a>
                         </p>
                         <p>
                             <a href="carteirinha-linhas.html" class="text-primary fw-light ">Linhas</a>
@@ -708,7 +786,8 @@
                             <a href="atendimento.html" class=" text-secondary text-decoration-none">Atendimento</a>
                         </p>
                         <p>
-                            <a href="empresas.html" class="text-secondary fw-light text-decoration-none">Para Empresas</a>
+                            <a href="empresas.html" class="text-secondary fw-light text-decoration-none">Para
+                                Empresas</a>
                         </p>
                         <p>
                             <a href="#" class="text-secondary fw-light text-decoration-none">Sobre nós</a>
@@ -725,13 +804,17 @@
                             Ajuda
                         </h5>
                         <p>
-                            <a href="#" class="text-secondary fw-light text-decoration-none">Central de ajuda</a>
+                            <a href="central-ajuda.html" class="text-secondary fw-light text-decoration-none">Central de
+                                ajuda</a>
                         </p>
                         <p>
                             <a href="#" class="text-secondary fw-light text-decoration-none">Ligue pra gente</a>
                         </p>
                         <p>
-                            <a href="#" class="text-secondary fw-light text-decoration-none">Atendimento pelo Whatsapp</a>
+                            <a href="https://api.whatsapp.com/send?phone=+5512997215547&text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20uma%20d%C3%BAvida."
+                                target="_blank" class="text-secondary fw-light text-decoration-none">
+                                Atendimento pelo Whatsapp
+                            </a>
                         </p>
                         <p>
                             <a href="#" class="text-secondary fw-light text-decoration-none">Ligações para PCDs</a>
@@ -786,7 +869,7 @@
                                 class="fab fa-twitter"></i></a>
 
                         <!-- Google -->
-                        <a class="btn btn-outline-light btn-floating m-1" class="text-secondary role="button"><i
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-secondary role=" button"><i
                                 class="fab fa-google"></i></a>
 
                         <!-- Instagram -->

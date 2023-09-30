@@ -5,11 +5,25 @@ $secondary: #eaeaea;
 
 $dark: #212121;
 
+
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
 body {
     font-family: 'Inria Sans', sans-serif;
     overflow-x: none;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+.btn-outline-secondary {
+    --bs-btn-hover-bg: #8d8d8d; // Substitua #FF0000 pela cor desejada
+}
+
+.fs-0 {
+    font-size: calc(3.000rem + 2.5vw) !important;
 }
 
 

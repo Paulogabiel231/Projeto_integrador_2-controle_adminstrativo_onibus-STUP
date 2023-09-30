@@ -225,7 +225,6 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
 }
-
 @media (min-width: 1200px) {
   h1, .h1 {
     font-size: 2.5rem;
@@ -253,7 +252,6 @@ h3, .h3 {
 h4, .h4 {
   font-size: calc(1.275rem + 0.3vw);
 }
-
 @media (min-width: 1200px) {
   h4, .h4 {
     font-size: 1.5rem;
@@ -352,7 +350,6 @@ a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   text-decoration: underline;
 }
-
 a:hover {
   --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
 }
@@ -3105,8 +3102,8 @@ textarea.form-control-lg {
 .btn-outline-primary {
   --bs-btn-color: #602E9A;
   --bs-btn-border-color: #602E9A;
-  --bs-btn-hover-color: #eaeaea;
-  --bs-btn-hover-bg: #512485;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #602E9A;
   --bs-btn-hover-border-color: #602E9A;
   --bs-btn-focus-shadow-rgb: 96, 46, 154;
   --bs-btn-active-color: #fff;
@@ -3123,7 +3120,7 @@ textarea.form-control-lg {
   --bs-btn-color: #eaeaea;
   --bs-btn-border-color: #eaeaea;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #6d6d6d;
+  --bs-btn-hover-bg: #eaeaea;
   --bs-btn-hover-border-color: #eaeaea;
   --bs-btn-focus-shadow-rgb: 234, 234, 234;
   --bs-btn-active-color: #000;
@@ -8247,10 +8244,6 @@ textarea.form-control-lg {
   font-family: var(--bs-font-monospace) !important;
 }
 
-.fs-0 {
-    font-size: calc(3rem + 3vw) !important;
-  }
-
 .fs-1 {
   font-size: calc(1.375rem + 1.5vw) !important;
 }
@@ -11865,6 +11858,19 @@ textarea.form-control-lg {
 body {
   font-family: "Inria Sans", sans-serif;
   overflow-x: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+.btn-outline-secondary {
+  --bs-btn-hover-bg: #8d8d8d;
+}
+
+.fs-0 {
+  font-size: calc(3rem + 2.5vw) !important;
 }
 
 /*# sourceMappingURL=style.css.map */

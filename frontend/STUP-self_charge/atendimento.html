@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100;0,200;1,100;1,200&family=Open+Sans:ital,wght@0,300;1,300&display=swap"
         rel="stylesheet" />
-        <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>STUP</title>
 </head>
 
@@ -28,14 +28,17 @@
                     <div class="col ">
                         <img class="rounded-0" src="https://placehold.co/80x40/AAA/31343C" alt="logo" />
                     </div>
-                    <div class="col col-md-5 col-lg-4 col-xl-3 ms-auto d-flex justify-content-between justify-content-end gap-2">
+                    <div
+                        class="col col-md-5 col-lg-4 col-xl-3 ms-auto d-flex justify-content-between justify-content-end gap-2">
                         <button type="button" class="w-100 btn rounded-0 border text-secondary btn-outline-secondary">
-                            Ajuda
+                            <a class="text-secondary text-decoration-none" href="central-ajuda.html">Ajuda</a>
                         </button>
                         <button type="button" class="w-100 btn rounded-0 border text-secondary btn-outline-secondary">
                             Recarregar
                         </button>
-                        <button type="button" class="w-100 btn rounded-0 btn-primary">Entrar</button>
+                        <button type="button" class="w-100 btn rounded-0 btn-primary fw-bold"><a
+                                class="text-secondary text-decoration-none"
+                                href="../STUP-self_charge/klorofil-dashboard-template-v2.0/template/login.html">Entrar</a></button>
                     </div>
                 </div>
             </div>
@@ -57,22 +60,25 @@
                                                 href="index.html">Home</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link text-secondary" href="carteirinha-linhas.html">Carteirinha</a>
+                                            <a class="nav-link text-secondary"
+                                                href="carteirinha-linhas.html">Carteirinha</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link text-secondary" href="#">Consulte Saldo</a>
+                                            <a class="nav-link text-secondary" href="consulta-recarga.html">Consulte
+                                                Saldo</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link text-secondary" href="carteirinha-linhas.html">Linhas</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link text-secondary" href="#">Recarga</a>
+                                            <a class="nav-link text-secondary" href="consulta-recarga.html">Recarga</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link text-secondary" href="#">Aplicativo</a>
                                         </li>
                                         <li class="nav-item justify-content-center align-items-center">
-                                            <a class="nav-link text-secondary p-2 bg-primary" href="atendimento.html">Atendimento</a>
+                                            <a class="nav-link text-secondary p-2 bg-primary"
+                                                href="atendimento.html">Atendimento</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link text-secondary" href="empresas.html">Para Empresas</a>
@@ -102,7 +108,9 @@
                     abaixo nossas outras formas de ajudar você.
                 </p>
                 <button class="btn btn-primary px-5">
-                    INICIAR CONVERSA
+                    <a class="text-decoration-none text-secondary"
+                        href="https://api.whatsapp.com/send?phone=+5512997215547&text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20uma%20d%C3%BAvida."
+                        target="_blank">INICAR CONVERSA</a>
                 </button>
             </div>
         </div>
@@ -125,7 +133,9 @@
                         para iniciar uma conversa.
                     </p>
                     <button class="btn btn-primary px-5 mt-3">
-                        INICIAR CONVERSA
+                        <a class="text-decoration-none text-secondary"
+                            href="https://api.whatsapp.com/send?phone=+5512997215547&text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20uma%20d%C3%BAvida."
+                            target="_blank">INICAR CONVERSA</a>
                     </button>
                 </div>
                 <div class="col-0 col-lg-1">
@@ -217,9 +227,11 @@
                     </h2>
                     <p class="fs-5 fw-light mt-3">
                         Clique no botão abaixo e encontre uma unidade STUP
-                        mais próxima de você, o horário de cada uma varia,
+                        mais próxima de você, lá você pode fornecer seus dados e uma foto, e com isso criamos sua
+                        carteirinha para você, apenas consulte o horário de cada unidade, pode variar
                         então é importante checar por qual delas você sera atendido,
-                        também verifique os serviços que cada uma oferece.
+                        também verifique os serviços que cada uma oferece, lembrando
+                        que até o momento só criamos as carteirinhas via local físico.
                     </p>
                     <button class="btn btn-primary px-5 mt-3">
                         ACHAR SUA UNIDADE
@@ -242,7 +254,7 @@
         <div style="background-color: #eaeaea;" class="w-auto h-auto pt-5">
             <div class="container">
                 <div class="row">
-                    <h2 class="fs-2 fw-bold text-dark mb-0">
+                    <h2 class="fs-2 fw-bold text-dark  mb-0">
                         Ainda tem Dúvidas?
                     </h2>
                     <h2 class="fs-2 fw-bold text-primary mb-5"> Nós te ajudamos.</h2>
@@ -259,8 +271,15 @@
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">adsad
-
+                                <div class="accordion-body">A carteirinha da STUP é um cartão de transporte recarregável
+                                    que os passageiros adquirem em nossos postos de emissão
+                                    autorizados. Ela é utilizada para entrar nos ônibus, bastando aproximá-la do leitor
+                                    de cartões próximo à catraca. A
+                                    carteirinha pode ser recarregada com créditos ou passes mensais, tem validade
+                                    determinada e oferece benefícios, como
+                                    descontos para estudantes e idosos, conforme as políticas da STUP. Além disso, os
+                                    clientes também podem recarregá-la de
+                                    forma conveniente através do nosso site oficial.
                                 </div>
                             </div>
                         </div>
@@ -274,7 +293,16 @@
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">asdadasasdasd</div>
+                                <div class="accordion-body">Você pode fazer sua carteirinha da STUP em Caraguatatuba,
+                                    especificamente no posto de emissão autorizado localizado no
+                                    CEP 11665-071. Basta se dirigir a esse posto, fornecer as informações necessárias e
+                                    tirar uma foto para obter sua
+                                    carteirinha. Certifique-se de verificar o horário de funcionamento e quaisquer
+                                    requisitos específicos no site oficial da
+                                    STUP ou entrando em contato com nosso serviço de atendimento ao cliente para obter
+                                    informações atualizadas sobre o ponto
+                                    de emissão em Caraguatatuba.
+                                </div>
                             </div>
                         </div>
                         <div class="accordion-item rounded-5 mb-4">
@@ -287,28 +315,38 @@
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">asdasd</div>
+                                <div class="accordion-body">Para recarregar suas passagens na STUP em Caraguatatuba (CEP
+                                    11665-071), dirija-se ao único ponto de atendimento
+                                    autorizado no local ou recarregue online através do nosso site oficial.
+                                </div>
                             </div>
                         </div>
                         <div class="accordion-item rounded-5 mb-4">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed rounded-5" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
-                                    aria-expanded="false" aria-controls="flush-collapseThree">
-                                    Se eu perder o cartão?
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                    aria-controls="flush-collapseFour">
+                                    E se eu perder o cartão?
                                 </button>
                             </h2>
                             <div id="flush-collapseFour" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">asdasd</div>
+                                <div class="accordion-body">Se você perder o seu cartão da STUP em Caraguatatuba (CEP
+                                    11665-071), entre em contato com nosso serviço de atendimento
+                                    ao cliente imediatamente para reportar a perda e solicitar um novo cartão. Poderá
+                                    haver um custo para a emissão de um
+                                    novo cartão, e seus créditos existentes podem ser transferidos para o novo cartão,
+                                    sujeito às políticas da STUP.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="text-center fw-bold mb-5">
-                        <p class="">
-                            Ainda sobraram dúvidas? <a class="text-decoration-underline text-primary" href="#">Entre em
+                        <p class=" ">
+                            Ainda sobraram dúvidas? <a class="text-decoration-underline text-primary"
+                                href="atendimento.html">Entre em
                                 contato.</a>
                         </p>
                     </div>
@@ -345,10 +383,12 @@
                     <div class="col-md-5 col-lg-2 col-xl-2 mx-auto mt-3">
                         <h5 class="text-uppercase mb-4 fw-bold">Informações</h5>
                         <p>
-                            <a href="index.html" class="fw-light text-decoration-none text-secondary text-decoration-none">Para você</a>
+                            <a href="index.html"
+                                class="fw-light text-decoration-none text-secondary text-decoration-none">Para você</a>
                         </p>
                         <p>
-                            <a href="carteirinha-linhas.html" class="text-secondary fw-light text-decoration-none">Carteirinha</a>
+                            <a href="carteirinha-linhas.html"
+                                class="text-secondary fw-light text-decoration-none">Carteirinha</a>
                         </p>
                         <p>
                             <a href="#" class="text-secondary fw-light text-decoration-none">Consulte Saldo</a>
@@ -357,7 +397,8 @@
                             <a href="#" class="text-secondary fw-light text-decoration-none">Recarga</a>
                         </p>
                         <p>
-                            <a href="carteirinha-linhas.html" class="text-secondary fw-light text-decoration-none">Linhas</a>
+                            <a href="carteirinha-linhas.html"
+                                class="text-secondary fw-light text-decoration-none">Linhas</a>
                         </p>
                         <p>
                             <a href="#" class="text-secondary fw-light text-decoration-none">Aplicativo</a>
@@ -366,7 +407,8 @@
                             <a href="atendimento.html" class=" text-primary ">Atendimento</a>
                         </p>
                         <p>
-                            <a href="empresas.html" class="text-secondary fw-light text-decoration-none">Para Empresas</a>
+                            <a href="empresas.html" class="text-secondary fw-light text-decoration-none">Para
+                                Empresas</a>
                         </p>
                         <p>
                             <a href="#" class="text-secondary fw-light text-decoration-none">Sobre nós</a>
@@ -382,6 +424,7 @@
                         <h5 class="text-uppercase mb-4 fw-bold">
                             Ajuda
                         </h5>
+
                         <p>
                             <a href="#" class="text-secondary fw-light text-decoration-none">Central de ajuda</a>
                         </p>
@@ -389,7 +432,10 @@
                             <a href="#" class="text-secondary fw-light text-decoration-none">Ligue pra gente</a>
                         </p>
                         <p>
-                            <a href="#" class="text-secondary fw-light text-decoration-none">Atendimento pelo Whatsapp</a>
+                            <a href="https://api.whatsapp.com/send?phone=+5512997215547&text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20uma%20d%C3%BAvida."
+                                target="_blank" class="text-secondary fw-light text-decoration-none">
+                                Atendimento pelo Whatsapp
+                            </a>
                         </p>
                         <p>
                             <a href="#" class="text-secondary fw-light text-decoration-none">Ligações para PCDs</a>

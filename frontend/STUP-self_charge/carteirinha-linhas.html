@@ -180,7 +180,7 @@
                                             </div>
                                             <div class="col-12 col-lg-6 p-0 position-relative ">
                                                 <img src="img/carteirinha-linhas-modal1.png" alt=""
-                                                    class="img-fluid w-100">
+                                                    class="img-fluid w-100  rounded-1">
                                                 <span
                                                     class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
                                                     <button
@@ -253,7 +253,7 @@
                                             </div>
                                             <div class="col-12 col-lg-6 p-0 position-relative ">
                                                 <img src="img/carteirinha-linhas-modal2.png" alt=""
-                                                    class="img-fluid w-100">
+                                                    class="img-fluid w-100 rounded-1">
                                                 <span
                                                     class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
                                                     <button
@@ -326,7 +326,7 @@
                                             </div>
                                             <div class="col-12 col-lg-6 p-0 position-relative ">
                                                 <img src="img/carteirinha-linhas-modal3.png" alt=""
-                                                    class="img-fluid w-100">
+                                                    class="img-fluid w-100  rounded-1">
                                                 <span
                                                     class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
                                                     <button
@@ -399,7 +399,7 @@
                                             </div>
                                             <div class="col-12 col-lg-6 p-0 position-relative ">
                                                 <img src="img/carteirinha-linhas-modal4.png" alt=""
-                                                    class="img-fluid w-100">
+                                                    class="img-fluid w-100  rounded-1">
                                                 <span
                                                     class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
                                                     <button
@@ -474,7 +474,7 @@
                                             </div>
                                             <div class="col-12 col-lg-6 p-0 position-relative ">
                                                 <img src="img/carteirinha-linhas-modal5.png" alt=""
-                                                    class="img-fluid w-100">
+                                                    class="img-fluid w-100  rounded-1">
                                                 <span
                                                     class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
                                                     <button
@@ -523,9 +523,13 @@
                 <h3 class="text-dark fs-1 fw-bold">
                     Tudo que você precisa para embancar com agilidade, facilidade e eficiência.
                 </h3>
-                <h4 class="text-dark fs-5 fw-light">
+                <h4 class="text-dark fs-5 fw-light pb-3">
                     Adquira a sua o quanto antes !
                 </h4>
+                <button class="btn text-secondary fw-bold btn-primary px-5">
+                    <a href="carteirinha-linhas.html#atendimento-presencial"
+                        class="text-decoration-none text-secondary">PEÇA A SUA</a>
+                </button>
             </div>
             <div class="col-0 col-lg-1">
             </div>
@@ -586,7 +590,8 @@
                         também verifique os serviços que cada uma oferece, lembrando
                         que até o momento só criamos as carteirinhas via local físico.
                     </p>
-                    <button class="btn btn-primary px-5 mt-3">
+                    <button class="btn btn-primary px-5 mt-3" data-bs-target="#exampleModalToggle"
+                        data-bs-toggle="modal">
                         ACHAR SUA UNIDADE
                     </button>
                 </div>
@@ -600,6 +605,97 @@
                     <img class="mt-5 img-fluid" src="img/atendimento-banner6.png" alt="banner">
                 </div>
             </div>
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+                tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 fw-bold" id="exampleModalToggleLabel">Procurar unidade mais próxima</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h2 class="fs-5 mb-5"> Preencha os campos e descubra a unidade mais próxima a você!</h2>
+                            <div class="dropdown mb-5">
+                                <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="cidadeDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Selecione uma cidade
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="cidadeDropdown">
+                                    <li><a class="dropdown-item" href="#" data-cidade="Caraguatatuba, SP">Caraguatatuba, SP</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="bairroDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false" disabled>
+                                    Selecione o bairro
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="bairroDropdown">
+                                    <li><a class="dropdown-item" href="#" data-bairro="Olaria">Olaria</a></li>
+                                    <li><a class="dropdown-item" href="#" data-bairro="Indaiá">Indaiá</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" id="buscarBtn" data-bs-dismiss="modal" disabled>Buscar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modais de Unidade Olaria e Unidade Indaiá permanecem os mesmos -->
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const cidadeDropdown = document.getElementById("cidadeDropdown");
+                    const bairroDropdown = document.getElementById("bairroDropdown");
+                    const buscarBtn = document.getElementById("buscarBtn");
+
+                    const cidadeSelecionada = document.getElementById("cidadeSelecionada");
+                    const bairroSelecionado = document.getElementById("bairroSelecionado");
+
+                    cidadeDropdown.addEventListener("click", function () {
+                        cidadeDropdown.classList.toggle("show");
+                    });
+
+                    cidadeDropdown.querySelector("ul").addEventListener("click", function (e) {
+                        if (e.target.tagName === "A") {
+                            const cidadeSelecionadaText = e.target.getAttribute("data-cidade");
+                            cidadeDropdown.querySelector("button").textContent = cidadeSelecionadaText;
+                            cidadeDropdown.classList.remove("show");
+                            bairroDropdown.disabled = false;
+                            cidadeSelecionada.textContent = cidadeSelecionadaText;
+                            bairroSelecionado.textContent = "Selecione o bairro";
+                        }
+                    });
+
+                    bairroDropdown.addEventListener("click", function () {
+                        bairroDropdown.classList.toggle("show");
+                    });
+
+                    bairroDropdown.querySelector("ul").addEventListener("click", function (e) {
+                        if (e.target.tagName === "A") {
+                            const bairroSelecionadoText = e.target.getAttribute("data-bairro");
+                            bairroDropdown.querySelector("button").textContent = bairroSelecionadoText;
+                            bairroDropdown.classList.remove("show");
+                            buscarBtn.disabled = false;
+                            bairroSelecionado.textContent = bairroSelecionadoText;
+                        }
+                    });
+
+                    buscarBtn.addEventListener("click", function () {
+                        const selectedBairro = bairroDropdown.querySelector("button").textContent;
+                        if (selectedBairro === "Olaria") {
+                            // Abra o modal correspondente a Olaria
+                            $('#unidadeOlaria').modal('show');
+                        } else if (selectedBairro === "Indaiá") {
+                            // Abra o modal correspondente a Indaiá
+                            $('#unidadeIndaia').modal('show');
+                        }
+                    });
+                });
+            </script>
+
+
         </div>
     </section>
 

@@ -570,7 +570,7 @@
                     com a gente, corra o quanto antes.
                 </h3>
                 <button class="btn text-primary fw-bold btn-light px-5">
-                    PEÇA A SUA
+                    <a class="text-decoration-none" href="#atendimento-presencial">PEÇA A SUA</a>
                 </button>
             </div>
         </div>
@@ -605,97 +605,169 @@
                     <img class="mt-5 img-fluid" src="img/atendimento-banner6.png" alt="banner">
                 </div>
             </div>
-            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
-                tabindex="-1">
+            <!-- Modal para o bairro Indáia -->
+            <div class="modal fade" id="modalIndaia" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5 fw-bold" id="exampleModalToggleLabel">Procurar unidade mais próxima</h1>
+                            <h1 class="modal-title fs-5 fw-bold">Unidade Indáia</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Conteúdo específico para Indáia -->
+                            <h2 class="fw-bold text-primary fs-5 mb-4">
+                                Sobre a unidade.
+                            </h2>
+                            <h3 class="fw-medium text-dark fs-5">
+                                A unidade Indaiá se encontra no CEP 11665-285, dizponibilizando diversos serviçoes,
+                                como:
+                            </h3>
+                            <ul class="fw-light">
+                                <li>Criação de carteirinha.</li>
+                                <li>Recarga de carteirinha.</li>
+                                <li>Alteração dos dados cadastrais.</li>
+                                <li>Impressão de 2° Via.</li>
+                            </ul>
+                            <h3 class="fw-medium text-primary fs-4">
+                                Atendemos:
+                            </h3>
+                            <h3 class="fw-light text-dark fs-5">
+                                Segunda a sábado, das 8h às 18h, exceto feriados.
+                            </h3>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para o bairro Martim -->
+            <div class="modal fade" id="modalSumare" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 fw-bold">Unidade Sumaré</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Conteúdo específico para Indáia -->
+                            <h2 class="fw-bold text-primary fs-5 mb-4">
+                                Sobre a unidade.
+                            </h2>
+                            <h3 class="fw-medium text-dark fs-5">
+                                A unidade Indaiá se encontra no CEP 11661-300, dizponibilizando diversos serviçoes,
+                                como:
+                            </h3>
+                            <ul class="fw-light">
+                                <li>Criação de carteirinha.</li>
+                                <li>Recarga de carteirinha.</li>
+                                <li>Alteração dos dados cadastrais.</li>
+                                <li>Impressão de 2° Via.</li>
+                            </ul>
+                            <h3 class="fw-medium text-primary fs-4">
+                                Atendemos:
+                            </h3>
+                            <h3 class="fw-light text-dark fs-5">
+                                Segunda a sábado, das 8h às 18h, exceto feriados.
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 fw-bold">Procurar unidade mais próxima</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <h2 class="fs-5 mb-5"> Preencha os campos e descubra a unidade mais próxima a você!</h2>
                             <div class="dropdown mb-5">
-                                <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="cidadeDropdown"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Selecione uma cidade
-                                </button>
-                                <ul class="dropdown-menu w-100" aria-labelledby="cidadeDropdown">
-                                    <li><a class="dropdown-item" href="#" data-cidade="Caraguatatuba, SP">Caraguatatuba, SP</a></li>
-                                </ul>
+                                <select id="cidade" class="form-select form-select-sm w-100"
+                                    aria-labelledby="cidadeDropdown" aria-label="Small select example">
+                                    <option selected>Selecione sua cidade</option>
+                                    <option value="caraguatatuba">Caraguatatuba, SP</option>
+                                </select>
                             </div>
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="bairroDropdown"
-                                    data-bs-toggle="dropdown" aria-expanded="false" disabled>
-                                    Selecione o bairro
-                                </button>
-                                <ul class="dropdown-menu w-100" aria-labelledby="bairroDropdown">
-                                    <li><a class="dropdown-item" href="#" data-bairro="Olaria">Olaria</a></li>
-                                    <li><a class="dropdown-item" href="#" data-bairro="Indaiá">Indaiá</a></li>
-                                </ul>
+                                <select id="bairro" class="disabled form-select form-select-sm w-100"
+                                    aria-labelledby="cidadeDropdown " aria-label="Small select example" disabled>
+                                    <option selected>Selecione seu bairro</option>
+                                    <option value="indaia">Indáia</option>
+                                    <option value="sumare">Sumaré</option>
+                                </select>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-primary" id="buscarBtn" data-bs-dismiss="modal" disabled>Buscar</button>
+                            <button class="btn btn-primary" id="buscarBtn" data-bs-dismiss="modal">Buscar</button>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Modais de Unidade Olaria e Unidade Indaiá permanecem os mesmos -->
-            
             <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const cidadeDropdown = document.getElementById("cidadeDropdown");
-                    const bairroDropdown = document.getElementById("bairroDropdown");
-                    const buscarBtn = document.getElementById("buscarBtn");
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Obtenha referências para os elementos #cidade, #bairro e o botão #buscarBtn
+                    let cidadeSelect = document.getElementById('cidade');
+                    let bairroSelect = document.getElementById('bairro');
+                    let buscarBtn = document.getElementById('buscarBtn');
 
-                    const cidadeSelecionada = document.getElementById("cidadeSelecionada");
-                    const bairroSelecionado = document.getElementById("bairroSelecionado");
+                    // Inicialmente, desabilite o botão
+                    buscarBtn.disabled = true;
 
-                    cidadeDropdown.addEventListener("click", function () {
-                        cidadeDropdown.classList.toggle("show");
-                    });
-
-                    cidadeDropdown.querySelector("ul").addEventListener("click", function (e) {
-                        if (e.target.tagName === "A") {
-                            const cidadeSelecionadaText = e.target.getAttribute("data-cidade");
-                            cidadeDropdown.querySelector("button").textContent = cidadeSelecionadaText;
-                            cidadeDropdown.classList.remove("show");
-                            bairroDropdown.disabled = false;
-                            cidadeSelecionada.textContent = cidadeSelecionadaText;
-                            bairroSelecionado.textContent = "Selecione o bairro";
-                        }
-                    });
-
-                    bairroDropdown.addEventListener("click", function () {
-                        bairroDropdown.classList.toggle("show");
-                    });
-
-                    bairroDropdown.querySelector("ul").addEventListener("click", function (e) {
-                        if (e.target.tagName === "A") {
-                            const bairroSelecionadoText = e.target.getAttribute("data-bairro");
-                            bairroDropdown.querySelector("button").textContent = bairroSelecionadoText;
-                            bairroDropdown.classList.remove("show");
+                    // Adicione um ouvinte de evento para o campo #cidade
+                    cidadeSelect.addEventListener('change', function () {
+                        // Verifique se a opção selecionada não é "Selecione sua cidade"
+                        if (cidadeSelect.value !== "Selecione sua cidade" && bairroSelect.value !== "Selecione seu bairro") {
+                            // Habilitar o botão se a cidade e o bairro forem selecionados
                             buscarBtn.disabled = false;
-                            bairroSelecionado.textContent = bairroSelecionadoText;
+                        } else {
+                            // Se a opção for "Selecione sua cidade" ou o bairro não for selecionado, desabilite o botão
+                            buscarBtn.disabled = true;
+                        }
+
+                        // Verifique se a opção selecionada não é "Selecione sua cidade"
+                        if (cidadeSelect.value !== "Selecione sua cidade") {
+                            // Habilitar o campo #bairro
+                            bairroSelect.disabled = false;
+                        } else {
+                            // Se a opção for "Selecione sua cidade", desabilite o campo #bairro novamente
+                            bairroSelect.disabled = true;
                         }
                     });
 
-                    buscarBtn.addEventListener("click", function () {
-                        const selectedBairro = bairroDropdown.querySelector("button").textContent;
-                        if (selectedBairro === "Olaria") {
-                            // Abra o modal correspondente a Olaria
-                            $('#unidadeOlaria').modal('show');
-                        } else if (selectedBairro === "Indaiá") {
-                            // Abra o modal correspondente a Indaiá
-                            $('#unidadeIndaia').modal('show');
+                    // Adicione um ouvinte de evento para o campo #bairro
+                    bairroSelect.addEventListener('change', function () {
+                        // Verifique se a opção selecionada não é "Selecione seu bairro"
+                        if (cidadeSelect.value !== "Selecione sua cidade" && bairroSelect.value !== "Selecione seu bairro") {
+                            // Habilitar o botão se a cidade e o bairro forem selecionados
+                            buscarBtn.disabled = false;
+                        } else {
+                            // Se a opção for "Selecione seu bairro" ou a cidade não for selecionada, desabilite o botão
+                            buscarBtn.disabled = true;
+                        }
+                    });
+
+                    // Adicione um ouvinte de evento para o botão "Buscar"
+                    buscarBtn.addEventListener('click', function () {
+                        let selectedCidade = cidadeSelect.value;
+                        let selectedBairro = bairroSelect.value;
+
+                        // Verificar se a cidade e o bairro foram selecionados
+                        if (selectedCidade !== "Selecione sua cidade" && selectedBairro !== "Selecione seu bairro") {
+                            // Fechar o modal principal
+                            let mainModal = new bootstrap.Modal(document.getElementById('exampleModalToggle'));
+                            mainModal.hide();
+
+                            // Redefinir campos e mostrar o modal correspondente ao bairro selecionado
+                            cidadeSelect.selectedIndex = 0;
+                            bairroSelect.selectedIndex = 0;
+                            let bairroModal = new bootstrap.Modal(document.getElementById('modal' + selectedBairro.charAt(0).toUpperCase() + selectedBairro.slice(1)));
+                            bairroModal.show();
                         }
                     });
                 });
             </script>
-
-
         </div>
     </section>
 

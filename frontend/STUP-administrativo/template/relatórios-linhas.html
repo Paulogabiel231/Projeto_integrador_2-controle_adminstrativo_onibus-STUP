@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-	<title>Relatórios Linhas | STUP</title>
+	<title>Home | STUP</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -47,28 +47,89 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="index.html"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
-						<li><a href="cadastro-motorista.html" class=""><i class="lnr lnr-pencil"></i> <span>Cadastro de
-									Motorista</span></a></li>
-						<li><a href="cadastro-cliente.html" class=""><i class="fa fa-credit-card"></i>
-								<span>Cadastro de
-									Cliente</span></a></li>
-						<li><a href="cadastro-linhas.html" class=""><i class="fa fa-map-marker"></i> <span>Cadastro de
-									Linhas</span></a></li>
+						<li><a href="index.html" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+						<li><a href="recarga.html" class=""><i class="lnr lnr-cart"></i> <span>Recarga</span></a></li>
 						<li>
-							<a href="#subPages" data-toggle="collapse" class="active" class="collapsed"><i
-									class="lnr lnr-file-empty"></i> <span>Registros</span> <i
-									class="icon-submenu lnr lnr-chevron-left"></i></a>
-							<div id="subPages" class="collapse ">
+							<a href="#cadastros" data-toggle="collapse" class="collapsed"><i
+									class="lnr lnr-file-empty"></i>
+								<span>Cadastros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="cadastros" class="collapse ">
 								<ul class="nav">
-									<li><a href="relatórios-linhas.html" class="active">Linhas</a></li>
-									<li><a href="relatórios-motorista.html" class="">Motoristas</a></li>
-									<li><a href="relatórios-clientes.html" class="">Passes</a></li>
-									<li><a href="relatórios-gerais.html" class="">Gerais</a></li>
+									<li><a href="cadastro-cliente.html" class=""><i class="fa fa-credit-card"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="cadastro-motorista.html" class=""><i class="lnr lnr-user"></i>
+											<span>
+												Motorista
+											</span>
+										</a>
+									</li>
+									<li><a href="cadastro-linhas.html" class=""><i class="fa fa-map-marker"></i>
+											<span>
+												Linhas
+											</span>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</li>
-
+						<li>
+							<a href="#registros" data-toggle="collapse" class="collapsed"><i
+									class="lnr lnr lnr-pencil"></i>
+								<span>Registros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="registros" class="collapse ">
+								<ul class="nav">
+									<li><a href="registro-clientes.html" class=""><i class="fa fa-credit-card"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="registro-motorista.html" class=""><i class="lnr lnr-user"></i>
+											<span>
+												Motorista
+											</span>
+										</a>
+									</li>
+									<li><a href="registros-linhas.html" class=""><i class="fa fa-map-marker"></i>
+											<span>
+												Linhas
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#relatorios" data-toggle="collapse" class="collapsed active"><i
+									class="fa fa-calendar"></i>
+								<span>Relatórios</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="relatorios" class="collapse ">
+								<ul class="nav">
+									<li><a href="relatórios-clientes.html" class=""><i class="fa fa-credit-card"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="relatórios-motorista.html" class=""><i class="lnr lnr-user"></i>
+											<span>
+												Motorista
+											</span>
+										</a>
+									</li>
+									<li><a href="relatórios-linhas.html" class="active"><i class="fa fa-map-marker"></i>
+											<span>
+												Linhas
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -82,225 +143,217 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Relatórios Linhas</h3>
+							<h3 class="panel-title">Relatório de Motorista</h3>
+						</div>
+						<div class="panel-body">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>Nome Completo</th>
+										<th>CPF</th>
+										<th>Na Data</th>
+										<th>Trabalha na linha</th>
+										<th>Jornada de Trabalho</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="">
+										<td class="">512.466.818-14</td>
+										<td>Steve Jobs Alencar</td>
+										<td class="" for="data1"><input type="text" id="data1" class="form-control"
+												readonly></td>
+										<td> 100 </td>
+										<td class="" for="horario1"><input type="text" id="horario1"
+												class="form-control" readonly></td>
+									</tr>
+									<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+									<script
+										src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+									<script>
+										$(document).ready(function () {
+											let diaDeTrabalho = "20";
+											let MesDeTrabalho = "09";
+											let anoDeTrabalho = "2023";
+											$("#data1").val(diaDeTrabalho + "/" + MesDeTrabalho + "/" + anoDeTrabalho);
+										});
+									</script>
+									<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+									<script
+										src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+									<script>
+										$(document).ready(function () {
+											let entradaNoServico = "6:30";
+											let saidaDoServico = "14:30";
+											$("#horario1").val(entradaNoServico + " até " + saidaDoServico);
+										});
+									</script>
+									<tr class="">
+										<td class="">512.466.818-14</td>
+										<td>Steve Jobs Alencar</td>
+										<td class="" for="data2"><input type="text" id="data2" class="form-control"
+												readonly></td>
+										<td> 110 </td>
+										<td class="" for="horario2"><input type="text" id="horario2"
+												class="form-control" readonly></td>
+									</tr>
+									<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+									<script
+										src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+									<script>
+										$(document).ready(function () {
+											let diaDeTrabalho = "21"; // Usando uma data diferente
+											let MesDeTrabalho = "09";
+											let anoDeTrabalho = "2023";
+											$("#data2").val(diaDeTrabalho + "/" + MesDeTrabalho + "/" + anoDeTrabalho);
+
+											let entradaNoServico = "7:00"; // Usando um horário diferente
+											let saidaDoServico = "15:00"; // Usando um horário diferente
+											$("#horario2").val(entradaNoServico + " até " + saidaDoServico);
+										});
+									</script>
+								</tbody>
+
+
+								</tbody>
+							</table>
 						</div>
 
-						<div class="row">
-							<div class="col-md-12">
-								<!-- RECENT PURCHASES -->
-								<div class="panel">
-									<div class="panel-heading">
-										<h3 class="panel-title">Linha 100</h3>
-									</div>
-
-									<table class="table table-hover">
-										<thead>
-											<tr>
-												<th>Nome</th>
-												<th>Saída</th>
-												<th>Prim. Trajeto</th>
-												<th>Loc. Chegada</th>
-												<th>Novo Trajeto</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>CÂMPUS / OLARIA</td>
-												<td>CÂMPUS</td>
-												<td>Praia das Palmeiras - Av. Geraldo Nogueira da Silva, Sumaré - Av. Dr. Arthur da Costa Filho, Sumaré - R. Caçapava, Sumaré - Av. Pres. Castelo Branco</td>
-												<td>Sumaré - Av. Pres. Castelo Branco</td>
-												<td>Praia das Palmeiras - Av. Geraldo Nogueira da Silva, Sumaré - Av. Dr. Arthur da Costa Filho, Sumaré - R. Caçapava, Sumaré - Av. Pres. Castelo Branco</td>
-
-											</tr>
-										</tbody>
-									</table>
-									<br>
-									<div class="row">
-										<div class="col-md-12 text-right"><a href="#" class="btn btn-primary">Editar</a></div>
-									</div>
-								</div>
-								<!-- END RECENT PURCHASES -->
+						<div class="clearfix"></div>
+						<footer>
+							<div class="container-fluid">
+								<p class="copyright">&copy; 2023 <a href="#" target="_blank">STUP</a>.
+									Todos os Direitos Reservador</p>
 							</div>
-							<!-- END RECENT PURCHASES -->
-							<div class="col-md-12">
-								<!-- RECENT PURCHASES -->
-								<div class="panel">
-									<div class="panel-heading">
-										<h3 class="panel-title">Linha 110</h3>
-									</div>
-
-									<table class="table table-hover">
-										<thead>
-											<tr>
-												<th>Nome</th>
-												<th>Saída</th>
-												<th>Prim. Trajeto</th>
-												<th>Loc. Chegada</th>
-												<th>Novo Trajeto</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>CÂMPUS / OLARIA</td>
-												<td>CÂMPUS</td>
-												<td>Praia das Palmeiras - Av. Geraldo Nogueira da Silva, Sumaré - Av. Dr. Arthur da Costa Filho, Sumaré - R. Caçapava, Sumaré - Av. Pres. Castelo Branco</td>
-												<td>Sumaré - Av. Pres. Castelo Branco</td>
-												<td>Praia das Palmeiras - Av. Geraldo Nogueira da Silva, Sumaré - Av. Dr. Arthur da Costa Filho, Sumaré - R. Caçapava, Sumaré - Av. Pres. Castelo Branco</td>
-
-											</tr>
-										</tbody>
-									</table>
-									<br>
-									<div class="row">
-										<div class="col-md-12 text-right"><a href="#" class="btn btn-primary">Editar</a></div>
-									</div>
-								</div>
-								<!-- END RECENT PURCHASES -->
-							</div>
-						</div>
-
-						
+						</footer>
 					</div>
+					<!-- END WRAPPER -->
+					<!-- Javascript -->
+					<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+					<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+					<script src="assets/vendor/jquery/jquery.min.js"></script>
+					<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+					<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+					<script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+					<script src="assets/vendor/chartist/js/chartist.min.js"></script>
+					<script src="assets/scripts/klorofil-common.js"></script>
+					<script>
+						$(function () {
+							var data, options;
 
+							// headline charts
+							data = {
+								labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+								series: [
+									[23, 29, 24, 40, 25, 24, 35],
+									[14, 25, 18, 34, 29, 38, 44],
+								]
+							};
 
-
-
-
-				</div>
-				<div class="clearfix"></div>
-				<footer>
-					<div class="container-fluid">
-						<p class="copyright">&copy; 2023 <a href="#" target="_blank">STUP</a>.
-							Todos os Direitos Reservador</p>
-					</div>
-				</footer>
-			</div>
-			<!-- END WRAPPER -->
-			<!-- Javascript -->
-			<script src="assets/vendor/jquery/jquery.min.js"></script>
-			<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-			<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-			<script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-			<script src="assets/vendor/chartist/js/chartist.min.js"></script>
-			<script src="assets/scripts/klorofil-common.js"></script>
-			<script>
-				$(function () {
-					var data, options;
-
-					// headline charts
-					data = {
-						labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-						series: [
-							[23, 29, 24, 40, 25, 24, 35],
-							[14, 25, 18, 34, 29, 38, 44],
-						]
-					};
-
-					options = {
-						height: 300,
-						showArea: true,
-						showLine: false,
-						showPoint: false,
-						fullWidth: true,
-						axisX: {
-							showGrid: false
-						},
-						lineSmooth: false,
-					};
-
-					new Chartist.Line('#headline-chart', data, options);
-
-
-					// visits trend charts
-					data = {
-						labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-						series: [{
-							name: 'series-real',
-							data: [200, 380, 350, 320, 410, 450, 570, 400, 555, 620, 750, 900],
-						}, {
-							name: 'series-projection',
-							data: [240, 350, 360, 380, 400, 450, 480, 523, 555, 600, 700, 800],
-						}]
-					};
-
-					options = {
-						fullWidth: true,
-						lineSmooth: false,
-						height: "270px",
-						low: 0,
-						high: 'auto',
-						series: {
-							'series-projection': {
+							options = {
+								height: 300,
 								showArea: true,
+								showLine: false,
 								showPoint: false,
-								showLine: false
-							},
-						},
-						axisX: {
-							showGrid: false,
+								fullWidth: true,
+								axisX: {
+									showGrid: false
+								},
+								lineSmooth: false,
+							};
 
-						},
-						axisY: {
-							showGrid: false,
-							onlyInteger: true,
-							offset: 0,
-						},
-						chartPadding: {
-							left: 20,
-							right: 20
-						}
-					};
-
-					new Chartist.Line('#visits-trends-chart', data, options);
+							new Chartist.Line('#headline-chart', data, options);
 
 
-					// visits chart
-					data = {
-						labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-						series: [
-							[6384, 6342, 5437, 2764, 3958, 5068, 7654]
-						]
-					};
+							// visits trend charts
+							data = {
+								labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+								series: [{
+									name: 'series-real',
+									data: [200, 380, 350, 320, 410, 450, 570, 400, 555, 620, 750, 900],
+								}, {
+									name: 'series-projection',
+									data: [240, 350, 360, 380, 400, 450, 480, 523, 555, 600, 700, 800],
+								}]
+							};
 
-					options = {
-						height: 300,
-						axisX: {
-							showGrid: false
-						},
-					};
+							options = {
+								fullWidth: true,
+								lineSmooth: false,
+								height: "270px",
+								low: 0,
+								high: 'auto',
+								series: {
+									'series-projection': {
+										showArea: true,
+										showPoint: false,
+										showLine: false
+									},
+								},
+								axisX: {
+									showGrid: false,
 
-					new Chartist.Bar('#visits-chart', data, options);
+								},
+								axisY: {
+									showGrid: false,
+									onlyInteger: true,
+									offset: 0,
+								},
+								chartPadding: {
+									left: 20,
+									right: 20
+								}
+							};
+
+							new Chartist.Line('#visits-trends-chart', data, options);
 
 
-					// real-time pie chart
-					var sysLoad = $('#system-load').easyPieChart({
-						size: 130,
-						barColor: function (percent) {
-							return "rgb(" + Math.round(200 * percent / 100) + ", " + Math.round(200 * (1.1 - percent / 100)) + ", 0)";
-						},
-						trackColor: 'rgba(245, 245, 245, 0.8)',
-						scaleColor: false,
-						lineWidth: 5,
-						lineCap: "square",
-						animate: 800
-					});
+							// visits chart
+							data = {
+								labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+								series: [
+									[6384, 6342, 5437, 2764, 3958, 5068, 7654]
+								]
+							};
 
-					var updateInterval = 3000; // in milliseconds
+							options = {
+								height: 300,
+								axisX: {
+									showGrid: false
+								},
+							};
 
-					setInterval(function () {
-						var randomVal;
-						randomVal = getRandomInt(0, 100);
+							new Chartist.Bar('#visits-chart', data, options);
 
-						sysLoad.data('easyPieChart').update(randomVal);
-						sysLoad.find('.percent').text(randomVal);
-					}, updateInterval);
 
-					function getRandomInt(min, max) {
-						return Math.floor(Math.random() * (max - min + 1)) + min;
-					}
+							// real-time pie chart
+							var sysLoad = $('#system-load').easyPieChart({
+								size: 130,
+								barColor: function (percent) {
+									return "rgb(" + Math.round(200 * percent / 100) + ", " + Math.round(200 * (1.1 - percent / 100)) + ", 0)";
+								},
+								trackColor: 'rgba(245, 245, 245, 0.8)',
+								scaleColor: false,
+								lineWidth: 5,
+								lineCap: "square",
+								animate: 800
+							});
 
-				});
-			</script>
+							var updateInterval = 3000; // in milliseconds
+
+							setInterval(function () {
+								var randomVal;
+								randomVal = getRandomInt(0, 100);
+
+								sysLoad.data('easyPieChart').update(randomVal);
+								sysLoad.find('.percent').text(randomVal);
+							}, updateInterval);
+
+							function getRandomInt(min, max) {
+								return Math.floor(Math.random() * (max - min + 1)) + min;
+							}
+
+						});
+					</script>
 </body>
 
 </html>

@@ -147,7 +147,7 @@
 						</div>
 						<div class="panel-body">
 							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Foto 3x4</span>
+								<span class="input-group-addon"><i class=""></i>Foto 3x4</span>
 								<div class="">
 									<img class="" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
 										alt="example placeholder" style="width: 300px;" />
@@ -160,22 +160,22 @@
 							<br>
 							<div class="input-group">
 								<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
-								<input class="form-control" type="text">
+								<input class="form-control" name="nomeCompleto" type="text">
 							</div>
 							<br>
 							<div class="input-group">
 								<span class="input-group-addon"><i class=""></i>*CPF</span>
-								<input class="form-control" type="text">
+								<input class="form-control" name="cpf" type="text">
 							</div>
 							<br>
 							<div class="input-group">
 								<span class="input-group-addon"><i class=""></i>*Data de Nascimento</span>
-								<input class="form-control" type="date" id="dataNascimento">
+								<input class="form-control" type="date" name="dataNascimento" id="dataNascimento">
 							</div>
 							<br>
 							<div class="input-group">
 								<span class="input-group-addon"><i class=""></i>*Uso:</span>
-								<select class="form-control" id="usoSelect">
+								<select class="form-control" name="uso" id="usoSelect">
 									<option value="" disabled selected hidden> </option>
 									<option value="Comum">Comum</option>
 									<option value="Escolar">Escolar</option>
@@ -288,7 +288,13 @@
 								<input class="form-control" type="text">
 							</div>
 							<br>
-							<div class="col text-left"><a href="#" class="btn btn-primary">Enviar</a></div>
+							<div class=""><input id="cadastrarUsuario" class="col text-left btn btn-primary" type="submit"></div>
+							<script>
+								const btnCadastrar = document.querySelector ("#cadastrarUsuario")
+								btnCadastrar.addEventListener('click', async (event) => {
+									event.preventDefault()
+								});
+							</script>
 						</div>
 
 						<div class="clearfix"></div>

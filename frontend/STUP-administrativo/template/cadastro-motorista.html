@@ -183,20 +183,15 @@
 								<input class="form-control" type="date">
 							</div>
 							<br>
-							<div class="input-group d-flex flex-row">
-								<span class="input-group-addon"><i class=""></i>Sexo</span>
-								<label class="fancy-radio">
-									<input name="gender" value="male" type="radio">
-									<span><i></i>Homem</span>
-								</label>
-								<label class="fancy-radio">
-									<input name="gender" value="female" type="radio">
-									<span><i></i>Mulher</span>
-								</label>
-								<label class="fancy-radio">
-									<input name="gender" value="male" type="radio">
-									<span><i></i>Outro</span>
-								</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>Sexo:</span>
+								<select class="form-control" name="sexo" id="usoSelect">
+									<option value="" disabled selected hidden> Escolher</option>
+									<option value="masculino">Masculino</option>
+									<option value="feminino">Feminino</option>
+									<option value="outro">Outro</option>
+									<option value="prefiroNãoResponder">Prefiro não responder</option>
+								</select>
 							</div>
 							<br>
 							<div class="input-group">

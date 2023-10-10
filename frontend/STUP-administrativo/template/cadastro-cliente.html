@@ -19,7 +19,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../../STUP-self_charge/img/icon-title.svg">
 </head>
 
 <body>
@@ -154,7 +154,7 @@
 								</div>
 								<div class="col-4"> <br>
 									<label class="form-label text-white " for="customFile1"></label>
-									<input type="file" class="form-control px-0" id="customFile1" />
+									<input type="file" class="form-control px-0" id="customFile1"/>
 								</div>
 							</div>
 							<br>
@@ -210,6 +210,7 @@
 
 							<script>
 								const usoSelect = document.getElementById("usoSelect");
+								const comumInput = document.getElementById("comumInput");
 								const raInput = document.getElementById("raInput");
 								const atestadoInput = document.getElementById("atestadoInput");
 								const cnpjInput = document.getElementById("cnpjInput");
@@ -242,6 +243,10 @@
 									} else if (usoSelect.value === "Idoso") {
 										brSeparadorAtestado.style.display = "none";
 										brSeparadorCnpj.style.display = "none";
+										brSeparadorRA.style.display = "none";
+									} else if (usoSelect.value === "Comum") {
+										brSeparadorAtestado.style.display = "none"
+										brSeparadorCnpj.style.display = "none"
 										brSeparadorRA.style.display = "none";
 									}
 								});

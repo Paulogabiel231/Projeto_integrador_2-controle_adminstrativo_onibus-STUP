@@ -8,7 +8,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const linhasRouter = require('./routes/linhas');
 const clientesRouter = require('./routes/clientes');
-const motoristasRouter = require('./routes/motoristas');
+// const motoristasRouter = require('./routes/motoristas');
 const usuariosRouter = require('./routes/usuarios');
 const onibusRouter = require('./routes/onibus');
 
@@ -25,7 +25,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/linhas', linhasRouter);
 app.use('/api/clientes', clientesRouter);
-app.use('/api/motoristas', motoristasRouter);
+// app.use('/api/motoristas', motoristasRouter);
 app.use('/api/usuarios', usuariosRouter);
 app.use('/api/onibus', onibusRouter);
 

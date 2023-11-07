@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100;0,200;1,100;1,200&family=Open+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/css-self/style.css" />
+  <link rel="icon" type="image/x-icon" href="/images/icon-title.svg">
+  <title>STUP</title>
+</head>
+<body>
+  <div style="background-color: #602e9a" class="pt-1">
+    <header class="bg-dark">
+      <div class="container">
+        <div class="row navbar py-2 d-flex justify-content-between">
+          <div class="col-3 col-sm-2 col-md-2 col-lg-1">
+            <a href="/"><img class="rounded-0 img-fluid" src="/images/icon-stup-white.svg" alt="logo" /></a>
+          </div>
+          <div class="col col-md-5 col-lg-4 col-xl-3 ms-auto d-flex justify-content-between justify-content-end gap-2">
+            <button type="button" class="w-100 btn rounded-0 border text-secondary btn-outline-secondary">
+              <a class="text-secondary text-decoration-none" href="/central-ajuda">Ajuda</a>
+            </button>
+            <button type="button" class="w-100 btn rounded-0 border text-secondary btn-outline-secondary">
+              <a class="text-secondary text-decoration-none" href="/consulta-recarga">Recarregar</a>
+            </button>
+            <button type="button" class="w-100 btn rounded-0 btn-primary fw-bold"><a
+                class="text-secondary text-decoration-none " href="/login">Entrar</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid border-bottom"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <nav class="navbar navbar-expand-lg bg-dark">
+              <div class="px-0 w-100">
+                <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item justify-content-center align-items-center">
+                      <a class="nav-link text-secondary  " aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-secondary" href="/carteirinha-linhas">Carteirinha</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-secondary p-2 bg-primary" href="/consulta-recarga">Consulte Saldo</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-secondary" href="/carteirinha-linhas">Linhas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-secondary p-2 bg-primary" href="/consulta-recarga">Recarga</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-secondary" href="/aplicativo">Aplicativo</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-secondary" href="/atendimento">Atendimento</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-secondary" href="/empresas">Para Empresas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link pe-0 text-secondary" href="#">Sobre nós</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <!-- BANNER -->
+  <section>
+    <div class="container-fluid px-0 w-100 position-relative">
+      <img src="/images/consulta-recarga-banner1.png" class="img-fluid px-0 w-100" alt="Imagem" />
+      <div class="d-none d-md-block position-absolute top-50 start-50 translate-middle text-center">
+        <h2 class="text-secondary fs-2 fw-bold">FICOU MAIS FÁCIL RECARREGAR <br> E CONSULTAR SUA CARTEIRINHA.</h2>
+        <h3 class="text-secondary fs-4 fw-light mb-4">Ganhe mais facilidade recarregando da sua casa, <br>
+          e consultando seu saldo com um simples clique!</h3>
+        <div class="d-flex justify-content-between">
+          <button class="btn fw-bold text-secondary btn-primary  px-5">
+            RECARREGAR
+          </button>
+          <button class="btn fw-bold text-secondary btn-primary px-5">
+            CONSULTAR
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- FIM BANNER -->
+  <!-- CONSULTA -->
+  <section class="bg-secondary">
+    <div class="container pt-5 pb-5">
+      <div class="row text-center">
+        <h2 class="text-primary fs-2 fw-bold">PASSES DISPONÍVEIS:</h2>
+        <div class="d-flex justify-content-center align-items-center mt-4">
+          <button class="btn btn-primary fw-bold text-secondary w-25 fs-3 p-2">22</button>
+        </div>
+        <div class="mt-5 d-flex justify-content-center">
+          <table class="table table-bordered border-primary col-10">
+            <thead class="">
+              <tr>
+                <th colspan="4" class="text-center bg-primary text-secondary">ÚLTIMOS 10 USOS:</th>
+              </tr>
+
+              <tr>
+                <th scope="col">LINHA</th>
+                <th scope="col">DESCONTADO</th>
+                <th scope="col">DATA</th>
+                <th scope="col">HORÁRIO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">100</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">210</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">120</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">100</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">210</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">120</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">100</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">210</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">120</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">120</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container pt-5 pb-5">
+      <div class="row text-center">
+        <div class="d-flex justify-content-center">
+          <table class="table table-bordered border-primary col-10">
+            <thead class="">
+              <tr>
+                <th colspan="4" class="text-center bg-primary text-secondary">HISTÓRICO DE RECARGAS-SOLICITAÇÕES:</th>
+              </tr>
+
+              <tr CL>
+                <th scope="col">N°</th>
+                <th scope="col">DATA DE SOLICITAÇÃO</th>
+                <th scope="col">PREVISÃO DE ENTREGA</th>
+                <th scope="col">STATUS DO PEDIDO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">10</th>
+                <td>30/09/2023</td>
+                <td>30/09/2023</td>
+                <td class="text-warning">PENDENTE</td>
+              </tr>
+              <tr>
+                <td scope="row">9</th>
+                <td>30/09/2023 </td>
+                <td>30/09/2023</td>
+                <td class="text-success">ACEITA</td>
+              </tr>
+              <tr>
+                <td scope="row">8</th>
+                <td>30/09/2023 </td>
+                <td>30/09/2023</td>
+                <td class="text-success">ACEITA</td>
+              </tr>
+              <tr>
+                <td scope="row">7</th>
+                <td>30/09/2023</td>
+                <td>30/09/2023</td>
+                <td class="text-success">ACEITA</td>
+              </tr>
+              <tr>
+                <td scope="row">6</th>
+                <td>30/09/2023 </td>
+                <td>30/09/2023</td>
+                <td class="text-success">ACEITA</td>
+              </tr>
+              <tr>
+                <td scope="row">5</th>
+                <td>30/09/2023 </td>
+                <td>30/09/2023</td>
+                <td class="text-success">ACEITA</td>
+              </tr>
+              <tr>
+                <td scope="row">4</th>
+                <td>30/09/2023 </td>
+                <td>30/09/2023</td>
+                <td class="text-success">ACEITA</td>
+              </tr>
+              <tr>
+                <td scope="row">3</th>
+                <td>30/09/2023</td>
+                <td>30/09/2023</td>
+                <td class="text-danger">NEGADA</td>
+              </tr>
+              <tr>
+                <td scope="row">2</th>
+                <td>30/09/2023 </td>
+                <td>30/09/2023</td>
+                <td class="text-success">ACEITA</td>
+              </tr>
+              <tr>
+                <td scope="row">1</th>
+                <td>30/09/2023 </td>
+                <td>30/09/2023</td>
+                <td class="text-success">ACEITA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-secondary">
+    <div class="container pt-5 pb-5">
+      <div class="row text-center">
+        <div class="d-flex justify-content-center">
+          <table class="table table-bordered border-primary col-10">
+            <thead class="">
+              <tr>
+                <th colspan="4" class="text-center bg-primary text-secondary">Últimos 10 usos:</th>
+              </tr>
+
+              <tr>
+                <th scope="col">LINHA</th>
+                <th scope="col">DESCONTADO</th>
+                <th scope="col">DATA</th>
+                <th scope="col">HORÁRIO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">100</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">210</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">120</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">100</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">210</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">120</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">100</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">210</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">120</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+              <tr>
+                <td scope="row">120</th>
+                <td>$ 5,00 </td>
+                <td>30/09/2023</td>
+                <td>PM 2:06</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- duvidas -->
+  <section>
+    <div class="container mt-5">
+      <div class="row">
+        <h2 class="fs-2 fw-bold text-dark mb-0">
+          Ainda tem Dúvidas?
+        </h2>
+        <h2 class="fs-2 fw-bold text-primary mb-5"> Nós te ajudamos.</h2>
+      </div>
+      <div class="row mb-5">
+        <div class="accordion accordion-flush rounded-5" id="accordionFlushExample">
+          <div class="accordion-item rounded-5 border-2 border-dark mb-4">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Como funciona o vale transporte?
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">adsad</div>
+            </div>
+          </div>
+          <div class="accordion-item rounded-5 border-2 border-dark mb-4">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Como cadastrar empresa e adquirir os passes para os funcionários?
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">asdadasasdasd</div>
+            </div>
+          </div>
+          <div class="accordion-item rounded-5 border-2 border-dark mb-4">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Como o funcionário pode adquirir seu cartão?
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">asdasd</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-center fw-bold mb-5">
+          <p class="">
+            Ainda sobraram dúvidas? <a class="text-decoration-underline text-primary" href="#">Entre em
+              contato.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>
+  <footer class="text-center text-lg-start text-secondary " style="background-color: #212121">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 fw-bold">
+              Somos a STUP
+            </h5>
+            <p class="fw-light mb-5 mb-md-4">
+              Nossa empresa de ônibus é ágil, prática e rápida, proporcionando viagens eficientes e sem complicações.
+            </p>
+            <h5 class="text-uppercase mb-4 fw-bold">Baixe o app</h5>
+            <img class="mb-5 mb-md-4" src="/images/index-baixar-apple.png" alt="Baixe">
+            <br>
+            <img class="mb-5 mb-md-0" src="/images/index-baixar-google.png" alt="Baixe">
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 fw-bold">Informações</h5>
+            <p>
+              <a href="index" class="fw-light  text-primary">Para você</a>
+            </p>
+            <p>
+              <a href="carteirinha-linhas" class="text-secondary fw-light text-decoration-none">Carteirinha</a>
+            </p>
+            <p>
+              <a href="consulta-recarga" class="text-secondary fw-light text-decoration-none">Consulte Saldo</a>
+            </p>
+            <p>
+              <a href="consulta-recarga" class="text-secondary fw-light text-decoration-none">Recarga</a>
+            </p>
+            <p>
+              <a href="carteirinha-linhas" class="text-secondary fw-light text-decoration-none">Linhas</a>
+            </p>
+            <p>
+              <a href="aplicativo" class="text-secondary fw-light text-decoration-none">Aplicativo</a>
+            </p>
+            <p>
+              <a href="atendimento" class=" text-secondary text-decoration-none">Atendimento</a>
+            </p>
+            <p>
+              <a href="empresas" class="text-secondary fw-light text-decoration-none">Para Empresas</a>
+            </p>
+            <p>
+              <a href="#" class="text-secondary fw-light text-decoration-none">Sobre nós</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 fw-bold">
+              Ajuda
+            </h5>
+            <p>
+              <a href="central-ajuda" class="text-secondary fw-light text-decoration-none">Central de ajuda</a>
+            </p>
+            <p>
+              <a href="#" class="text-secondary fw-light text-decoration-none">Ligue pra gente</a>
+            </p>
+            <p>
+              <a href="https://api.whatsapp.com/send?phone=+5512997215547&text=Ol%C3%A1%2C%20gostaria%20de%20tirar%20uma%20d%C3%BAvida."
+                target="_blank" class="text-secondary fw-light text-decoration-none">
+                Atendimento pelo Whatsapp
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-secondary fw-light text-decoration-none">Ligações para PCDs</a>
+            </p>
+            <hr class="w-100 clearfix d-md-none" />
+            <br>
+            <h5 class="text-uppercase mb-4 fw-bold">
+              Sobre nós
+            </h5>
+            <p>
+              <a href="#" class="text-secondary fw-light text-decoration-none">João Gabriel</a>
+            </p>
+            <p>
+              <a href="#" class="text-secondary fw-light text-decoration-none">Paulo Gabriel</a>
+            </p>
+            <p>
+              <a href="#" class="text-secondary fw-light text-decoration-none">Roberto Criscuolo</a>
+            </p>
+          </div>
+
+
+          <!-- Grid column -->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-3">
+
+      <!-- Section: Copyright -->
+      <section class="p-3 pt-0">
+        <div class="row d-flex align-items-center">
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8 text-center text-md-start">
+            <!-- Copyright -->
+            <div class="p-3">
+              © 2023 Copyright:
+              <h2 class="text-secondary"> STUP</h2>
+            </div>
+            <!-- Copyright -->
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" class="text-secondary" role="button"><i
+                class="fab fa-facebook-f"></i></a>
+
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" class="text-secondary" role="button"><i
+                class="fab fa-twitter"></i></a>
+
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" class="text-secondary" role="button">
+              <i class="fab fa-google"></i></a>
+
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" class="text-secondary" role="button"><i
+                class="fab fa-instagram"></i></a>
+          </div>
+          <!-- Grid column -->
+        </div>
+      </section>
+      <!-- Section: Copyright -->
+    </div>
+    <!-- Grid container -->
+  </footer>
+  <script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

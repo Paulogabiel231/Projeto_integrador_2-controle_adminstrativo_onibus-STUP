@@ -1,15 +1,15 @@
 -- Inserir dados para simular 10 motoristas diferentes
 INSERT INTO motorista (nome, foto) VALUES
-  ('João Silva', '/img/joao_silva.jpg'),
-  ('Maria Souza', '/img/maria_souza.jpg'),
-  ('Carlos Oliveira', '/img/carlos_oliveira.jpg'),
-  ('Ana Pereira', '/img/ana_pereira.jpg'),
-  ('Fernando Santos', '/img/fernando_santos.jpg'),
-  ('Amanda Costa', '/img/amanda_costa.jpg'),
-  ('Pedro Rodrigues', '/img/pedro_rodrigues.jpg'),
-  ('Larissa Fernandes', '/img/larissa_fernandes.jpg'),
-  ('Rafaela Lima', '/img/rafaela_lima.jpg'),
-  ('Gustavo Almeida', '/img/gustavo_almeida.jpg');
+  ('João Silva', '//images/joao_silva.jpg'),
+  ('Maria Souza', '//images/maria_souza.jpg'),
+  ('Carlos Oliveira', '//images/carlos_oliveira.jpg'),
+  ('Ana Pereira', '//images/ana_pereira.jpg'),
+  ('Fernando Santos', '//images/fernando_santos.jpg'),
+  ('Amanda Costa', '//images/amanda_costa.jpg'),
+  ('Pedro Rodrigues', '//images/pedro_rodrigues.jpg'),
+  ('Larissa Fernandes', '//images/larissa_fernandes.jpg'),
+  ('Rafaela Lima', '//images/rafaela_lima.jpg'),
+  ('Gustavo Almeida', '//images/gustavo_almeida.jpg');
 
 -- Inserir dados para simular 10 linhas de São Paulo
 INSERT INTO linha (nome, origem, destino, horarioPartida, duracao) VALUES

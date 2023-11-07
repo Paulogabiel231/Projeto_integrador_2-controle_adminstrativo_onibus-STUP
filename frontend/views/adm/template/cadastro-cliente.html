@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+	<title>Home | STUP</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- VENDOR CSS -->
+	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/vendor/linearicons/style.css">
+	<link rel="stylesheet" href="assets/vendor/chartist/css/chartist-custom.css">
+	<!-- MAIN CSS -->
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/demo.css">
+	<link rel="stylesheet" href="assets/css/demo.css">
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<!-- ICONS -->
+	<link rel="apple-touch-icon" sizes="76x76" href="assets//images/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../../STUP-self_charge//images/icon-title.svg">
+</head>
+
+<body>
+	<!-- WRAPPER -->
+	<div id="wrapper">
+		<!-- NAVBAR -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="brand">
+				<a href="index"><img src="assets//images/Stup-logo.png" alt="Stup Logo"
+						class="img-responsive logo"></a>
+			</div>
+			<div class="container-fluid">
+				<div class="navbar-btn">
+					<button type="button" class="btn-toggle-fullwidth"><i
+							class="lnr lnr-arrow-left-circle"></i></button>
+				</div>
+				<form class="navbar-form navbar-left">
+
+				</form>
+			</div>
+		</nav>
+		<!-- END NAVBAR -->
+		<!-- LEFT SIDEBAR -->
+		<div id="sidebar-nav" class="sidebar">
+			<div class="sidebar-scroll">
+				<nav>
+					<ul class="nav">
+						<li><a href="index" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+						<li><a href="recarga" class=""><i class="lnr lnr-cart"></i> <span>Recarga</span></a></li>
+						<li>
+							<a href="#cadastros" data-toggle="collapse" class="collapsed active"><i
+									class="lnr lnr-file-empty"></i>
+								<span>Cadastros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="cadastros" class="collapse ">
+								<ul class="nav">
+									<li><a href="cadastro-cliente" class="active"><i class="fa fa-credit-card"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="cadastro-motorista" class=""><i class="lnr lnr-user"></i>
+											<span>
+												Motorista
+											</span>
+										</a>
+									</li>
+									<li><a href="cadastro-linhas" class=""><i class="fa fa-map-marker"></i>
+											<span>
+												Linhas
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#registros" data-toggle="collapse" class="collapsed"><i
+									class="lnr lnr lnr-pencil"></i>
+								<span>Registros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="registros" class="collapse ">
+								<ul class="nav">
+									<li><a href="registro-clientes" class=""><i class="fa fa-credit-card"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="registro-motorista" class=""><i class="lnr lnr-user"></i>
+											<span>
+												Motorista
+											</span>
+										</a>
+									</li>
+									<li><a href="registros-linhas" class=""><i class="fa fa-map-marker"></i>
+											<span>
+												Linhas
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#relatorios" data-toggle="collapse" class="collapsed"><i
+									class="fa fa-calendar"></i>
+								<span>Relatórios</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="relatorios" class="collapse ">
+								<ul class="nav">
+									<li><a href="relatórios-clientes" class=""><i class="fa fa-credit-card"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="relatórios-motorista" class=""><i class="lnr lnr-user"></i>
+											<span>
+												Motorista
+											</span>
+										</a>
+									</li>
+									<li><a href="relatórios-linhas" class=""><i class="fa fa-map-marker"></i>
+											<span>
+												Linhas
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<!-- END LEFT SIDEBAR -->
+		<!-- MAIN -->
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					<!-- OVERVIEW -->
+					<div class="panel panel-headline">
+						<div class="panel-heading">
+							<h3 class="panel-title">Cadastro Cliente</h3>
+						</div>
+						<div class="panel-body">
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>Foto 3x4</span>
+								<div class="">
+									<img class="" src="https://mdbootstrap.com//images/Photos/Others/placeholder.jpg"
+										alt="example placeholder" style="width: 300px;" />
+								</div>
+								<div class="col-4"> <br>
+									<label class="form-label text-white " for="customFile1"></label>
+									<input type="file" class="form-control px-0" id="customFile1"/>
+								</div>
+							</div>
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
+								<input class="form-control" name="nomeCompleto" type="text">
+							</div>
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>*CPF</span>
+								<input class="form-control" name="cpf" type="text">
+							</div>
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>*Data de Nascimento</span>
+								<input class="form-control" type="date" name="dataNascimento" id="dataNascimento">
+							</div>
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>*Uso:</span>
+								<select class="form-control" name="uso" id="usoSelect">
+									<option value="" disabled selected hidden> </option>
+									<option value="Comum">Comum</option>
+									<option value="Escolar">Escolar</option>
+									<option value="Idoso">Idoso</option>
+									<option value="PCDs">PCDs</option>
+									<option value="ValeTransporte">Vale Transporte</option>
+								</select>
+							</div>
+							<br>
+							<div class="input-group" id="raInput" style="display: none;">
+								<span class="input-group"><i class=""></i>*RA</span>
+								<input class="form-control" type="text">
+							</div>
+							<div class="" id="brSeparadorRA" style="display: none;">
+								<br>
+							</div>
+							<div class="input-group" id="atestadoInput" style="display: none;">
+								<span class="input-group"><i class=""></i>*Atestado de Matrícula ou
+									Deficiência</span>
+								<input class="form-control" type="file" id="formFile">
+							</div>
+							<div class="" id="brSeparadorAtestado" style="display: none;">
+								<br>
+							</div>
+							<div class="input-group" id="cnpjInput" style="display: none;">
+								<span class="input-group"><i class=""></i>*CPNJ da Empresa</span>
+								<input class="form-control" type="text">
+							</div>
+							<div class="" id="brSeparadorCnpj" style="display: none;">
+								<br>
+							</div>
+
+							<script>
+								const usoSelect = document.getElementById("usoSelect");
+								const comumInput = document.getElementById("comumInput");
+								const raInput = document.getElementById("raInput");
+								const atestadoInput = document.getElementById("atestadoInput");
+								const cnpjInput = document.getElementById("cnpjInput");
+								const dataNascimento = document.getElementById("dataNascimento");
+								const brSeparadorRA = document.getElementById("brSeparadorRA");
+								const brSeparadorAtestado = document.getElementById("brSeparadorAtestado");
+								const brSeparadorCnpj = document.getElementById("brSeparadorCnpj");
+								usoSelect.addEventListener("change", function () {
+									// Resetar todos os campos ao valor inicial
+									raInput.style.display = "none";
+									atestadoInput.style.display = "none";
+									cnpjInput.style.display = "none";
+
+									if (usoSelect.value === "Escolar") {
+										raInput.style.display = "flex";
+										brSeparadorRA.style.display = "block";
+										atestadoInput.style.display = "flex";
+										brSeparadorAtestado.style.display = "block";
+										brSeparadorCnpj.style.display = "none";
+									} else if (usoSelect.value === "ValeTransporte") {
+										brSeparadorRA.style.display = "none";
+										brSeparadorAtestado.style.display = "none";
+										brSeparadorCnpj.style.display = "flex";
+										cnpjInput.style.display = "flex";
+									} else if (usoSelect.value === "PCDs") {
+										atestadoInput.style.display = "flex";
+										brSeparadorAtestado.style.display = "flex";
+										brSeparadorCnpj.style.display = "none";
+										brSeparadorRA.style.display = "none";
+									} else if (usoSelect.value === "Idoso") {
+										brSeparadorAtestado.style.display = "none";
+										brSeparadorCnpj.style.display = "none";
+										brSeparadorRA.style.display = "none";
+									} else if (usoSelect.value === "Comum") {
+										brSeparadorAtestado.style.display = "none"
+										brSeparadorCnpj.style.display = "none"
+										brSeparadorRA.style.display = "none";
+									}
+								});
+
+								dataNascimento.addEventListener("change", function () {
+									const selectedDate = new Date(dataNascimento.value);
+									const currentDate = new Date();
+									const age = currentDate.getFullYear() - selectedDate.getFullYear();
+
+									if (age >= 65) {
+										usoSelect.value = "Idoso";
+									}
+								});
+							</script>
+
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>Sexo:</span>
+								<select class="form-control" name="sexo" id="usoSelect">
+									<option value="" disabled selected hidden> Escolher</option>
+									<option value="masculino">Masculino</option>
+									<option value="feminino">Feminino</option>
+									<option value="outro">Outro</option>
+									<option value="prefiroNãoResponder">Prefiro não responder</option>
+								</select>
+							</div>
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>*E-mail</span>
+								<input type="email" class="form-control is-invalid" class="form-control">
+							</div>
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>*E-mail Secundário</span>
+								<input type="email" class="form-control is-invalid" class="form-control">
+							</div>
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>*Número de Telefone</span>
+								<input class="form-control" type="text">
+							</div>
+							<br>
+							<div class=""><input id="cadastrarUsuario" class="col text-left btn btn-primary" type="submit"></div>
+							<script>
+								const btnCadastrar = document.querySelector ("#cadastrarUsuario")
+								btnCadastrar.addEventListener('click', async (event) => {
+									event.preventDefault()
+								});
+							</script>
+						</div>
+
+						<div class="clearfix"></div>
+						<footer>
+							<div class="container-fluid">
+								<p class="copyright">&copy; 2023 <a href="#" target="_blank">STUP</a>.
+									Todos os Direitos Reservador</p>
+							</div>
+						</footer>
+					</div>
+					<!-- END WRAPPER -->
+					<!-- Javascript -->
+					<script src="assets/vendor/jquery/jquery.min.js"></script>
+					<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+					<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+					<script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+					<script src="assets/vendor/chartist/js/chartist.min.js"></script>
+					<script src="assets/scripts/klorofil-common.js"></script>
+					<script>
+						$(function () {
+							var data, options;
+
+							// headline charts
+							data = {
+								labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+								series: [
+									[23, 29, 24, 40, 25, 24, 35],
+									[14, 25, 18, 34, 29, 38, 44],
+								]
+							};
+
+							options = {
+								height: 300,
+								showArea: true,
+								showLine: false,
+								showPoint: false,
+								fullWidth: true,
+								axisX: {
+									showGrid: false
+								},
+								lineSmooth: false,
+							};
+
+							new Chartist.Line('#headline-chart', data, options);
+
+
+							// visits trend charts
+							data = {
+								labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+								series: [{
+									name: 'series-real',
+									data: [200, 380, 350, 320, 410, 450, 570, 400, 555, 620, 750, 900],
+								}, {
+									name: 'series-projection',
+									data: [240, 350, 360, 380, 400, 450, 480, 523, 555, 600, 700, 800],
+								}]
+							};
+
+							options = {
+								fullWidth: true,
+								lineSmooth: false,
+								height: "270px",
+								low: 0,
+								high: 'auto',
+								series: {
+									'series-projection': {
+										showArea: true,
+										showPoint: false,
+										showLine: false
+									},
+								},
+								axisX: {
+									showGrid: false,
+
+								},
+								axisY: {
+									showGrid: false,
+									onlyInteger: true,
+									offset: 0,
+								},
+								chartPadding: {
+									left: 20,
+									right: 20
+								}
+							};
+
+							new Chartist.Line('#visits-trends-chart', data, options);
+
+
+							// visits chart
+							data = {
+								labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+								series: [
+									[6384, 6342, 5437, 2764, 3958, 5068, 7654]
+								]
+							};
+
+							options = {
+								height: 300,
+								axisX: {
+									showGrid: false
+								},
+							};
+
+							new Chartist.Bar('#visits-chart', data, options);
+
+
+							// real-time pie chart
+							var sysLoad = $('#system-load').easyPieChart({
+								size: 130,
+								barColor: function (percent) {
+									return "rgb(" + Math.round(200 * percent / 100) + ", " + Math.round(200 * (1.1 - percent / 100)) + ", 0)";
+								},
+								trackColor: 'rgba(245, 245, 245, 0.8)',
+								scaleColor: false,
+								lineWidth: 5,
+								lineCap: "square",
+								animate: 800
+							});
+
+							var updateInterval = 3000; // in milliseconds
+
+							setInterval(function () {
+								var randomVal;
+								randomVal = getRandomInt(0, 100);
+
+								sysLoad.data('easyPieChart').update(randomVal);
+								sysLoad.find('.percent').text(randomVal);
+							}, updateInterval);
+
+							function getRandomInt(min, max) {
+								return Math.floor(Math.random() * (max - min + 1)) + min;
+							}
+
+						});
+					</script>
+</body>
+
+</html>

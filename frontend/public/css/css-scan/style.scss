@@ -1,0 +1,23 @@
+
+$container-max-widths: (
+    sm: 540px,
+    md: 768px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
+
+$primary: #602E9A;
+
+$secondary: #eaeaea;
+
+$dark: #212121;
+
+$warning: #757575;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+    font-family: 'Inria Sans', sans-serif;
+    overflow-x: none;
+}

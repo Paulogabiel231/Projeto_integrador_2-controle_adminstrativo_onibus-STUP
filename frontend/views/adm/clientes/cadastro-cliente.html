@@ -21,14 +21,14 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="/images/icon-title.svg">
 </head>
+
 <body>
 	<!-- WRAPPER -->
 	<div id="wrapper">
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index"><img src="assets//images/Stup-logo.png" alt="Stup Logo"
-						class="img-responsive logo"></a>
+				<a href="/adm"><img src="/images/adm-stup-logo.png" alt="Stup Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -145,7 +145,8 @@
 							<h3 class="panel-title">Cadastro Cliente</h3>
 						</div>
 						<div class="panel-body">
-							<div class="input-group">
+							<form id="form">
+								<!-- <div class="input-group">
 								<span class="input-group-addon"><i class=""></i>Foto 3x4</span>
 								<div class="">
 									<img class="" src="https://mdbootstrap.com//images/Photos/Others/placeholder.jpg"
@@ -155,18 +156,18 @@
 									<label class="form-label text-white " for="customFile1"></label>
 									<input type="file" class="form-control px-0" id="customFile1"/>
 								</div>
-							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
-								<input class="form-control" name="nomeCompleto" type="text">
-							</div>
-							<br>
-							<div class="input-group">
+							</div> -->
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
+									<input class="form-control" name="nome" type="text">
+								</div>
+								<br>
+								<!-- <div class="input-group">
 								<span class="input-group-addon"><i class=""></i>*CPF</span>
 								<input class="form-control" name="cpf" type="text">
-							</div>
-							<br>
+							</div> -->
+								<!-- <br>
 							<div class="input-group">
 								<span class="input-group-addon"><i class=""></i>*Data de Nascimento</span>
 								<input class="form-control" type="date" name="dataNascimento" id="dataNascimento">
@@ -271,47 +272,47 @@
 									<option value="prefiroNãoResponder">Prefiro não responder</option>
 								</select>
 							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*E-mail</span>
-								<input type="email" class="form-control is-invalid" class="form-control">
-							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*E-mail Secundário</span>
-								<input type="email" class="form-control is-invalid" class="form-control">
-							</div>
-							<br>
-							<div class="input-group">
+							<br> -->
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Saldo</span>
+									<input type="email" name="saldo" class="form-control is-invalid"
+										class="form-control">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*CPF</span>
+									<input type="password" name="cpf" class="form-control is-invalid" maxlength="8"
+										class="form-control">
+								</div>
+								<br>
+								<!-- <div class="input-group">
 								<span class="input-group-addon"><i class=""></i>*Número de Telefone</span>
 								<input class="form-control" type="text">
 							</div>
-							<br>
-							<div class=""><input id="cadastrarUsuario" class="col text-left btn btn-primary" type="submit"></div>
-							<script>
-								const btnCadastrar = document.querySelector ("#cadastrarUsuario")
-								btnCadastrar.addEventListener('click', async (event) => {
-									event.preventDefault()
-								});
-							</script>
+							<br> -->
+								<div class=""><input id="cadastrarUsuario" class="col text-left btn btn-primary"
+										type="submit"></div>
+							</form>
 						</div>
 
 						<div class="clearfix"></div>
 						<footer>
 							<div class="container-fluid">
 								<p class="copyright">&copy; 2023 <a href="#" target="_blank">STUP</a>.
-									Todos os Direitos Reservador</p>
+									Todos os Direitos Reservados</p>
 							</div>
 						</footer>
 					</div>
 					<!-- END WRAPPER -->
 					<!-- Javascript -->
-					<script src="assets/vendor/jquery/jquery.min.js"></script>
-					<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-					<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-					<script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-					<script src="assets/vendor/chartist/js/chartist.min.js"></script>
-					<script src="assets/scripts/klorofil-common.js"></script>
+					<script src="/css/css-adm/template/assets/vendor/jquery/jquery.min.js"></script>
+					<script src="/css/css-adm/template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+					<script
+						src="/css/css-adm/template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+					<script
+						src="/css/css-adm/template/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
+					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script>
 						$(function () {
 							var data, options;
@@ -428,6 +429,31 @@
 								return Math.floor(Math.random() * (max - min + 1)) + min;
 							}
 
+						});
+					</script>
+					<script>
+						document.addEventListener('DOMContentLoaded', () => {
+
+							const form = document.querySelector('#form');
+							form.addEventListener('submit', async (event) => {
+								event.preventDefault()
+
+
+								try {
+									const formData = new FormData(form);
+									const data = {
+										nome: formData.get('nome'),
+										email: formData.get('saldo'),
+										senha: formData.get('cpf')
+									};
+
+									const response = await axios.post('http://localhost:3000/adm/usuarios/cadastrar', data);
+									alert("cadastro realizado com sucesso")
+									window.location.href = '/entrar';
+								} catch (error) {
+									alert("erro ao realizar cadastro" + error)
+								}
+							})
 						});
 					</script>
 </body>

@@ -25,6 +25,16 @@ const SelfRouterEmpresas = require('./routes/interface-self/empresas');
 const SelfRouterIndex = require('./routes/interface-self/index');
 const SelfRouterLogin = require('./routes/interface-self/login');
 
+const AdmRouterIndex = require('./routes/interface-adm/index');
+const AdmRouterCliente = require('./routes/interface-adm/cliente');
+// const AdmRouterMotorista = require('./routes/interface-adm/motorista');
+// const AdmRouterLinhas = require('./routes/interface-adm/cliente');
+
+const ScanRouterAproximar = require('./routes/interface-scan/index');
+
+
+// app self
+
 app.use('/aplicativo', SelfRouterAplicativo);
 app.use('/atendimento', SelfRouterAtendimento);
 app.use('/carteirinha-linhas', SelfRouterCarteirinhaLinhas);
@@ -35,16 +45,12 @@ app.use('/login', SelfRouterLogin);
 
 // rotas scan
 
-const ScanRouterAproximar = require('./routes/interface-scan/index');
-
 app.use('/scan', ScanRouterAproximar);
 
 // rotas adm
 
-const AdmRouterIndex = require('./routes/interface-adm/index');
-
 app.use('/adm', AdmRouterIndex);
-
+app.use('/adm/cliente', AdmRouterCliente);
 
 
 // catch 404 and forward to error handler

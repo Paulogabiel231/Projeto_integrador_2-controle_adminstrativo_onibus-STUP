@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const app = express();
+require('dotenv').config();
 
 
 //  aplicativos
@@ -18,7 +19,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // rotas app adm
 
 const clientesRouter = require('./routes/interface-adm/clientes');
+const LinhasRouter = require('./routes/interface-adm/linhas');
 
+app.use('/api/linhas', LinhasRouter);
 app.use('/api/clientes', clientesRouter);
 // const indexAdmnistrativoRouter = require('./routes/interface-adm/index');
 // const usersRouter = require('./routes/interface-adm/clientes/users');

@@ -160,7 +160,7 @@
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
-									<input class="form-control" name="nome" type="text">
+									<input class="form-control" id="nome" name="nome" type="text">
 								</div>
 								<br>
 								<!-- <div class="input-group">
@@ -275,13 +275,13 @@
 							<br> -->
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Saldo</span>
-									<input type="email" name="saldo" class="form-control is-invalid"
+									<input type="number" name="saldo" id="saldo" class="form-control is-invalid"
 										class="form-control">
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*CPF</span>
-									<input type="password" name="cpf" class="form-control is-invalid" maxlength="8"
+									<input type="number" name="cpf" id="cpf" class="form-control is-invalid"
 										class="form-control">
 								</div>
 								<br>
@@ -290,8 +290,7 @@
 								<input class="form-control" type="text">
 							</div>
 							<br> -->
-								<div class=""><input id="cadastrarUsuario" class="col text-left btn btn-primary"
-										type="submit"></div>
+								<div class=""><input class="col text-left btn btn-primary" type="submit"></div>
 							</form>
 						</div>
 
@@ -431,31 +430,9 @@
 
 						});
 					</script>
-					<script>
-						document.addEventListener('DOMContentLoaded', () => {
-
-							const form = document.querySelector('#form');
-							form.addEventListener('submit', async (event) => {
-								event.preventDefault()
-
-
-								try {
-									const formData = new FormData(form);
-									const data = {
-										nome: formData.get('nome'),
-										email: formData.get('saldo'),
-										senha: formData.get('cpf')
-									};
-
-									const response = await axios.post('http://localhost:3000/adm/usuarios/cadastrar', data);
-									alert("cadastro realizado com sucesso")
-									window.location.href = '/entrar';
-								} catch (error) {
-									alert("erro ao realizar cadastro" + error)
-								}
-							})
-						});
-					</script>
+					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+					<script src="/js/js-adm/clientes/cadastrar.js"></script>
+					
 </body>
 
 </html>

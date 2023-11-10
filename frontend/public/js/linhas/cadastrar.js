@@ -14,16 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const duracao = document.querySelector("#duracao").value;
 
       const data = { nome, origem, destino, horarioPartida, duracao };
-
+      console.log("Linha cadastrada com sucesso. ID:", id);
+      document.querySelector("#form").reset();
       try {
         const response = await axios.post("http://localhost:3000/api/linhas/cadastrar", data);
-      
-        storeFlashMessage("success", "Cadastro realizado sucesso");
-
         const id = response.data.id;
-        window.location.href = `http://localhost:3001/linhas/exibir/${id}`;
+
       } catch (error) {
-        triggerFlashMessage("danger", error.message);
+        console.log("erro ao criar a linhas", error)
       }
     }
     

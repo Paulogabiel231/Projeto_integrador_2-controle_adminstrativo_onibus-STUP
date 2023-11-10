@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const { PrismaClient } = require("@prisma/client");
 
+
 const prisma = new PrismaClient();
 
 router.get("/listar", async function (req, res, next) {
@@ -33,6 +34,7 @@ router.get("/buscar/:id", async function (req, res, next) {
   }
 });
 
+
 router.post("/cadastrar", async (req, res, next) => {
   try {
     const {usuario_id, nome, cpf, saldo } = req.body;
@@ -52,6 +54,10 @@ router.post("/cadastrar", async (req, res, next) => {
     res.status(500).json({ error: "Erro ao criar a cliente." });
   }
 });
+
+
+
+
 
 router.put('/editar/:id', async function (req, res, next) {
   try {

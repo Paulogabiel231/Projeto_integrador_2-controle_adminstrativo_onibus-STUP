@@ -42,14 +42,17 @@ router.get("/buscar/:id", async function (req, res, next) {
 
 router.post("/cadastrar", async (req, res, next) => {
   try {
-    const { nome, origem, destino, horarioPartida, duracao } = req.body;
+    const { nome, origem, destino, horarioPartida, horarioChegada, duracao } = req.body;
+
+    const converterParaISO8601 = (horario) => `1970-01-01T${horario}:00Z`;
 
     const novaLinha = await prisma.linha.create({
       data: {
         nome,
         origem,
         destino,
-        horarioPartida: `1970-01-01T${horarioPartida}:00Z`,
+        horarioPartida: "2023-11-10T12:30:45Z",
+        horarioChegada: "2023-11-10T12:30:45Z",
         duracao: parseInt(duracao)
       },
     });
@@ -60,6 +63,7 @@ router.post("/cadastrar", async (req, res, next) => {
     res.status(500).json({ error: "Erro ao criar a linha." });
   }
 });
+
 
 router.put('/editar/:id', async function (req, res, next) {
   try {

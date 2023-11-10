@@ -147,12 +147,31 @@
 						</div>
 						<div class="panel-body">
 							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Nome e Número da Linha</span>
-								<input class="form-control" placeholder="*Nome" type="text">
-								<input class="form-control" placeholder="*Número" type="text">
+								<span class="input-group-addon"><i class=""></i>*Nome</span>
+								<input class="form-control" placeholder="" id="nome" name="nome" type="text">
 							</div>
 							<br>
 							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>*Origem</span>
+								<input class="form-control" placeholder="" id="origem" name="origem" type="text">
+							</div>
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>*Destino</span>
+								<input class="form-control" placeholder="" id="destino" name="destino" type="text">
+							</div>
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>*Horário de partida</span>
+								<input class="form-control" placeholder="" id="horarioPartida" name="horatioPartida" type="text">
+							</div>
+							<br>
+							<div class="input-group">
+								<span class="input-group-addon"><i class=""></i>*Duração da partida</span>
+								<input class="form-control" placeholder="" id="duracao" name="duracao" type="text">
+							</div>
+							<br>
+							<!-- <div class="input-group">
 								<span class="input-group-addon"><i class=""></i>*Nome Inicial, <br>Local Inicial e <br> Trajeto</span>
 								<input class="form-control" placeholder="*Nome Inicial" type="text">
 								
@@ -187,10 +206,10 @@
 								<input class="form-control" placeholder='Nome Final é "Garagem"' type="text" readonly>
 							</div>
 							<br>
-							<br>
+							<br> -->
 							
 							
-							<div class="col text-left"><a href="#" class="btn btn-primary">Enviar</a></div>
+							<div class=""><input class="col text-left btn btn-primary" type="submit"></div>
 						</div>
 
 						<div class="clearfix"></div>
@@ -327,6 +346,8 @@
 
 						});
 					</script>
+					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+					<script src="/js/js-adm/linhas/cadastrar.js"></script>
 </body>
 
 </html>

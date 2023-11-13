@@ -54,7 +54,7 @@
 								<span>Cadastros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="cadastros" class="collapse ">
 								<ul class="nav">
-									<li><a href="cadastro-cliente" class="active"><i class="fa fa-credit-card"></i>
+									<li><a href="cadastro-cliente" class=""><i class="fa fa-credit-card"></i>
 											<span>
 												Usuário
 											</span>
@@ -72,6 +72,12 @@
 											</span>
 										</a>
 									</li>
+                                    <li><a href="/adm/cadastro-usuario/cadastrar" class="active"><i class="fa fa-map-marker"></i>
+                                        <span>
+                                            Usuários
+                                        </span>
+                                    </a>
+                                </li>
 								</ul>
 							</div>
 						</li>
@@ -142,10 +148,10 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Cadastro Cliente</h3>
+							<h3 class="panel-title">Cadastro de Usuário</h3>
 						</div>
 						<div class="panel-body">
-							<form id="form-cliente">
+							<form id="form-usuario">
 								<!-- <div class="input-group">
 								<span class="input-group-addon"><i class=""></i>Foto 3x4</span>
 								<div class="">
@@ -163,9 +169,14 @@
 									<input class="form-control" id="nome" name="nome" type="text">
 								</div>
 								<br>
+                                <div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*E-mail</span>
+									<input class="form-control" id="email" name="email" type="text">
+								</div>
+								<br>
 								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Seu ID de Usuário</span>
-									<input class="form-control" id="usuario_id" name="usuario_id" type="number">
+									<span class="input-group-addon"><i class=""></i>*Senha</span>
+									<input class="form-control" id="senha" name="senha" type="password">
 								</div>
 								<br>
 								<!-- <div class="input-group">
@@ -278,18 +289,6 @@
 								</select>
 							</div>
 							<br> -->
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Saldo</span>
-									<input type="number" name="saldo" id="saldo" class="form-control is-invalid"
-										class="form-control">
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*CPF</span>
-									<input type="number" name="cpf" id="cpf" class="form-control is-invalid"
-										class="form-control">
-								</div>
-								<br>
 								<!-- <div class="input-group">
 								<span class="input-group-addon"><i class=""></i>*Número de Telefone</span>
 								<input class="form-control" type="text">
@@ -319,20 +318,19 @@
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 					<script>
-						const form = document.querySelector('#form-cliente');
+						const form = document.querySelector('#form-usuario');
 						form.addEventListener('submit', async (event) => {
-							event.preventDefault()
 
 								try {
 									const formData = new FormData(form);
 									const nome = formData.get("nome");
-									const usuario_id = formData.get("usuario_id");
-									const saldo = formData.get("saldo");
-									const cpf = formData.get("cpf");
-									const data = {nome, usuario_id, saldo, cpf}
-									const response = await axios.post('http://localhost:3000/api/clientes/cadastrar', data);
-									const { cliente } = response.data;
-									alert("Cliente cadastrado com sucesso.");
+									const email = formData.get("email");
+									const senha = formData.get("senha");
+									const data = {nome, email, senha };
+									console.log(data);
+									const response = await axios.post('http://localhost:3000/api/usuarios/cadastrar', data);
+									const { usuario } = response.data;
+									alert("Usuário cadastrado com sucesso.");
 									//   window.location.href = `/motoristas/exibir/${motorista.id}`;
 								} catch (error) {
 									console.log(error);

@@ -34,30 +34,42 @@ router.get("/buscar/:id", async function (req, res, next) {
   }
 });
 
+// router.post("/cadastrar", async (req, res, next) => {
+//   try {
+//     const { nome, usuario_id, cpf, saldo } = req.body;
+
+//     const novacliente = await prisma.cliente.create({
+//       data: {
+//         nome,
+//         usuario_id: parseInt(usuario_id),
+//         cpf,
+//         saldo: parseFloat(saldo)
+//       },
+//     });
+
+//     res.json(novacliente);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Erro ao criar a cliente." });
+//   }
+// });
 
 router.post("/cadastrar", async (req, res, next) => {
   try {
-    const {usuario_id, nome, cpf, saldo } = req.body;
-
-    const novacliente = await prisma.cliente.create({
-      data: {
-        nome,
-        usuario_id: parseInt(usuario_id),
-        cpf,
-        saldo: parseFloat(saldo)
-      },
-    });
-
-    res.json(novacliente);
+    const nome = req.body.nome;
+    const usuario_id = Number(req.body.usuario_id);
+    const saldo = req.body.saldo ;
+    const cpf = req.body.cpf ;
+    console.log(req.body);
+    const data = { nome, usuario_id, saldo, cpf };
+    console.log(data);
+    const cliente = await prisma.cliente.create({ data });
+    res.json({ cliente });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Erro ao criar a cliente." });
+    res.status(500).json({ mensagem: "Não foi possível realizar o cadastro do Cliente." });
   }
 });
-
-
-
-
 
 router.put('/editar/:id', async function (req, res, next) {
   try {

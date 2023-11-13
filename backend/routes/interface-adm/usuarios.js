@@ -32,23 +32,20 @@ router.get("/buscar/:id", async function (req, res, next) {
 
 router.post("/cadastrar", async (req, res, next) => {
   try {
-    const { nome, email, senha, token } = req.body;
-
-    const novausuario = await prisma.usuario.create({
-      data: {
-        nome,
-        email,
-        senha,
-        token
-    },
-    });
-
-    res.json(novausuario);
+    const nome = req.body.nome;
+    const email = req.body.email;
+    const senha = req.body.senha;
+    console.log(req.body);
+    const data = { nome, email, senha};
+    console.log(data);;
+    const usuario = await prisma.usuario.create({ data });
+    res.json(usuario);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Erro ao criar o usuario." });
   }
 });
+
 
 router.put('/editar/:id', async function (req, res, next) {
   try {

@@ -20,7 +20,7 @@ router.get("/listar", async function (req, res, next) {
 });
 
 router.get("/buscar/:id", async function (req, res, next) {
-  const linhaId = parseInt(req.params.id); 
+  const linhaId = parseInt(req.params.id);
 
   try {
     const linha = await prisma.linha.findUnique({
@@ -32,44 +32,98 @@ router.get("/buscar/:id", async function (req, res, next) {
     if (linha) {
       res.json(linha);
     } else {
-      res.status(404).json({ error: 'Linha não encontrada' });
+      res.status(404).json({ error: "Linha não encontrada" });
     }
   } catch (error) {
-    console.error('Erro ao buscar linha por ID:', error);
-    res.status(500).json({ error: 'Erro interno do servidor' });
+    console.error("Erro ao buscar linha por ID:", error);
+    res.status(500).json({ error: "Erro interno do servidor" });
   }
 });
 
 router.post("/cadastrar", async (req, res, next) => {
   try {
-    const { nome, origem, destino, horarioPartida, horarioChegada, duracao } = req.body;
+    const { nome, origem, destino, horarioPartida, duracao } = req.body;
 
-    const converterParaISO8601 = (horario) => `1970-01-01T${horario}:00Z`;
-
-    const novaLinha = await prisma.linha.create({
+    const linha = await prisma.linha.create({
       data: {
         nome,
         origem,
         destino,
-        horarioPartida: "2023-11-10T12:30:45Z",
-        horarioChegada: "2023-11-10T12:30:45Z",
-        duracao: parseInt(duracao)
+        horarioPartida: `1970-01-01T${horarioPartida}:00Z`,
+        duracao: parseInt(duracao),
       },
     });
-
-    res.json(novaLinha);
+    res.json(linha);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Erro ao criar a linha." });
   }
 });
 
+// router.post('/cadastrar', async (req, res) => {
+//     try {
+//         const { body } = req;
 
-router.put('/editar/:id', async function (req, res, next) {
+//         // Converta o valor do campo horarioPartida para o formato desejado (por exemplo, 'HH:mm')
+//         const horarioPartidaFormatado = formatarHorarioPartida(horarioPartida);
+
+//         function formatarHorarioPartida(horarioPartida) {
+//           // Horário padrão no formato HH:mm
+//           const formatoPadrao = /^([01]\d|2[0-3]):([0-5]\d)$/;
+
+//           // Verifique se o horarioPartida está no formato desejado
+//           if (!formatoPadrao.test(horarioPartida)) {
+//               throw new Error('Formato de horário inválido.');
+//           }
+
+//           // Nenhuma modificação necessária, já está no formato correto
+//           return horarioPartida;
+//       }
+
+//         console.log('Dados recebidos:', {
+//             nome: body.get('nome'),
+//             origem: body.get('origem'),
+//             destino: body.get('destino'),
+//             horarioPartida: horarioPartidaFormatado,
+//             duracao: body.get('duracao'),
+//         });
+
+//         const novaLinha = await prisma.linha.create({
+//             data: {
+//                 nome: body.get('nome'),
+//                 origem: body.get('origem'),
+//                 destino: body.get('destino'),
+//                 horarioPartida: horarioPartidaFormatado,
+//                 duracao: body.get('duracao'),
+//             },
+//         });
+
+//         res.status(201).json({ linha: novaLinha, mensagem: 'Linha cadastrada com sucesso.' });
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ mensagem: 'Erro ao processar a requisição.' });
+//     }
+// });
+
+// Função para formatar o campo horarioPartida conforme necessário
+function formatarHorarioPartida(horarioPartida) {
+  // Realize qualquer lógica de formatação necessária, dependendo do formato de entrada
+  // Por exemplo, você pode precisar adicionar ou remover zeros à esquerda para garantir que o formato seja 'HH:mm'
+
+  // Aqui, estou assumindo que o horarioPartida já está no formato desejado
+  return horarioPartida;
+}
+
+module.exports = router;
+
+// Exporte o router
+module.exports = router;
+
+router.put("/editar/:id", async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
     const { nome, origem, destino, horarioPartida, duracao } = req.body;
-    
+
     const linhaAtualizada = await prisma.linha.update({
       where: {
         id: id,
@@ -86,7 +140,7 @@ router.put('/editar/:id', async function (req, res, next) {
     res.json(linhaAtualizada);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Erro ao atualizar a linha.' });
+    res.status(500).json({ error: "Erro ao atualizar a linha." });
   }
 });
 

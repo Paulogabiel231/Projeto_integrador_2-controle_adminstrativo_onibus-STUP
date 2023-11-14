@@ -27,11 +27,11 @@ const AdmRouterIndex = require('./routes/interface-adm/index');
 const AdmRouterCliente = require('./routes/interface-adm/cliente');
 const AdmRouterLinha = require('./routes/interface-adm/linha');
 const AdmRouterUsuario = require('./routes/interface-adm/usuario');
+const AdmRouterMotorista = require('./routes/interface-adm/motorista');
 // const AdmRouterMotorista = require('./routes/interface-adm/motorista');
 // const AdmRouterOnibus = require('./routes/interface-adm/onibus');
 // rotas scan
 const ScanRouterAproximar = require('./routes/interface-scan/index');
-
 
 // app self
 app.use('/aplicativo', SelfRouterAplicativo);
@@ -51,6 +51,7 @@ app.use('/adm', AdmRouterIndex);
 app.use('/adm/cliente', AdmRouterCliente);
 app.use('/adm/linha', AdmRouterLinha);
 app.use('/adm/usuario', AdmRouterUsuario);
+app.use('/adm/motorista', AdmRouterMotorista);
 // app.use('/adm/motorista', AdmRouterMotorista);
 // app.use('/adm/onibus', AdmRouterOnibus);
 

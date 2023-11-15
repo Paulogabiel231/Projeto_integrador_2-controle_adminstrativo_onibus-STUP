@@ -44,7 +44,7 @@ router.post("/cadastrar", async (req, res, next) => {
     res.json(novaonibus);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Erro ao criar a onibus." });
+    res.status(500).json({ error: "Erro ao criar o Ônibus." });
   }
 });
 

@@ -28,8 +28,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index"><img src="assets//images/Stup-logo.png" alt="Stup Logo"
-						class="img-responsive logo"></a>
+				<a href="/adm"><img src="/images/adm-stup-logo.png" alt="Stup Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -47,29 +46,44 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="index" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
-						<li><a href="recarga" class=""><i class="lnr lnr-cart"></i> <span>Recarga</span></a></li>
+						<li><a href="/adm" class="active"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+						<li><a href="/adm/recarga" class=""><i class="lnr lnr-cart"></i> <span>Recarga</span></a></li>
 						<li>
 							<a href="#cadastros" data-toggle="collapse" class="collapsed"><i
 									class="lnr lnr-file-empty"></i>
 								<span>Cadastros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="cadastros" class="collapse ">
 								<ul class="nav">
-									<li><a href="cadastro-cliente" class=""><i class="fa fa-credit-card"></i>
+									<li>
+										<a href="/adm/cliente/cadastrar" class=""><i class="fa fa-credit-card"></i>
 											<span>
-												Usuário
+												Cliente
 											</span>
 										</a>
 									</li>
-									<li><a href="cadastro-motorista" class=""><i class="lnr lnr-user"></i>
+									<li>
+										<a href="/adm/motorista/cadastrar" class=""><i class="fa-solid fa-id-card"></i>
 											<span>
 												Motorista
 											</span>
 										</a>
 									</li>
-									<li><a href="cadastro-linhas" class=""><i class="fa fa-map-marker"></i>
+									<li>
+										<a href="/adm/linha/cadastrar" class=""><i class="fa fa-map-marker"></i>
 											<span>
-												Linhas
+												Linha
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/usuario/cadastrar" class=""><i class="fa-solid fa-user"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/onibus/cadastrar" class=""><i class="fa-solid fa-bus"></i>
+											<span>
+												Ônibus
 											</span>
 										</a>
 									</li>
@@ -82,21 +96,36 @@
 								<span>Registros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="registros" class="collapse ">
 								<ul class="nav">
-									<li><a href="registro-clientes" class=""><i class="fa fa-credit-card"></i>
+									<li>
+										<a href="/adm/cliente/registro" class=""><i class="fa fa-credit-card"></i>
 											<span>
-												Usuário
+												Cliente
 											</span>
 										</a>
 									</li>
-									<li><a href="registro-motorista" class=""><i class="lnr lnr-user"></i>
+									<li>
+										<a href="/adm/motorista/registro" class=""><i class="fa-solid fa-id-card"></i>
 											<span>
 												Motorista
 											</span>
 										</a>
 									</li>
-									<li><a href="registros-linhas" class=""><i class="fa fa-map-marker"></i>
+									<li>
+										<a href="/adm/linha/registro" class=""><i class="fa fa-map-marker"></i>
 											<span>
-												Linhas
+												Linha
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/usuario/registro" class=""><i class="fa-solid fa-user"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/onibus/registro" class=""><i class="fa-solid fa-bus"></i>
+											<span>
+												Ônibus
 											</span>
 										</a>
 									</li>
@@ -104,26 +133,41 @@
 							</div>
 						</li>
 						<li>
-							<a href="#relatorios" data-toggle="collapse" class="collapsed active"><i
+							<a href="#relatorios" data-toggle="collapse" class="collapsed"><i
 									class="fa fa-calendar"></i>
 								<span>Relatórios</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="relatorios" class="collapse ">
 								<ul class="nav">
-									<li><a href="relatórios-clientes" class="active"><i class="fa fa-credit-card"></i>
+									<li>
+										<a href="/adm/cliente/cadastrar" class=""><i class="fa fa-credit-card"></i>
 											<span>
-												Usuário
+												Cliente
 											</span>
 										</a>
 									</li>
-									<li><a href="relatórios-motorista" class=""><i class="lnr lnr-user"></i>
+									<li>
+										<a href="/adm/motorista/cadastrar" class=""><i class="fa-solid fa-id-card"></i>
 											<span>
 												Motorista
 											</span>
 										</a>
 									</li>
-									<li><a href="relatórios-linhas" class=""><i class="fa fa-map-marker"></i>
+									<li>
+										<a href="/adm/linha/cadastrar" class=""><i class="fa fa-map-marker"></i>
 											<span>
-												Linhas
+												Linha
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/usuario/cadastrar" class=""><i class="fa-solid fa-user"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/onibus/cadastrar" class=""><i class="fa-solid fa-bus"></i>
+											<span>
+												Ônibus
 											</span>
 										</a>
 									</li>
@@ -156,14 +200,14 @@
 									</tr>
 								</thead>
 								<tbody>
-									
+
 									<tr>
 										<td>1</td>
 										<td>Steve</td>
 										<td>512.446.818-14</td>
 										<td class="" style="color: #008000;">R$ 126,00</td>
-										
-									</tr> 
+
+									</tr>
 									<tr>
 										<td>2</td>
 										<td>Simon</td>
@@ -181,8 +225,8 @@
 										<td>Steve</td>
 										<td>512.446.818-14</td>
 										<td class="" style="color: #008000;">R$ 126,00</td>
-										
-									</tr> 
+
+									</tr>
 									<tr>
 										<td>5</td>
 										<td>Simon</td>
@@ -200,8 +244,8 @@
 										<td>Steve</td>
 										<td>512.446.818-14</td>
 										<td class="" style="color: #008000;">R$ 126,00</td>
-										
-									</tr> 
+
+									</tr>
 									<tr>
 										<td>8</td>
 										<td>Simon</td>
@@ -219,8 +263,8 @@
 										<td>Steve</td>
 										<td>512.446.818-14</td>
 										<td class="bg-success" style="color: #eaeaea;">R$ 126,00</td>
-										
-									</tr> 
+
+									</tr>
 									<tr>
 										<td>11</td>
 										<td>Simon</td>
@@ -238,8 +282,8 @@
 										<td>Steve</td>
 										<td>512.446.818-14</td>
 										<td class="bg-success" style="color: #eaeaea;">R$ 126,00</td>
-										
-									</tr> 
+
+									</tr>
 									<tr>
 										<td>14</td>
 										<td>Simon</td>
@@ -257,8 +301,8 @@
 										<td>Steve</td>
 										<td>512.446.818-14</td>
 										<td class="bg-success" style="color: #eaeaea;">R$ 126,00</td>
-										
-									</tr> 
+
+									</tr>
 									<tr>
 										<td>17</td>
 										<td>Simon</td>
@@ -271,7 +315,7 @@
 										<td>512.446.818-14</td>
 										<td class="bg-danger" style="color: #eaeaea;">R$ 18,00</td>
 									</tr>
-									
+
 								</tbody>
 							</table>
 						</div>
@@ -290,8 +334,10 @@
 					<!-- Javascript -->
 					<script src="/css/css-adm/template/assets/vendor/jquery/jquery.min.js"></script>
 					<script src="/css/css-adm/template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-					<script src="/css/css-adm/template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-					<script src="/css/css-adm/template/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+					<script
+						src="/css/css-adm/template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+					<script
+						src="/css/css-adm/template/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script>
@@ -412,6 +458,7 @@
 
 						});
 					</script>
+					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

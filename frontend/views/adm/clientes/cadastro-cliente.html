@@ -47,28 +47,43 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="/adm" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
-						<li><a href="recarga" class=""><i class="lnr lnr-cart"></i> <span>Recarga</span></a></li>
+						<li><a href="/adm/recarga" class=""><i class="lnr lnr-cart"></i> <span>Recarga</span></a></li>
 						<li>
 							<a href="#cadastros" data-toggle="collapse" class="collapsed active"><i
 									class="lnr lnr-file-empty"></i>
 								<span>Cadastros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="cadastros" class="collapse ">
 								<ul class="nav">
-									<li><a href="cadastro-cliente" class="active"><i class="fa fa-credit-card"></i>
+									<li>
+										<a href="/adm/cliente/cadastrar" class=""><i class="fa fa-credit-card"></i>
 											<span>
-												Usuário
+												Cliente
 											</span>
 										</a>
 									</li>
-									<li><a href="cadastro-motorista" class=""><i class="lnr lnr-user"></i>
+									<li>
+										<a href="/adm/motorista/cadastrar" class=""><i class="fa-solid fa-id-card"></i>
 											<span>
 												Motorista
 											</span>
 										</a>
 									</li>
-									<li><a href="cadastro-linhas" class=""><i class="fa fa-map-marker"></i>
+									<li>
+										<a href="/adm/linha/cadastrar" class=""><i class="fa fa-map-marker"></i>
 											<span>
-												Linhas
+												Linha
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/usuario/cadastrar" class=""><i class="fa-solid fa-user"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/onibus/cadastrar" class=""><i class="fa-solid fa-bus"></i>
+											<span>
+												Ônibus
 											</span>
 										</a>
 									</li>
@@ -81,21 +96,36 @@
 								<span>Registros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="registros" class="collapse ">
 								<ul class="nav">
-									<li><a href="registro-clientes" class=""><i class="fa fa-credit-card"></i>
+									<li>
+										<a href="/adm/cliente/registro" class=""><i class="fa fa-credit-card"></i>
 											<span>
-												Usuário
+												Cliente
 											</span>
 										</a>
 									</li>
-									<li><a href="registro-motorista" class=""><i class="lnr lnr-user"></i>
+									<li>
+										<a href="/adm/motorista/registro" class=""><i class="fa-solid fa-id-card"></i>
 											<span>
 												Motorista
 											</span>
 										</a>
 									</li>
-									<li><a href="registros-linhas" class=""><i class="fa fa-map-marker"></i>
+									<li>
+										<a href="/adm/linha/registro" class=""><i class="fa fa-map-marker"></i>
 											<span>
-												Linhas
+												Linha
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/usuario/registro" class=""><i class="fa-solid fa-user"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/onibus/registro" class=""><i class="fa-solid fa-bus"></i>
+											<span>
+												Ônibus
 											</span>
 										</a>
 									</li>
@@ -108,21 +138,36 @@
 								<span>Relatórios</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="relatorios" class="collapse ">
 								<ul class="nav">
-									<li><a href="relatórios-clientes" class=""><i class="fa fa-credit-card"></i>
+									<li>
+										<a href="/adm/cliente/cadastrar" class=""><i class="fa fa-credit-card"></i>
 											<span>
-												Usuário
+												Cliente
 											</span>
 										</a>
 									</li>
-									<li><a href="relatórios-motorista" class=""><i class="lnr lnr-user"></i>
+									<li>
+										<a href="/adm/motorista/cadastrar" class=""><i class="fa-solid fa-id-card"></i>
 											<span>
 												Motorista
 											</span>
 										</a>
 									</li>
-									<li><a href="relatórios-linhas" class=""><i class="fa fa-map-marker"></i>
+									<li>
+										<a href="/adm/linha/cadastrar" class=""><i class="fa fa-map-marker"></i>
 											<span>
-												Linhas
+												Linha
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/usuario/cadastrar" class=""><i class="fa-solid fa-user"></i>
+											<span>
+												Usuário
+											</span>
+										</a>
+									</li>
+									<li><a href="/adm/onibus/cadastrar" class=""><i class="fa-solid fa-bus"></i>
+											<span>
+												Ônibus
 											</span>
 										</a>
 									</li>
@@ -323,25 +368,25 @@
 						form.addEventListener('submit', async (event) => {
 							event.preventDefault()
 
-								try {
-									const formData = new FormData(form);
-									const nome = formData.get("nome");
-									const usuario_id = formData.get("usuario_id");
-									const saldo = formData.get("saldo");
-									const cpf = formData.get("cpf");
-									const data = {nome, usuario_id, saldo, cpf}
-									const response = await axios.post('http://localhost:3000/api/clientes/cadastrar', data);
-									const { cliente } = response.data;
-									alert("Cliente cadastrado com sucesso.");
-									//   window.location.href = `/motoristas/exibir/${motorista.id}`;
-								} catch (error) {
-									console.log(error);
-									alert(error.response.data.mensagem);
-								}
+							try {
+								const formData = new FormData(form);
+								const nome = formData.get("nome");
+								const usuario_id = formData.get("usuario_id");
+								const saldo = formData.get("saldo");
+								const cpf = formData.get("cpf");
+								const data = { nome, usuario_id, saldo, cpf }
+								const response = await axios.post('http://localhost:3000/api/clientes/cadastrar', data);
+								const { cliente } = response.data;
+								alert("Cliente cadastrado com sucesso.");
+								//   window.location.href = `/motoristas/exibir/${motorista.id}`;
+							} catch (error) {
+								console.log(error);
+								alert(error.response.data.mensagem);
+							}
 
-								});
+						});
 					</script>
-
+					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

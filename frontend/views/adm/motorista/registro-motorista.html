@@ -46,7 +46,7 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="/adm" class="active"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+						<li><a href="/adm" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="/adm/recarga" class=""><i class="lnr lnr-cart"></i> <span>Recarga</span></a></li>
 						<li>
 							<a href="#cadastros" data-toggle="collapse" class="collapsed"><i
@@ -91,7 +91,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="#registros" data-toggle="collapse" class="collapsed"><i
+							<a href="#registros" data-toggle="collapse" class="collapsed active"><i
 									class="lnr lnr lnr-pencil"></i>
 								<span>Registros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="registros" class="collapse ">
@@ -104,7 +104,8 @@
 										</a>
 									</li>
 									<li>
-										<a href="/adm/motorista/registro" class=""><i class="fa-solid fa-id-card"></i>
+										<a href="/adm/motorista/registro" class="active"><i
+												class="fa-solid fa-id-card"></i>
 											<span>
 												Motorista
 											</span>
@@ -191,67 +192,34 @@
 						</div>
 						<div class="row style=" style="margin-left: 1%;">
 							<div class="col-md-1 text-left">
-								<a href="#" class="btn btn-primary">Novo
-									<i class="lnr lnr-user" style="padding-left: 5px;"></i>
+								<a href="/adm/motorista/cadastrar" class="btn btn-primary ">Novo
+									<i class="fa-solid fa-id-card" style="padding-left: 5px;"></i>
 								</a>
 							</div>
-							<div class="col-md-4 " style="margin-left: 2%;">
+							<div class="col-md-6" style="margin-left: 4%;">
 								<div class="input-group">
-									<input type="text" value="" class="form-control"
-										placeholder="Buscar motorista por nome">
-									<span class="input-group-btn"><button type="button"
-											class="btn btn-primary">Buscar</button></span>
+									<input id="inputNome" type="text" value="" class="form-control"
+										placeholder="Buscar Motorista por Nome">
+									<span  class="input-group-btn" >
+										<button id="btnBuscar" type="button" class="btn btn-primary">Buscar</button>
+									</span>
+									<span class="input-group-btn">
+										<button id="btnResetar" type="button" class="btn btn-primary" style="margin-left: 4%;">Resetar</button>
+									</span>
 								</div>
 							</div>
 						</div>
 						<br>
 						<div class="row">
-							<div class="col-md-6">
-								<!-- RECENT PURCHASES -->
-								<div class="panel">
-									<table class="table table-hover">
-										<thead>
-											<tr>
-												<th>Foto</th>
-												<th>ID</th>
-												<th>Nome Completo</th>
-												<th>CNH</th>
-												<th>Celular</th>
-												<th></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><img src="https://placehold.co/60x60/EEE/31343C" alt=""></td>
-												<td>1</td>
-												<td>João Gabriel de Faria</td>
-												<td>21316546</td>
-												<td>(12) 99751-4485</td>
-												<td class="text-center">
-													<ul class="list-unstyled">
-														<li><a href="#"><i class="fa-regular fa-eye"
-																	style="color: #6029a0;"></i></a></li>
-														<li><a href="#"><i class="fa-solid fa-pen-to-square"
-																	style="color: #6029a0;"></i></a></li>
-														<li><a href="#"><i class="fa-solid fa-trash"
-																	style="color: #6029a0;"></i></a></li>
-													</ul>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<!-- END RECENT PURCHASES -->
-							</div>
 							<!-- END RECENT PURCHASES -->
-							<div class="col-md-6">
+							<div class="col-md-12">
 								<!-- RECENT PURCHASES -->
 								<div class="panel">
 									<table id="motoristas" class="table table-hover">
 										<thead>
 											<th>ID</th>
-											<th>Nome</th>
 											<th>Foto</th>
+											<th>Nome</th>
 										</thead>
 										<tbody> </tbody>
 									</table>
@@ -270,59 +238,8 @@
 						src="/css/css-adm/template/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
-
-					<script>
-						document.addEventListener('DOMContentLoaded', async () => {
-							try {
-								const tbody = document.querySelector('#motoristas tbody');
-
-								const response = await axios.get('http://localhost:3000/api/motoristas/listar');
-								response.data.forEach(motorista => {
-									const tr = document.createElement('tr');
-
-									const codigoTd = document.createElement('td');
-									codigoTd.textContent = motorista.id;
-									tr.appendChild(codigoTd);
-
-									const nomeTd = document.createElement('td');
-									nomeTd.textContent = motorista.nome;
-									tr.appendChild(nomeTd);
-
-									const fotoTd = document.createElement('td');
-									if (motorista.foto) {
-										fotoTd.innerHTML = `<img src="http://localhost:3000/${motorista.foto}" alt="${motorista.nome}" width="50">`;
-									} else {
-										fotoTd.innerHTML = "Não possui.";
-									}
-									tr.appendChild(fotoTd);
-
-									const acoesTd = document.createElement('td.text-center');
-									const acoesUl = document.createElement('ul.list-unstyled');
-									const acoesLi = document.createElement('li');
-									const exibirLink = `<a href="/motoristas/exibir/${motorista.id}"></a>`;
-									const acoesI = document.createElement('i.fa-regular fa-eye');
-									i.appendChild(acoesI);
-									li.appendChild(acoesLi);
-
-
-
-									const editarLink = `<a href="/motoristas/editar/${motorista.id}">Editar</a>`;
-									const deletarLink = `<a href="/motoristas/deletar/${motorista.id}">Deletar</a>`;
-									acoesTd.innerHTML = `${exibirLink} | ${editarLink} | ${deletarLink}`;
-									tr.appendChild(acoesTd);
-																						
-
-									tbody.appendChild(tr);
-								});
-
-							} catch (error) {
-								console.log(error);
-								alert(error.response.data.mensagem);
-							}
-
-						});
-					</script>
-
+					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+					<script src="/js/js-adm/motoristas/motorista.js"></script>
 					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 </body>
 

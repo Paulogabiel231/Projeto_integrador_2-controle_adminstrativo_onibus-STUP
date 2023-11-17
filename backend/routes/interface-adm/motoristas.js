@@ -5,32 +5,6 @@ const upload = require("../../middlewares/fileUpload");
 
 const prisma = new PrismaClient();
 
-router.get("/listar", async function (req, res, next) {
-  const motoristas = await prisma.motorista.findMany();
-  res.json(motoristas);
-});
-
-router.get("/buscar/:id", async function (req, res, next) {
-  const motoristaId = parseInt(req.params.id);
-
-  try {
-    const motorista = await prisma.motorista.findUnique({
-      where: {
-        id: motoristaId,
-      },
-    });
-
-    if (motorista) {
-      res.json(motorista);
-    } else {
-      res.status(404).json({ error: "motorista não encontrado" });
-    }
-  } catch (error) {
-    console.error("Erro ao buscar motorista por ID:", error);
-    res.status(500).json({ error: "Erro interno do servidor" });
-  }
-});
-
 router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
   try {
     const nome = req.body.nome;
@@ -44,6 +18,29 @@ router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Erro ao criar a motorista." });
+  }
+});
+
+router.get("/listar", async function (req, res, next) {
+  const motorista = await prisma.motorista.findMany();
+  res.json(motorista);
+});
+
+router.get("/exibir/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const motorista = await prisma.motorista.findUnique({
+      where: { id: parseInt(id) }
+    });
+
+    if (!motorista) {
+      return res.status(404).json({ mensagem: "Motorista não encontrado." });
+    }
+
+    res.json(motorista);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ mensagem: "Erro ao obter o motorista por ID." });
   }
 });
 
@@ -86,6 +83,27 @@ router.delete("/excluir/:id", async function (req, res, next) {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Erro ao excluir o motorista." });
+  }
+});
+
+router.get("/buscar/:id", async function (req, res, next) {
+  const motoristaId = parseInt(req.params.id);
+
+  try {
+    const motorista = await prisma.motorista.findUnique({
+      where: {
+        id: motoristaId,
+      },
+    });
+
+    if (motorista) {
+      res.json(motorista);
+    } else {
+      res.status(404).json({ error: "motorista não encontrado" });
+    }
+  } catch (error) {
+    console.error("Erro ao buscar motorista por ID:", error);
+    res.status(500).json({ error: "Erro interno do servidor" });
   }
 });
 

@@ -378,7 +378,8 @@
 								const response = await axios.post('http://localhost:3000/api/clientes/cadastrar', data);
 								const { cliente } = response.data;
 								alert("Cliente cadastrado com sucesso.");
-								//   window.location.href = `/motoristas/exibir/${motorista.id}`;
+								window.location.href = `/adm/cliente/registro`;
+								
 							} catch (error) {
 								console.log(error);
 								alert(error.response.data.mensagem);

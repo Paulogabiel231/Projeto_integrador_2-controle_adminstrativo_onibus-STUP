@@ -5,14 +5,50 @@ const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
+router.post("/cadastrar", async (req, res, next) => {
+  try {
+    const nome = req.body.nome;
+    const usuario_id = Number(req.body.usuario_id);
+    const saldo = req.body.saldo;
+    const cpf = req.body.cpf;
+    console.log(req.body);
+    const data = { nome, usuario_id, saldo, cpf };
+    console.log(data);
+    const cliente = await prisma.cliente.create({ data });
+    res.json({ cliente });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ mensagem: "Não foi possível realizar o cadastro do Cliente." });
+  }
+});
+
 router.get("/listar", async function (req, res, next) {
   const clientes = await prisma.cliente.findMany();
   res.json(clientes);
 });
 
+router.post('/recarregar', (req, res) => {
+  const { clienteId, recargaValor } = req.body;
+
+  const cliente = cliente.find(c => c.id === parseInt(clienteId));
+
+  if (!cliente) {
+    return res.status(404).json({ mensagem: 'Cliente não encontrado.' });
+  }
+
+  if (isNaN(parseFloat(recargaValor))) {
+    return res.status(400).json({ mensagem: 'Valor de recarga inválido.' });
+  }
+
+  const valorRecarga = parseFloat(recargaValor);
+  cliente.saldo += valorRecarga;
+
+  return res.json({ novoSaldo: cliente.saldo });
+});
+
 router.get("/buscar/:id", async function (req, res, next) {
-  
-  const clienteId = parseInt(req.params.id); 
+
+  const clienteId = parseInt(req.params.id);
 
   try {
     const cliente = await prisma.cliente.findUnique({
@@ -31,43 +67,6 @@ router.get("/buscar/:id", async function (req, res, next) {
   } catch (error) {
     console.error('Erro ao buscar cliente por ID:', error);
     res.status(500).json({ error: 'Erro interno do servidor' });
-  }
-});
-
-// router.post("/cadastrar", async (req, res, next) => {
-//   try {
-//     const { nome, usuario_id, cpf, saldo } = req.body;
-
-//     const novacliente = await prisma.cliente.create({
-//       data: {
-//         nome,
-//         usuario_id: parseInt(usuario_id),
-//         cpf,
-//         saldo: parseFloat(saldo)
-//       },
-//     });
-
-//     res.json(novacliente);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: "Erro ao criar a cliente." });
-//   }
-// });
-
-router.post("/cadastrar", async (req, res, next) => {
-  try {
-    const nome = req.body.nome;
-    const usuario_id = Number(req.body.usuario_id);
-    const saldo = req.body.saldo ;
-    const cpf = req.body.cpf ;
-    console.log(req.body);
-    const data = { nome, usuario_id, saldo, cpf };
-    console.log(data);
-    const cliente = await prisma.cliente.create({ data });
-    res.json({ cliente });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ mensagem: "Não foi possível realizar o cadastro do Cliente." });
   }
 });
 

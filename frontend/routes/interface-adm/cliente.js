@@ -7,7 +7,7 @@ router.get('/cadastrar', function(req, res, next) {
 });
 
 // ROTA REGISTROS
-router.get('/registros', function(req, res, next) {
+router.get('/registro', function(req, res, next) {
     res.sendFile('adm/clientes/registro-cliente.html', { root: "views" });
 });
 

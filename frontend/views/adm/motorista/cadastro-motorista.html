@@ -279,6 +279,7 @@
 					src="/css/css-adm/template/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 				<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 				<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 				<script>
 					const form = document.querySelector('#form-motorista');
 					form.addEventListener('submit', async (event) => {
@@ -294,6 +295,8 @@
 							alert("Motorista cadastrado com sucesso.");
 							//   window.location.href = `/motoristas/exibir/${motorista.id}`;
 							form.reset();
+
+							window.location.href = `/adm/motorista/registro`;
 
 						} catch (error) {
 							console.log(error);

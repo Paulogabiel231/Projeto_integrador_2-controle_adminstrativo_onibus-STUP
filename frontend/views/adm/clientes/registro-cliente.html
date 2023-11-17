@@ -187,62 +187,46 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Registro de Clientes</h3>
+							<h3 class="panel-title">Registro de Cliente</h3>
 						</div>
-						<div class="row" style="margin-left: 1%;">
+						<div class="row style=" style="margin-left: 1%;">
 							<div class="col-md-1 text-left">
-								<a href="/adn/cliente/cadastrar" class="btn btn-primary">Novo
+								<a href="/adm/cliente/cadastrar" class="btn btn-primary ">Novo
 									<i class="fa fa-credit-card" style="padding-left: 5px;"></i>
 								</a>
 							</div>
-							<div class="col-md-4 " style="margin-left: 2%;">
+							<div class="col-md-6" style="margin-left: 4%;">
 								<div class="input-group">
-									<input type="text" value="" class="form-control"
-										placeholder="Buscar usuário por nome">
-									<span class="input-group-btn"><button type="button"
-											class="btn btn-primary">Buscar</button></span>
+									<input id="inputNome" type="text" value="" class="form-control"
+										placeholder="Buscar Cliente por Nome">
+									<span class="input-group-btn">
+										<button id="btnBuscar" type="button" class="btn btn-primary">Buscar</button>
+									</span>
+									<span class="input-group-btn">
+										<button id="btnResetar" type="button" class="btn btn-primary"
+											style="margin-left: 4%;">Resetar</button>
+									</span>
 								</div>
 							</div>
 						</div>
 						<br>
-
-						
-							<table id="motoristas" class="table table-striped table-bordered">
-								<thead>
-									<th>Código</th>
-									<th>Nome</th>
-									<th>Foto</th>
-									<th>Ações</th>
-								</thead>
-								<tbody>
-							</table>
-
-
 						<div class="row">
-							<div class="col-md-6">
+							<!-- END RECENT PURCHASES -->
+							<div class="col-md-12">
 								<!-- RECENT PURCHASES -->
 								<div class="panel">
-									<table class="table table-hover text-left">
+									<table id="clientes" class="table table-hover">
 										<thead>
-											<tr>
-												<th>Nome</th>
-												<th>ID</th>
-												<th>Primeiro Nome</th>
-												<th>Uso</th>
-												<th>Saldo</th>
-												<th></th>
-											</tr>
+											<th>ID</th>
+											<th>Nome</th>
+											<th>Saldo</th>
+											<th>CPF</th>
 										</thead>
-										<tbody>
-											
-										</tbody>
+										<tbody> </tbody>
 									</table>
-									<br>
 								</div>
 								<!-- END RECENT PURCHASES -->
 							</div>
-							<!-- END RECENT PURCHASES -->
-
 						</div>
 					</div>
 				</div>
@@ -263,7 +247,9 @@
 			<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 			<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 			<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
-			
+			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+			<script src="/js/js-adm/clientes/cliente.js"></script>
+
 </body>
 
 </html>

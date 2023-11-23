@@ -27,13 +27,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 tr.appendChild(cpfTd);
 
                 const acoesTd = document.createElement('td');
-                const exibirLink = `<ul class="list-unstyled"><li><a href="/api/clientes/exibir/${cliente.id}"><i class="fa-regular fa-eye"
-                        style="color: #6029a0;"></i></a>`;
-                const editarLink = `<li><a href="/api/clientes/editar/${cliente.id}"><i class="fa-solid fa-pen-to-square"
-                        style="color: #6029a0;"></i></a>`;
-                const deletarLink = `<li><a href="/api/clientes/deletar/${cliente.id}"><i class="fa-solid fa-trash"
-                        style="color: #6029a0;"></i></a></li></ul>`;
-                acoesTd.innerHTML = `${exibirLink} | ${editarLink} | ${deletarLink}`;
+                const exibirLink = `<a href="http://localhost:3000/api/clientes/visualizar/${cliente.id}"><i class="fa-regular fa-eye" style="color: #6029a0;"></i></a>`;
+                const editarLink = `<a href="http://localhost:3000/api/clientes/editar/${cliente.id}"><i class="fa-solid fa-pen-to-square" style="color: #6029a0;"></i></a>`;
+                const deletarLink = `<a href="http://localhost:3000/api/clientes/excluir/${cliente.id}"><i class="fa-solid fa-trash" style="color: #6029a0;"></i></a>`;
+                acoesTd.innerHTML = `${exibirLink}  ${editarLink} ${deletarLink}`;
                 tr.appendChild(acoesTd);;
 
                 tbody.appendChild(tr);
@@ -74,5 +71,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.log(error);
         alert("Erro ao listar clientes");
+    }
+});
+
+
+// VISUALIZAR
+
+document.addEventListener("DOMContentLoaded", async (event) => {
+
+    const url = window.location.href;
+    const urlId = url.split("/").pop();
+
+    try {
+        const response = await axios.get(`http://localhost:3000/api/clientes/${urlId}`);
+        const cliente = response.data;
+
+        console.log(cliente)
+
+        document.querySelector("#nome").value = cliente.nome;
+        document.querySelector("#usuario_id").value = cliente.usuario_id;
+        document.querySelector("#saldo").value = cliente.saldo;
+        document.querySelector("#cpf").value = cliente.cpf;
+    } catch (error) {
+        triggerFlashMessage("danger", error.message);
     }
 });

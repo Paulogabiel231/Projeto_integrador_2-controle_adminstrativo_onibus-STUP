@@ -49,7 +49,7 @@
 						<li><a href="/adm" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="/adm/recarga" class=""><i class="lnr lnr-cart"></i> <span>Recarga</span></a></li>
 						<li>
-							<a href="#cadastros" data-toggle="collapse" class="collapsed"><i
+							<a href="#cadastros" data-toggle="collapse" class="collapsed active"><i
 									class="lnr lnr-file-empty"></i>
 								<span>Cadastros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="cadastros" class="collapse ">
@@ -91,7 +91,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="#registros" data-toggle="collapse" class="collapsed active"><i
+							<a href="#registros" data-toggle="collapse" class="collapsed"><i
 									class="lnr lnr lnr-pencil"></i>
 								<span>Registros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="registros" class="collapse ">
@@ -187,69 +187,73 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Registro de Cliente</h3>
+							<h3 class="panel-title" id="clienteTitulo">Visualizar Cliente</h3>
 						</div>
-						<div class="row style=" style="margin-left: 1%;">
-							<div class="col-md-1 text-left">
-								<a href="/adm/cliente/cadastrar" class="btn btn-primary ">Novo
-									<i class="fa fa-credit-card" style="padding-left: 5px;"></i>
-								</a>
-							</div>
-							<div class="col-md-6" style="margin-left: 4%;">
+						<div class="panel-body">
+							<form id="form-cliente">
+								<br>
 								<div class="input-group">
-									<input id="inputNome" type="text" value="" class="form-control"
-										placeholder="Buscar Cliente por Nome">
-									<span class="input-group-btn">
-										<button id="btnBuscar" type="button" class="btn btn-primary">Buscar</button>
-									</span>
-									<span class="input-group-btn">
-										<button id="btnResetar" type="button" class="btn btn-primary"
-											style="margin-left: 4%;">Resetar</button>
-									</span>
+									<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
+									<input class="form-control" id="nome" name="nome" type="text" readonly>
 								</div>
-							</div>
-						</div>
-						<br>
-						<div class="row">
-							<!-- END RECENT PURCHASES -->
-							<div class="col-md-12">
-								<!-- RECENT PURCHASES -->
-								<div class="panel">
-									<table id="clientes" class="table table-hover">
-										<thead>
-											<th>ID</th>
-											<th>Nome</th>
-											<th>Saldo</th>
-											<th>CPF</th>
-										</thead>
-										<tbody> </tbody>
-									</table>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*ID de Usuário</span>
+									<input class="form-control" id="usuario_id" name="usuario_id" type="number"
+										readonly>
 								</div>
-								<!-- END RECENT PURCHASES -->
-							</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Saldo</span>
+									<input type="number" name="saldo" id="saldo" class="form-control is-invalid"
+										readonly>
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*CPF</span>
+									<input type="number" name="cpf" id="cpf" class="form-control is-invalid" readonly>
+								</div>
+								<br>
+								<div class=""><a class="col text-left btn btn-primary"
+										href="/interface-adm/clientes/listar">Voltar</a></div>
+							</form>
 						</div>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-				<footer>
-					<div class="container-fluid">
-						<p class="copyright">&copy; 2023 <a href="#" target="_blank">STUP</a>.
-							Todos os Direitos Reservador</p>
-					</div>
-				</footer>
-			</div>
-			<!-- END WRAPPER -->
-			<!-- Javascript -->
-			<script src="/css/css-adm/template/assets/vendor/jquery/jquery.min.js"></script>
-			<script src="/css/css-adm/template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-			<script src="/css/css-adm/template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-			<script src="/css/css-adm/template/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-			<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
-			<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
-			<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
-			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-			<script src="/js/js-adm/clientes/cliente.js"></script>
 
+						<div class="clearfix"></div>
+						<footer>
+							<div class="container-fluid">
+								<p class="copyright">&copy; 2023 <a href="#" target="_blank">STUP</a>. Todos os Direitos
+									Reservados</p>
+							</div>
+						</footer>
+					</div>
+
+					<!-- Javascript -->
+					<script src="http://localhost:3000/css/css-adm/template/assets/vendor/jquery/jquery.min.js"></script>
+					<script src="/css/css-adm/template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+					<script
+						src="/css/css-adm/template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+					<script
+						src="/css/css-adm/template/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
+					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
+					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+					<script>
+						// Use JavaScript para buscar e preencher os detalhes do cliente
+						const clienteId = window.location.pathname.split('/').pop();
+						fetch(`http://localhost:3000/api/clientes/buscar/${clienteId}`)
+							.then(response => response.json())
+							.then(cliente => {
+								document.getElementById('clienteTitulo').textContent = `Visualizar Cliente - ${cliente.nome}`;
+								document.getElementById('nome').value = cliente.nome;
+								document.getElementById('usuario_id').value = cliente.usuario_id;
+								document.getElementById('saldo').value = cliente.saldo;
+								document.getElementById('cpf').value = cliente.cpf;
+							})
+							.catch(error => console.error('Erro ao buscar detalhes do cliente:', error));
+					</script>
+
+					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

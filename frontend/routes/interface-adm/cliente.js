@@ -11,4 +11,9 @@ router.get('/registro', function(req, res, next) {
     res.sendFile('adm/clientes/registro-cliente.html', { root: "views" });
 });
 
+router.get('/visualizar/:id', function (req, res, next) {
+  const clienteId = req.params.id;
+  res.sendFile('adm/clientes/visualizar-cliente.html', { root: "views" });
+});
+
 module.exports = router;

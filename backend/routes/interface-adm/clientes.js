@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const { PrismaClient } = require("@prisma/client");
+const path = require('path');
 
 
 const prisma = new PrismaClient();
@@ -23,32 +24,18 @@ router.post("/cadastrar", async (req, res, next) => {
 });
 
 router.get("/listar", async function (req, res, next) {
-  const clientes = await prisma.cliente.findMany();
+  const clientes = await prisma.cliente.findMany({
+    orderBy: {
+      id: 'desc', // Isso ordenará pelos IDs de forma decrescente, você pode usar outro campo de data se preferir
+    },
+  });
   res.json(clientes);
 });
 
-router.post('/recarregar', (req, res) => {
-  const { clienteId, recargaValor } = req.body;
-
-  const cliente = cliente.find(c => c.id === parseInt(clienteId));
-
-  if (!cliente) {
-    return res.status(404).json({ mensagem: 'Cliente não encontrado.' });
-  }
-
-  if (isNaN(parseFloat(recargaValor))) {
-    return res.status(400).json({ mensagem: 'Valor de recarga inválido.' });
-  }
-
-  const valorRecarga = parseFloat(recargaValor);
-  cliente.saldo += valorRecarga;
-
-  return res.json({ novoSaldo: cliente.saldo });
-});
-
-router.get("/buscar/:id", async function (req, res, next) {
-
+router.get("/visualizar/:id", async function (req, res, next) {
   const clienteId = parseInt(req.params.id);
+
+  console.log(path.join(__dirname, 'interface-adm', 'views', 'adm', 'clientes', 'visualizar-cliente.html'))
 
   try {
     const cliente = await prisma.cliente.findUnique({
@@ -57,18 +44,21 @@ router.get("/buscar/:id", async function (req, res, next) {
       },
     });
 
-    // console.log(cliente);
     if (cliente) {
-      res.json(cliente);
-    } else {
+      // Renderize a página HTML de visualização do cliente e envie para o cliente
+      res.sendFile(path.join(__dirname, 'interface-adm', 'views', 'adm', 'clientes', 'visualizar-cliente.html'));
 
-      res.status(404).json({ error: 'cliente não encontrada' });
+
+    } else {
+      res.status(404).json({ error: 'Cliente não encontrado' });
     }
   } catch (error) {
+    console.log(error);
     console.error('Erro ao buscar cliente por ID:', error);
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
+
 
 router.put('/editar/:id', async function (req, res, next) {
   try {

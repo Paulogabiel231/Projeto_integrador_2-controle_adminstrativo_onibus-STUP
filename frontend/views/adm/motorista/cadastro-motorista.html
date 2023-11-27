@@ -194,11 +194,6 @@
 								<form id="form-motorista" novalidate enctype="multipart/form-data">
 									<div class="input-group">
 										<span class="input-group-addon"><i class=""></i>*Foto 3x4</span>
-										<div class="">
-											<!-- <img class=""
-												src="https://mdbootstrap.com//images/Photos/Others/placeholder.jpg"
-												alt="example placeholder"  /> -->
-										</div>
 										<div class="col-4"> <br>
 											<label class="form-label text-white " for="customFile1"></label>
 											<input type="file" class="form-control px-0" name="foto" id="foto" />
@@ -293,9 +288,7 @@
 							});
 							const { motorista } = response.data;
 							alert("Motorista cadastrado com sucesso.");
-							//   window.location.href = `/motoristas/exibir/${motorista.id}`;
 							form.reset();
-
 							window.location.href = `/adm/motorista/registro`;
 
 						} catch (error) {

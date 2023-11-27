@@ -13,6 +13,14 @@ model cliente {
   nome       String?    @db.VarChar(100)
   saldo      Decimal?   @db.Decimal(8, 2)
   cpf        String?    @db.Char(11)
+  foto       String?    @db.VarChar(200)
+  rg         String?    @db.VarChar(200)
+  carteira   String?    @db.VarChar(10)
+  tipo       String?    @db.VarChar(1)
+  sexo       String?    @db.VarChar(1)
+  telefone   String?    @db.VarChar(9)
+  email      String?    @db.VarChar(100)
+  nascimento DateTime?  @db.Date
   usuario    usuario?   @relation(fields: [usuario_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_cliente_usuario1")
   embarque   embarque[]
 
@@ -39,14 +47,21 @@ model linha {
   destino        String?   @db.VarChar(100)
   horarioPartida DateTime? @db.Time(0)
   duracao        Int?      @db.UnsignedSmallInt
+  numero         String?   @db.VarChar(3)
   viagem         viagem[]
 }
 
 model motorista {
-  id     Int      @id @default(autoincrement()) @db.UnsignedInt
-  nome   String?  @db.VarChar(100)
-  foto   String?  @db.VarChar(250)
-  viagem viagem[]
+  id         Int       @id @default(autoincrement()) @db.UnsignedInt
+  nome       String?   @db.VarChar(100)
+  foto       String?   @db.VarChar(250)
+  rg         String?   @db.VarChar(15)
+  cnh        String?   @db.VarChar(20)
+  nascimento DateTime? @db.Date
+  sexo       String?   @db.VarChar(1)
+  email      String?   @db.VarChar(100)
+  telefone   String?   @db.VarChar(9)
+  viagem     viagem[]
 }
 
 model onibus {
@@ -56,12 +71,21 @@ model onibus {
 }
 
 model usuario {
-  id      Int       @id @default(autoincrement()) @db.UnsignedInt
-  nome    String?   @db.VarChar(100)
-  email   String?   @db.VarChar(250)
-  senha   String?   @db.VarChar(100)
-  token   String?   @db.VarChar(100)
-  cliente cliente[]
+  id        Int       @id @default(autoincrement()) @db.UnsignedInt
+  nome      String?   @db.VarChar(100)
+  email     String?   @db.VarChar(250)
+  senha     String?   @db.VarChar(100)
+  token     String?   @db.VarChar(100)
+  foto      String?   @db.VarChar(200)
+  cpf       String?   @db.VarChar(11)
+  rg        String?   @db.VarChar(200)
+  cep       String?   @db.VarChar(8)
+  rua       String?   @db.VarChar(150)
+  bairro    String?   @db.VarChar(150)
+  cidade    String?   @db.VarChar(150)
+  nacimento DateTime? @db.Date
+  telefone  String?   @db.VarChar(9)
+  cliente   cliente[]
 }
 
 model viagem {

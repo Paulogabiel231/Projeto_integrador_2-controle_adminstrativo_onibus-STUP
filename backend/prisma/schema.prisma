@@ -16,6 +16,10 @@ model cliente {
   foto       String?    @db.VarChar(200)
   rg         String?    @db.VarChar(200)
   carteira   String?    @db.VarChar(10)
+  cep        String?    @db.VarChar(8)
+  rua        String?    @db.VarChar(150)
+  bairro     String?    @db.VarChar(150)
+  cidade     String?    @db.VarChar(150)
   tipo       String?    @db.VarChar(1)
   sexo       String?    @db.VarChar(1)
   telefone   String?    @db.VarChar(9)
@@ -79,10 +83,6 @@ model usuario {
   foto      String?   @db.VarChar(200)
   cpf       String?   @db.VarChar(11)
   rg        String?   @db.VarChar(200)
-  cep       String?   @db.VarChar(8)
-  rua       String?   @db.VarChar(150)
-  bairro    String?   @db.VarChar(150)
-  cidade    String?   @db.VarChar(150)
   nacimento DateTime? @db.Date
   telefone  String?   @db.VarChar(9)
   cliente   cliente[]

@@ -8,7 +8,7 @@ router.get('/cadastrar', function(req, res, next) {
 
 // ROTA REGISTROS
 router.get('/registros', function(req, res, next) {
-    res.sendFile('adm/linha/registro-linha.html', { root: "views" });
+    res.sendFile('adm/linhas/registro-linha.html', { root: "views" });
 });
 
 module.exports = router;

@@ -31,10 +31,6 @@ add column  cpf         varchar(11),
 add column  rg          varchar(200),
 add column  nacimento   date,
 add column  telefone    varchar(9);
--- add column  cep         varchar(8),
--- add column  rua         varchar(150),
--- add column  bairro      varchar(150),
--- add column  cidade      varchar(150),
 
 
 

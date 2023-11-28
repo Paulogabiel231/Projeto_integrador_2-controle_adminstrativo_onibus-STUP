@@ -1,3 +1,20 @@
+async function deletarCliente(clienteId, linhaTabela) {
+    const confirmacao = confirm("Tem certeza que deseja excluir este cliente?");
+  
+    if (confirmacao) {
+        try {
+            const response = await axios.delete(`http://localhost:3000/api/clientes/excluir/${clienteId}`);
+            
+            console.log(response.data);
+            alert("Cliente excluído com sucesso!");
+
+            linhaTabela.remove();
+        } catch (error) {
+            console.error(error);
+            alert("Erro ao excluir cliente.");
+        }
+    } 
+}
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -13,26 +30,26 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const codigoTd = document.createElement('td');
                 codigoTd.textContent = cliente.id;
                 tr.appendChild(codigoTd);
-
+        
                 const nomeTd = document.createElement('td');
                 nomeTd.textContent = cliente.nome;
                 tr.appendChild(nomeTd);
-
+        
                 const saldoTd = document.createElement('td');
                 saldoTd.textContent = cliente.saldo;
                 tr.appendChild(saldoTd);
-
+        
                 const cpfTd = document.createElement('td');
                 cpfTd.textContent = cliente.cpf;
                 tr.appendChild(cpfTd);
-
+        
                 const acoesTd = document.createElement('td');
-                const exibirLink = `<a href="http://localhost:3000/api/clientes/visualizar/${cliente.id}"><i class="fa-regular fa-eye" style="color: #6029a0;"></i></a>`;
-                const editarLink = `<a href="http://localhost:3000/api/clientes/editar/${cliente.id}"><i class="fa-solid fa-pen-to-square" style="color: #6029a0;"></i></a>`;
-                const deletarLink = `<a href="http://localhost:3000/api/clientes/excluir/${cliente.id}"><i class="fa-solid fa-trash" style="color: #6029a0;"></i></a>`;
+                const exibirLink = `<a href="http://localhost:3001/adm/cliente/visualizar/${cliente.id}"><i class="fa-regular fa-eye" style="color: #6029a0;"></i></a>`;
+                const editarLink = `<a href="http://localhost:3001/adm/cliente/editar/${cliente.id}"><i class="fa-solid fa-pen-to-square" style="color: #6029a0;"></i></a>`;
+                const deletarLink = `<a href="#" onclick="deletarCliente(${cliente.id}, this.parentNode.parentNode); return false;"><i class="fa-solid fa-trash" style="color: #6029a0;"></i></a>`;
                 acoesTd.innerHTML = `${exibirLink}  ${editarLink} ${deletarLink}`;
-                tr.appendChild(acoesTd);;
-
+                tr.appendChild(acoesTd);
+        
                 tbody.appendChild(tr);
             });
         };

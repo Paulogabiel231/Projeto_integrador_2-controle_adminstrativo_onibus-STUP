@@ -17,12 +17,10 @@ router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
     const usuario_id = Number(req.body.usuario_id)
     const email = req.body.email;
     const saldo = req.body.saldo;
-    
     const tipo = req.body.tipo;
     const carteira = req.body.carteira;
     const sexo = req.body.sexo;
     const telefone = req.body.telefone;
-    
     const foto = req.file?.path;
     const nascimento = req.body.nascimento ? new Date(req.body.nascimento).toISOString() : null;
 
@@ -53,9 +51,7 @@ router.get("/listar", async function (req, res, next) {
 });
 
 router.get("/visualizar/:id", async function (req, res, next) {
-  const clienteId = parseInt(req.params.id);
-
-  console.log(path.join(__dirname, 'interface-adm', 'views', 'adm', 'clientes', 'visualizar-cliente.html'))
+  const clienteId = parseInt(req.params.id); 
 
   try {
     const cliente = await prisma.cliente.findUnique({
@@ -65,19 +61,17 @@ router.get("/visualizar/:id", async function (req, res, next) {
     });
 
     if (cliente) {
-      // Renderize a página HTML de visualização do cliente e envie para o cliente
-      res.sendFile(path.join(__dirname, 'interface-adm', 'views', 'adm', 'clientes', 'visualizar-cliente.html'));
-
-
+      res.json(cliente);
     } else {
-      res.status(404).json({ error: 'Cliente não encontrado' });
+      res.status(404).json({ error: 'Cliente não encontrada' });
     }
   } catch (error) {
-    console.log(error);
-    console.error('Erro ao buscar cliente por ID:', error);
+    console.error('Erro ao buscar Cliente por ID:', error);
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
+
+
 
 
 router.put('/editar/:id', async function (req, res, next) {

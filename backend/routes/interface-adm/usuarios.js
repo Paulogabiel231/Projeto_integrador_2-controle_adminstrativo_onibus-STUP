@@ -30,13 +30,19 @@ router.get("/buscar/:id", async function (req, res, next) {
   }
 });
 
-router.post("/cadastrar", async (req, res, next) => {
+router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
   try {
     const nome = req.body.nome;
     const email = req.body.email;
     const senha = req.body.senha;
+    const cpf = req.body.cpf;
+    const rg = req.body.rg;
+    const nascimento = req.body.nascimento ? new Date(req.body.nascimento).toISOString() : null;
+    const telefone = req.body.telefone;
+    const sexo = req.body.sexo;
+    const foto = req.file?.path;
     console.log(req.body);
-    const data = { nome, email, senha};
+    const data = { nome, email, senha, foto, cpf, rg, nascimento, telefone, sexo};
     console.log(data);;
     const usuario = await prisma.usuario.create({ data });
     res.json(usuario);
@@ -45,7 +51,6 @@ router.post("/cadastrar", async (req, res, next) => {
     res.status(500).json({ error: "Erro ao criar o usuario." });
   }
 });
-
 
 router.put('/editar/:id', async function (req, res, next) {
   try {

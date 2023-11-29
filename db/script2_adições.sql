@@ -29,8 +29,9 @@ alter table usuario
 add column  foto        varchar(200),
 add column  cpf         varchar(11),
 add column  rg          varchar(200),
-add column  nacimento   date,
-add column  telefone    varchar(9);
+add column  nascimento   date,
+add column  telefone    varchar(9),
+add column  sexo        varchar(1);
 
 
 

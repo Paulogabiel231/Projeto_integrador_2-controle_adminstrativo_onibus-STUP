@@ -190,22 +190,44 @@
 							<h3 class="panel-title">Cadastro de Usuário</h3>
 						</div>
 						<div class="panel-body">
-							<form id="form-usuario">
-								<!-- <div class="input-group">
-								<span class="input-group-addon"><i class=""></i>Foto 3x4</span>
-								<div class="">
-									<img class="" src="https://mdbootstrap.com//images/Photos/Others/placeholder.jpg"
-										alt="example placeholder" style="width: 300px;" />
+							<form id="form" novalidate enctype="multipart/form-data">
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Foto 3x4</span>
+									<div class="col-4"> <br>
+										<label class="form-label text-white " for="customFile1"></label>
+										<input type="file" class="form-control px-0" name="foto" id="foto" />
+									</div>
 								</div>
-								<div class="col-4"> <br>
-									<label class="form-label text-white " for="customFile1"></label>
-									<input type="file" class="form-control px-0" id="customFile1"/>
-								</div>
-							</div> -->
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
 									<input class="form-control" id="nome" name="nome" type="text">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Data de Nascimento</span>
+									<input class="form-control" type="date" name="nascimento" id="nascimento">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*CPF</span>
+									<input class="form-control" name="cpf" id="cpf" type="text">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*RG</span>
+									<input class="form-control" name="rg" id="rg" type="text">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>Sexo:</span>
+									<select class="form-control" name="sexo" id="usoSelect">
+										<option value="" disabled selected hidden> Escolha:</option>
+										<option value="1">Masculino</option>
+										<option value="2">Feminino</option>
+										<option value="3">Outro</option>
+										<option value="4">Prefiro não responder</option>
+									</select>
 								</div>
 								<br>
 								<div class="input-group">
@@ -214,125 +236,16 @@
 								</div>
 								<br>
 								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Telefone</span>
+									<input class="form-control" id="telefone" name="telefone" type="text">
+								</div>
+								<br>
+								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Senha</span>
 									<input class="form-control" id="senha" name="senha" type="password">
 								</div>
 								<br>
-								<!-- <div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*CPF</span>
-								<input class="form-control" name="cpf" type="text">
-							</div> -->
-								<!-- <br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Data de Nascimento</span>
-								<input class="form-control" type="date" name="dataNascimento" id="dataNascimento">
-							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Uso:</span>
-								<select class="form-control" name="uso" id="usoSelect">
-									<option value="" disabled selected hidden> </option>
-									<option value="Comum">Comum</option>
-									<option value="Escolar">Escolar</option>
-									<option value="Idoso">Idoso</option>
-									<option value="PCDs">PCDs</option>
-									<option value="ValeTransporte">Vale Transporte</option>
-								</select>
-							</div>
-							<br>
-							<div class="input-group" id="raInput" style="display: none;">
-								<span class="input-group"><i class=""></i>*RA</span>
-								<input class="form-control" type="text">
-							</div>
-							<div class="" id="brSeparadorRA" style="display: none;">
-								<br>
-							</div>
-							<div class="input-group" id="atestadoInput" style="display: none;">
-								<span class="input-group"><i class=""></i>*Atestado de Matrícula ou
-									Deficiência</span>
-								<input class="form-control" type="file" id="formFile">
-							</div>
-							<div class="" id="brSeparadorAtestado" style="display: none;">
-								<br>
-							</div>
-							<div class="input-group" id="cnpjInput" style="display: none;">
-								<span class="input-group"><i class=""></i>*CPNJ da Empresa</span>
-								<input class="form-control" type="text">
-							</div>
-							<div class="" id="brSeparadorCnpj" style="display: none;">
-								<br>
-							</div>
-
-							<script>
-								const usoSelect = document.getElementById("usoSelect");
-								const comumInput = document.getElementById("comumInput");
-								const raInput = document.getElementById("raInput");
-								const atestadoInput = document.getElementById("atestadoInput");
-								const cnpjInput = document.getElementById("cnpjInput");
-								const dataNascimento = document.getElementById("dataNascimento");
-								const brSeparadorRA = document.getElementById("brSeparadorRA");
-								const brSeparadorAtestado = document.getElementById("brSeparadorAtestado");
-								const brSeparadorCnpj = document.getElementById("brSeparadorCnpj");
-								usoSelect.addEventListener("change", function () {
-									// Resetar todos os campos ao valor inicial
-									raInput.style.display = "none";
-									atestadoInput.style.display = "none";
-									cnpjInput.style.display = "none";
-
-									if (usoSelect.value === "Escolar") {
-										raInput.style.display = "flex";
-										brSeparadorRA.style.display = "block";
-										atestadoInput.style.display = "flex";
-										brSeparadorAtestado.style.display = "block";
-										brSeparadorCnpj.style.display = "none";
-									} else if (usoSelect.value === "ValeTransporte") {
-										brSeparadorRA.style.display = "none";
-										brSeparadorAtestado.style.display = "none";
-										brSeparadorCnpj.style.display = "flex";
-										cnpjInput.style.display = "flex";
-									} else if (usoSelect.value === "PCDs") {
-										atestadoInput.style.display = "flex";
-										brSeparadorAtestado.style.display = "flex";
-										brSeparadorCnpj.style.display = "none";
-										brSeparadorRA.style.display = "none";
-									} else if (usoSelect.value === "Idoso") {
-										brSeparadorAtestado.style.display = "none";
-										brSeparadorCnpj.style.display = "none";
-										brSeparadorRA.style.display = "none";
-									} else if (usoSelect.value === "Comum") {
-										brSeparadorAtestado.style.display = "none"
-										brSeparadorCnpj.style.display = "none"
-										brSeparadorRA.style.display = "none";
-									}
-								});
-
-								dataNascimento.addEventListener("change", function () {
-									const selectedDate = new Date(dataNascimento.value);
-									const currentDate = new Date();
-									const age = currentDate.getFullYear() - selectedDate.getFullYear();
-
-									if (age >= 65) {
-										usoSelect.value = "Idoso";
-									}
-								});
-							</script>
-
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>Sexo:</span>
-								<select class="form-control" name="sexo" id="usoSelect">
-									<option value="" disabled selected hidden> Escolher</option>
-									<option value="masculino">Masculino</option>
-									<option value="feminino">Feminino</option>
-									<option value="outro">Outro</option>
-									<option value="prefiroNãoResponder">Prefiro não responder</option>
-								</select>
-							</div>
-							<br> -->
-								<!-- <div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Número de Telefone</span>
-								<input class="form-control" type="text">
-							</div>
-							<br> -->
+								
 								<div class=""><input class="col text-left btn btn-primary" type="submit"></div>
 							</form>
 						</div>
@@ -357,26 +270,24 @@
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 					<script>
-						const form = document.querySelector('#form-usuario');
+						const form = document.querySelector('#form');
 						form.addEventListener('submit', async (event) => {
-
-							try {
-								const formData = new FormData(form);
-								const nome = formData.get("nome");
-								const email = formData.get("email");
-								const senha = formData.get("senha");
-								const data = { nome, email, senha };
-								console.log(data);
-								const response = await axios.post('http://localhost:3000/api/usuarios/cadastrar', data);
-								const { usuario } = response.data;
-								alert("Usuário cadastrado com sucesso.");
-								form.reset();
-							} catch (error) {
-								console.log(error);
-								alert(error.response.data.mensagem);
-							}
+						  event.preventDefault()
+						  try {
+							const formData = new FormData(form);
+							const response = await axios.post('http://localhost:3000/api/usuarios/cadastrar', formData, {
+							  headers: {
+								'Content-Type': 'multipart/form-data'
+							  }
+							});
+							alert("Usuario Cadastrado com Sucesso!");
+							window.location.href = `/adm/usuario/registro`;
+						  } catch (error) {
+							console.log(error);
+							alert(error.response.data.mensagem);
+						  }
 						});
-					</script>
+					  </script>
 					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 
 </body>

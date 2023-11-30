@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const codigoTd = document.createElement('td');
                 codigoTd.textContent = cliente.id;
                 tr.appendChild(codigoTd);
-                // const fotoTd = document.createElement('td');
-                // if (motorista.foto) {
-                //     fotoTd.innerHTML = `<img src="http://localhost:3000/${cliente.foto}" alt="${cliente.nome}" width="60">`;
-                // } else {
-                //     fotoTd.innerHTML = "Não possui.";
-                // }
-                // tr.appendChild(fotoTd);
+                const fotoTd = document.createElement('td');
+                if (cliente.foto) {
+                    fotoTd.innerHTML = `<img src="http://localhost:3000/${cliente.foto}" alt="${cliente.nome}" width="60">`;
+                } else {
+                    fotoTd.innerHTML = "Não possui.";
+                }
+                tr.appendChild(fotoTd);
                 const nomeTd = document.createElement('td');
                 nomeTd.textContent = cliente.nome;
                 tr.appendChild(nomeTd);

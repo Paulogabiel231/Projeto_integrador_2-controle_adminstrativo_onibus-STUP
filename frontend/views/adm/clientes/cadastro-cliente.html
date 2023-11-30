@@ -301,7 +301,8 @@
 								'Content-Type': 'multipart/form-data'
 							  }
 							})
-							Alert('Cliente cadastrado com sucesso.');
+							alert("Cliente Cadastrado com Sucesso!");
+							form.reset();
 							window.location.href = `/adm/cliente/registro`;
 						  } catch (error) {
 							console.log(error);

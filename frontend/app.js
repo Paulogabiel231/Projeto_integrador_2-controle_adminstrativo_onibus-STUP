@@ -52,8 +52,7 @@ app.use('/adm/linha', AdmRouterLinha);
 app.use('/adm/usuario', AdmRouterUsuario);
 app.use('/adm/motorista', AdmRouterMotorista);
 app.use('/adm/onibus', AdmRouterOnibus);
-// app.use('/adm/motorista', AdmRouterMotorista);
-// app.use('/adm/onibus', AdmRouterOnibus);
+
 
 
 // catch 404 and forward to error handler

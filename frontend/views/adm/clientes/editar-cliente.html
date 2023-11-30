@@ -187,13 +187,13 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Cadastro Cliente</h3>
+							<h3 class="panel-title">Editar Cliente</h3>
 						</div>
 						<div class="panel-body">
 							<form id="form" novalidate enctype="multipart/form-data">
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Foto 3x4</span>
-									<div class="col-4"> <br>
+									<div class="col-4"> <p id="fotoPreview"></p>
 										<label class="form-label text-white " for="customFile1"></label>
 										<input type="file" class="form-control px-0" name="foto" id="foto" />
 									</div>
@@ -232,7 +232,7 @@
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Tipo:</span>
-									<select class="form-control" name="tipo" id="usoSelect">
+									<select class="form-control" name="tipo" id="tipo">
 										<option value="" disabled selected hidden> Escolha: </option>
 										<option value="1">Comum</option>
 										<option value="2">Escolar</option>
@@ -244,7 +244,7 @@
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>Sexo:</span>
-									<select class="form-control" name="sexo" id="usoSelect">
+									<select class="form-control" name="sexo" id="sexo">
 										<option value="" disabled selected hidden> Escolha:</option>
 										<option value="1">Masculino</option>
 										<option value="2">Feminino</option>
@@ -255,12 +255,12 @@
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Número de Telefone</span>
-									<input class="form-control" type="text" name="telefone">
+									<input class="form-control" type="text" name="telefone" id="telefone">
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*E-mail</span>
-									<input class="form-control" type="email" name="email">
+									<input class="form-control" type="email" name="email" id="email">
 								</div>
 								<br>
 								<div class="input-group">

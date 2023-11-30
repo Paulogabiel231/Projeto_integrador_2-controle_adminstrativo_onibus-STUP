@@ -69,12 +69,30 @@ router.get("/visualizar/:id", async function (req, res, next) {
   }
 });
 
+router.get("/editar/:id", async function (req, res, next) {
+  const clienteId = parseInt(req.params.id); 
+  try {
+    const cliente = await prisma.cliente.findUnique({
+      where: {
+        id: clienteId,
+      },
+    });
 
+    if (cliente) {
+      res.json(cliente);
+    } else {
+      res.status(404).json({ error: 'Cliente não encontrada' });
+    }
+  } catch (error) {
+    console.error('Erro ao buscar Cliente por ID:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
 
-
-router.put('/editar/:id', async function (req, res, next) {
+router.put('/editar/:id', upload.single("foto"), async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
+    const foto = req.file?.path;
     const { nome, carteira, usuario_id, cpf, rg, nascimento, tipo, sexo, email, telefone, saldo} = req.body;
     
     const clienteAtualizada = await prisma.cliente.update({
@@ -82,7 +100,7 @@ router.put('/editar/:id', async function (req, res, next) {
         id: id,
       },
       data: {
-        // foto: foto,
+        foto: foto,
         nome: nome,
         carteira: carteira,
         usuario_id: parseInt(usuario_id),

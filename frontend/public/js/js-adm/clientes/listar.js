@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         
                 const acoesTd = document.createElement('td');
                 const exibirLink = `<a href="http://localhost:3001/adm/cliente/visualizar/${cliente.id}"><i class="fa-regular fa-eye" style="color: #6029a0;"></i></a>`;
-                const editarLink = `<a href="/api/clientes/editar/${cliente.id}"><i class="fa-solid fa-pen-to-square" style="color: #6029a0;"></i></a>`;
+                const editarLink = `<a href="http://localhost:3001/adm/cliente/editar/${cliente.id}"><i class="fa-solid fa-pen-to-square" style="color: #6029a0;"></i></a>`;
                 const deletarLink = `<a href="#" onclick="deletarCliente(${cliente.id}, this.parentNode.parentNode); return false;"><i class="fa-solid fa-trash" style="color: #6029a0;"></i></a>`;
                 acoesTd.innerHTML = `${exibirLink}  ${editarLink} ${deletarLink}`;
                 tr.appendChild(acoesTd);

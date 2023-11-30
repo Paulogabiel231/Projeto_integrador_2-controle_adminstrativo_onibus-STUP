@@ -2,8 +2,6 @@ var express = require("express");
 var router = express.Router();
 const { PrismaClient } = require("@prisma/client");
 const upload = require("../../middlewares/fileUpload");
-const path = require('path');
-
 
 const prisma = new PrismaClient();
 
@@ -77,23 +75,31 @@ router.get("/visualizar/:id", async function (req, res, next) {
 router.put('/editar/:id', async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
-    const { usuario_id, nome, saldo, cpf } = req.body;
+    const { nome, carteira, usuario_id, cpf, rg, nascimento, tipo, sexo, email, telefone, saldo} = req.body;
     
     const clienteAtualizada = await prisma.cliente.update({
       where: {
         id: id,
       },
       data: {
+        // foto: foto,
         nome: nome,
+        carteira: carteira,
         usuario_id: parseInt(usuario_id),
-        saldo: parseFloat(saldo),
         cpf: cpf,
+        rg: rg,
+        nascimento: nascimento,
+        tipo: tipo,
+        sexo: sexo,
+        email: email,
+        telefone: telefone,
+        saldo: parseFloat(saldo),
       },
     });
-
     res.json(clienteAtualizada);
-  } catch (error) {
+  } catch (error){
     console.error(error);
+    console.log("deu erro porra");
     res.status(500).json({ error: 'Erro ao atualizar a cliente.' });
   }
 });

@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const { PrismaClient } = require("@prisma/client");
-
+const upload = require("../../middlewares/fileUpload");
 const prisma = new PrismaClient();
 
 router.get("/listar", async function (req, res, next) {

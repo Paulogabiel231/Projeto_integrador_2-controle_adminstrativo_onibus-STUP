@@ -190,7 +190,7 @@
 							<h3 class="panel-title">Cadastro Cliente</h3>
 						</div>
 						<div class="panel-body">
-							<form id="form-cliente" novalidate enctype="multipart/form-data">
+							<form id="form" novalidate enctype="multipart/form-data">
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Foto 3x4</span>
 									<div class="col-4"> <br>
@@ -201,8 +201,7 @@
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
-									<input class="form-control" id="nome" name="nome" type="text"
-										value="Luiz Rodrigues">
+									<input class="form-control" id="nome" name="nome" type="text">
 								</div>
 								<br>
 								<div class="input-group">
@@ -293,25 +292,7 @@
 					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-					<script src="/js/js-adm/clientes/cliente.js"></script>
 					<script src="/js/js-adm/clientes/editar.js"></script>
-					<script src="/js/js-adm/clientes/excluir.js"></script>
-					<script src="/js/js-adm/clientes/listar.js"></script>
-					<script>
-						document.addEventListener('DOMContentLoaded', async () => {
-							const clienteId = window.location.href.split('/').pop();
-
-							try {
-								const response = await axios.get(`http://localhost:3000/api/clientes/visualizar/${clienteId}`);
-
-								console.log(response.data);
-							} catch (error) {
-								console.error(error);
-								alert("Erro ao carregar dados do cliente.");
-							}
-						});
-					</script>
-
 					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 </body>
 

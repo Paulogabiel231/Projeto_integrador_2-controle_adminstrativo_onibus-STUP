@@ -12,7 +12,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const codigoTd = document.createElement('td');
                 codigoTd.textContent = cliente.id;
                 tr.appendChild(codigoTd);
-        
+                // const fotoTd = document.createElement('td');
+                // if (motorista.foto) {
+                //     fotoTd.innerHTML = `<img src="http://localhost:3000/${cliente.foto}" alt="${cliente.nome}" width="60">`;
+                // } else {
+                //     fotoTd.innerHTML = "Não possui.";
+                // }
+                // tr.appendChild(fotoTd);
                 const nomeTd = document.createElement('td');
                 nomeTd.textContent = cliente.nome;
                 tr.appendChild(nomeTd);
@@ -27,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         
                 const acoesTd = document.createElement('td');
                 const exibirLink = `<a href="http://localhost:3001/adm/cliente/visualizar/${cliente.id}"><i class="fa-regular fa-eye" style="color: #6029a0;"></i></a>`;
-                const editarLink = `<a href="http://localhost:3001/adm/cliente/editar/${cliente.id}"><i class="fa-solid fa-pen-to-square" style="color: #6029a0;"></i></a>`;
+                const editarLink = `<a href="/api/clientes/editar/${cliente.id}"><i class="fa-solid fa-pen-to-square" style="color: #6029a0;"></i></a>`;
                 const deletarLink = `<a href="#" onclick="deletarCliente(${cliente.id}, this.parentNode.parentNode); return false;"><i class="fa-solid fa-trash" style="color: #6029a0;"></i></a>`;
                 acoesTd.innerHTML = `${exibirLink}  ${editarLink} ${deletarLink}`;
                 tr.appendChild(acoesTd);

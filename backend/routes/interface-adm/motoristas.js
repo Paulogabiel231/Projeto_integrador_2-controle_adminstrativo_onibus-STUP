@@ -22,7 +22,11 @@ router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
 });
 
 router.get("/listar", async function (req, res, next) {
-  const motorista = await prisma.motorista.findMany();
+  const motorista = await prisma.motorista.findMany({
+    orderBy: {
+      id: 'desc', // Isso ordenará pelos IDs de forma decrescente, você pode usar outro campo de data se preferir
+    },
+  });
   res.json(motorista);
 });
 

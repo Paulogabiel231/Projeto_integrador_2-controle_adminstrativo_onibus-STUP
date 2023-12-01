@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     console.log(urlId);
 
     try {
-        const response = await axios.get(`http://localhost:3000/api/clientes/editar/${urlId}`);
+        const response = await axios.get(`http://localhost:3000/api/clientes/visualizar/${urlId}`);
         const cliente = response.data;
         console.log(cliente);
 
@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         } else {
             fotoPreview.innerHTML = "Não possui.";
         }
-        // document.querySelector("#foto").value = cliente.foto;
         if (cliente.nome != null) {
             document.querySelector("#nome").value = cliente.nome;
         }

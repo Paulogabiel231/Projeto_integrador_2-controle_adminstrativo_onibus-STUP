@@ -49,7 +49,7 @@
 						<li><a href="/adm" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="/adm/recarga" class=""><i class="lnr lnr-cart"></i> <span>Recarga</span></a></li>
 						<li>
-							<a href="#cadastros" data-toggle="collapse" class="collapsed active"><i
+							<a href="#cadastros" data-toggle="collapse" class="collapsed "><i
 									class="lnr lnr-file-empty"></i>
 								<span>Cadastros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="cadastros" class="collapse ">
@@ -91,7 +91,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="#registros" data-toggle="collapse" class="collapsed"><i
+							<a href="#registros" data-toggle="collapse" class="collapsed active"><i
 									class="lnr lnr lnr-pencil"></i>
 								<span>Registros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="registros" class="collapse ">
@@ -187,131 +187,90 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Cadastro Cliente</h3>
+							<h3 class="panel-title">Visualizar Motorista</h3>
 						</div>
 						<div class="panel-body">
-							<form id="form-cliente" novalidate enctype="multipart/form-data">
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Foto 3x4</span>
-									<div class="col-4"> <br>
-										<label class="form-label text-white " for="customFile1"></label>
-										<input type="file" class="form-control px-0" name="foto" id="foto" />
+							<div class="form">
+								<form id="form-motorista" novalidate enctype="multipart/form-data">
+									<div class="input-group">
+										<span class="input-group-addon"><i class=""></i>*Foto 3x4</span>
+										<div class="col-4">
+											<p id="fotoPreview"></p>
+											<label class="form-label text-white " for="customFile1"></label>
+									
+										</div>
 									</div>
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
-									<input class="form-control" id="nome" name="nome" type="text">
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Código Carteirinha</span>
-									<input class="form-control" id="carteira" name="carteira" type="text">
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Seu ID de Usuário</span>
-									<input class="form-control" id="usuario_id" name="usuario_id" type="number">
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*CPF</span>
-									<input class="form-control" name="cpf" id="cpf" type="text">
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*RG</span>
-									<input class="form-control" name="rg" id="rg" type="text">
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Data de Nascimento</span>
-									<input class="form-control" type="date" name="nascimento" id="nascimento">
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Tipo:</span>
-									<select class="form-control" name="tipo" id="usoSelect">
-										<option value="" disabled selected hidden> Escolha: </option>
-										<option value="1">Comum</option>
-										<option value="2">Escolar</option>
-										<option value="3">Idoso</option>
-										<option value="4">PCDs</option>
-										<option value="5">Vale Transporte</option>
-									</select>
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>Sexo:</span>
-									<select class="form-control" name="sexo" id="usoSelect">
-										<option value="" disabled selected hidden> Escolha:</option>
-										<option value="1">Masculino</option>
-										<option value="2">Feminino</option>
-										<option value="3">Outro</option>
-										<option value="4">Prefiro não responder</option>
-									</select>
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Número de Telefone</span>
-									<input class="form-control" type="text" name="telefone">
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*E-mail</span>
-									<input class="form-control" type="email" name="email">
-								</div>
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Saldo Inicial</span>
-									<input type="number" name="saldo" id="saldo" class="form-control is-invalid"
-										class="form-control">
-								</div>
-								<br>
-								<div class=""><input class="col text-left btn btn-primary" type="submit"></div>
-							</form>
-						</div>
-
-						<div class="clearfix"></div>
-						<footer>
-							<div class="container-fluid">
-								<p class="copyright">&copy; 2023 <a href="#" target="_blank">STUP</a>.
-									Todos os Direitos Reservados</p>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
+										<input class="form-control" name="nome" id="nome" type="text" readonly>
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon"><i class=""></i>*Data de Nascimento</span>
+										<input class="form-control" name="nascimento" id="nascimento" type="date" readonly>
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon"><i class=""></i>*RG</span>
+										<input class="form-control" name="rg" id="rg" type="text" readonly>
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon"><i class=""></i>*CPF</span>
+										<input class="form-control" name="cpf" id="cpf" type="number" readonly>
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon"><i class=""></i>*CNH</span>
+										<input class="form-control" name="cnh" id="cnh" type="number" readonly>
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon"><i class=""></i>Sexo:</span>
+										<select class="form-control" name="sexo" id="sexo" readonly>
+											<option value="" disabled selected hidden> Escolha:</option>
+											<option value="1">Masculino</option>
+											<option value="2">Feminino</option>
+											<option value="3">Outro</option>
+											<option value="4">Prefiro não responder</option>
+										</select>
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon"><i class=""></i>*Número de Telefone</span>
+										<input class="form-control" type="text" name="telefone" id="telefone" readonly>
+									</div>
+									<br>
+									<div class="input-group">
+										<span class="input-group-addon"><i class=""></i>*E-mail</span>
+										<input class="form-control" type="email" name="email" id="email" readonly>
+									</div>
+								</form>
 							</div>
-						</footer>
+						</div>
 					</div>
-					<!-- END WRAPPER -->
-					<!-- Javascript -->
-					<script src="/css/css-adm/template/assets/vendor/jquery/jquery.min.js"></script>
-					<script src="/css/css-adm/template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-					<script
-						src="/css/css-adm/template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-					<script
-						src="/css/css-adm/template/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
-					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
-					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-					<script>
-						const form = document.querySelector('#form-cliente');
-						form.addEventListener('submit', async (event) => {
-						  try {
-							const formData = new FormData(form);
-							const response = await axios.post('http://localhost:3000/api/clientes/cadastrar', formData, {
-							  headers: {
-								'Content-Type': 'multipart/form-data'
-							  }
-							})
-							alert("Cliente Cadastrado com Sucesso!");
-							form.reset();
-							window.location.href = `/adm/cliente/registro`;
-						  } catch (error) {
-							console.log(error);
-							alert(error.response.data.mensagem);
-						  }
-						});
-					  </script>
-					  
-					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
+
+					<div class="clearfix"></div>
+					<footer>
+						<div class="container-fluid">
+							<p class="copyright">&copy; 2023 <a href="#" target="_blank">STUP</a>.
+								Todos os Direitos Reservador</p>
+						</div>
+					</footer>
+				</div>
+				<!-- END WRAPPER -->
+				<!-- Javascript -->
+				<script src="/css/css-adm/template/assets/vendor/jquery/jquery.min.js"></script>
+				<script src="/css/css-adm/template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+				<script src="/css/css-adm/template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+				<script
+					src="/css/css-adm/template/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+				<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
+				<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+				<script src="/js/js-adm/motoristas/visualizar.js"></script>
+				<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

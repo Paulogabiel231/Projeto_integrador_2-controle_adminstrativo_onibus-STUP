@@ -11,5 +11,12 @@ router.get('/registro', function (req, res, next) {
   res.sendFile('adm/motorista/registro-motorista.html', { root: "views" });
 });
 
+router.get('/visualizar/:id', function (req, res, next) {
+  res.sendFile('adm/motorista/visualizar-motorista.html', { root: "views" });
+});
+
+router.get('/editar/:id', function (req, res, next) {
+  res.sendFile('adm/motorista/editar-motorista.html', { root: "views" });
+});
 
 module.exports = router;

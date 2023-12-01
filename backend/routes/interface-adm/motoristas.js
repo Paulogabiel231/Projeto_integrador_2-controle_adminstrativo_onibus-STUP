@@ -6,12 +6,18 @@ const prisma = new PrismaClient();
 
 router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
   try {
+
     const nome = req.body.nome;
+    const rg = req.body.rg;
+    const cnh = req.body.cnh;
+    const cpf = req.body.cpf;
+    const sexo = req.body.sexo;
+    const email = req.body.email;
+    const telefone = req.body.telefone;
     const foto = req.file?.path;
-    console.log(req.body);
-    const data = { nome, foto };
+    const nascimento = req.body.nascimento ? new Date(req.body.nascimento).toISOString() : null;
+    const data = { nome, rg, cnh, cpf, nascimento, telefone, email, sexo, foto };
     console.log(data);
-    console.log(req.file);
     const motorista = await prisma.motorista.create({ data });
     res.json(motorista);
   } catch (error) {
@@ -29,24 +35,26 @@ router.get("/listar", async function (req, res, next) {
   res.json(motorista);
 });
 
-router.get("/exibir/:id", async (req, res) => {
+router.get("/visualizar/:id", async function (req, res, next) {
+  const motoristaId = parseInt(req.params.id);
+
   try {
-    const { id } = req.params;
     const motorista = await prisma.motorista.findUnique({
-      where: { id: parseInt(id) }
+      where: {
+        id: motoristaId,
+      },
     });
 
-    if (!motorista) {
-      return res.status(404).json({ mensagem: "Motorista não encontrado." });
+    if (motorista) {
+      res.json(motorista);
+    } else {
+      res.status(404).json({ error: 'Motorista não encontrado' });
     }
-
-    res.json(motorista);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ mensagem: "Erro ao obter o motorista por ID." });
+    console.error('Erro ao buscar Motorista por ID:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
-
 router.put("/editar/:id", async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
@@ -58,7 +66,7 @@ router.put("/editar/:id", async function (req, res, next) {
       },
       data: {
         nome: nome,
-        foto: foto,
+        
       },
     });
 
@@ -79,7 +87,7 @@ router.delete("/excluir/:id", async function (req, res, next) {
     });
 
     if (motoristaExcluida) {
-      res.json({ message: "motorista excluído com sucesso." });
+      res.json({ message: "Motorista excluído com sucesso." });
     } else {
       res.status(404).json({ error: "motorista não encontrado." });
     }

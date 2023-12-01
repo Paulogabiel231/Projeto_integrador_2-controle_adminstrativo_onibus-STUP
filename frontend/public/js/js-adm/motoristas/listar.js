@@ -24,16 +24,21 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const nomeTd = document.createElement('td');
                 nomeTd.textContent = motorista.nome;
                 tr.appendChild(nomeTd);
+
+                const cpfTd = document.createElement('td');
+                cpfTd.textContent = motorista.cpf;
+                tr.appendChild(cpfTd);
                 
+                const cnhTd = document.createElement('td');
+                cnhTd.textContent = motorista.cpf;
+                tr.appendChild(cnhTd);
+
 
                 const acoesTd = document.createElement('td');
-                const exibirLink = `<ul class="list-unstyled"><li><a href="/api/motoristas/exibir/${motorista.id}"><i class="fa-regular fa-eye"
-                        style="color: #6029a0;"></i></a>`;
-                const editarLink = `<li><a href="/api/motoristas/editar/${motorista.id}"><i class="fa-solid fa-pen-to-square"
-                        style="color: #6029a0;"></i></a>`;
-                const deletarLink = `<li><a href="/api/motoristas/deletar/${motorista.id}"><i class="fa-solid fa-trash"
-                        style="color: #6029a0;"></i></a></li></ul>`;
-                acoesTd.innerHTML = `${exibirLink} | ${editarLink} | ${deletarLink}`;
+                const exibirLink = `<a href="http://localhost:3001/adm/motorista/visualizar/${motorista.id}"><i class="fa-regular fa-eye" style="color: #6029a0;"></i></a>`;
+                const editarLink = `<a href="http://localhost:3001/adm/motorista/editar/${motorista.id}"><i class="fa-solid fa-pen-to-square" style="color: #6029a0;"></i></a>`;
+                const deletarLink = `<a href="#" onclick="deletarMotorista(${motorista.id}, this.parentNode.parentNode); return false;"><i class="fa-solid fa-trash" style="color: #6029a0;"></i></a>`;
+                acoesTd.innerHTML = `${exibirLink}  ${editarLink} ${deletarLink}`;
                 tr.appendChild(acoesTd);
 
                 tbody.appendChild(tr);

@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     fotoTd.innerHTML = "Não possui.";
                 }
                 tr.appendChild(fotoTd);
+                
                 const nomeTd = document.createElement('td');
                 nomeTd.textContent = cliente.nome;
                 tr.appendChild(nomeTd);

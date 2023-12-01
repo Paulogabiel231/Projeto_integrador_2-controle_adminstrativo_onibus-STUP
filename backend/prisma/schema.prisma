@@ -61,6 +61,7 @@ model motorista {
   sexo       String?   @db.VarChar(1)
   email      String?   @db.VarChar(100)
   telefone   String?   @db.VarChar(9)
+  cpf        String?   @db.VarChar(11)
   viagem     viagem[]
 }
 

@@ -5,6 +5,7 @@ add column numero    varchar(3);
 
 alter table motorista
 add column  rg          varchar(15),
+add column cpf          varchar(11),
 add column  cnh			varchar(20),
 add column  nascimento  date,
 add column  sexo		varchar(1),

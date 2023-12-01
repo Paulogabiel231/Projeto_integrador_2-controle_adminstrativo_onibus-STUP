@@ -66,6 +66,8 @@ router.put("/editar/:id", async function (req, res, next) {
       },
       data: {
         nome: nome,
+        foto: foto,
+        
         
       },
     });

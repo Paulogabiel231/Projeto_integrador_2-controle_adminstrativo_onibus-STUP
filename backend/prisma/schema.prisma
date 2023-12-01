@@ -56,12 +56,12 @@ model motorista {
   nome       String?   @db.VarChar(100)
   foto       String?   @db.VarChar(250)
   rg         String?   @db.VarChar(15)
+  cpf        String?   @db.VarChar(11)
   cnh        String?   @db.VarChar(20)
   nascimento DateTime? @db.Date
   sexo       String?   @db.VarChar(1)
   email      String?   @db.VarChar(100)
   telefone   String?   @db.VarChar(9)
-  cpf        String?   @db.VarChar(11)
   viagem     viagem[]
 }
 

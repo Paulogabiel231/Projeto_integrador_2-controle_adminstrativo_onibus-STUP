@@ -89,10 +89,9 @@ router.get("/editar/:id", async function (req, res, next) {
   }
 });
 
-router.put('/editar/:id', upload.single("foto"), async function (req, res, next) {
+router.put('/editar/:id', async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
-    const foto = req.file?.path;
     const { nome, carteira, usuario_id, cpf, rg, nascimento, tipo, sexo, email, telefone, saldo} = req.body;
     
     const clienteAtualizada = await prisma.cliente.update({
@@ -100,7 +99,6 @@ router.put('/editar/:id', upload.single("foto"), async function (req, res, next)
         id: id,
       },
       data: {
-        foto: foto,
         nome: nome,
         carteira: carteira,
         usuario_id: parseInt(usuario_id),
@@ -117,7 +115,6 @@ router.put('/editar/:id', upload.single("foto"), async function (req, res, next)
     res.json(clienteAtualizada);
   } catch (error){
     console.error(error);
-    console.log("deu erro porra");
     res.status(500).json({ error: 'Erro ao atualizar a cliente.' });
   }
 });

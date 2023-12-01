@@ -31,6 +31,7 @@ const MotoristasRouter = require('./routes/interface-adm/motoristas');
 const OnibusRouter = require('./routes/interface-adm/onibus');
 const authRouter = require("./routes/interface-adm/auth");
 const adminRouter = require("./routes/interface-adm/admin");
+const ScanRouter = require("./routes/interface-scan/scan");
 
 app.use('/api/linhas', LinhasRouter);
 app.use('/api/clientes', clientesRouter);
@@ -39,5 +40,6 @@ app.use('/api/motoristas', MotoristasRouter);
 app.use('/api/onibus', OnibusRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/admin", adminRouter);
+app.use("/api/scan", ScanRouter);
 
 module.exports = app;

@@ -70,25 +70,27 @@
           <div class="row d-flex justify-content-center pt-4">
             <img class="w-50" src="/images/icon-aproximar.svg" alt="" />
           </div>
-
-          <input type="text" name="leitor" id="leitor"  />
+          <form id="form" name="form">
+            <input type="text" name="leitor" id="leitor"  />
+          </form>
+          
 
         </div>
       </div>
     </div>
-
+    <script src="/js/js-scan/scan.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const leitor = document.querySelector("#leitor");
         leitor.focus();
       });
 
-
       const leitor = document.querySelector("#leitor");
       leitor.addEventListener("input", function() {
-        alert("RFID:" + leitor.value);
-        window.location.href = "/scan/true";       
+        alert("Código da Carteirinha " + leitor.value); 
+        form.reset();      
       });
     </script>
+    
   </body>
 </html>

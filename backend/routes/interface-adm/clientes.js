@@ -104,7 +104,7 @@ router.put('/editar/:id', async function (req, res, next) {
         usuario_id: parseInt(usuario_id),
         cpf: cpf,
         rg: rg,
-        nascimento: nascimento,
+        nascimento: new Date(nascimento),
         tipo: tipo,
         sexo: sexo,
         email: email,

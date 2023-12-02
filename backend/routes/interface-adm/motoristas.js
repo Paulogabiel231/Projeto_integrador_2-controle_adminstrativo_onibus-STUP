@@ -55,10 +55,31 @@ router.get("/visualizar/:id", async function (req, res, next) {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
-router.put("/editar/:id", async function (req, res, next) {
+
+router.get("/editar/:id", async function (req, res, next) {
+  const motoristaId = parseInt(req.params.id);
+  try {
+    const motorista = await prisma.motorista.findUnique({
+      where: {
+        id: motoristaId,
+      },
+    });
+
+    if (motorista) {
+      res.json(motorista);
+    } else {
+      res.status(404).json({ error: 'Motorista não encontrada' });
+    }
+  } catch (error) {
+    console.error('Erro ao buscar Motorista por ID:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+router.put('/editar/:id', async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
-    const { nome, foto } = req.body;
+    const { nome, cpf, rg, cnh, nascimento, sexo, email, telefone } = req.body;
 
     const motoristaAtualizada = await prisma.motorista.update({
       where: {
@@ -66,16 +87,20 @@ router.put("/editar/:id", async function (req, res, next) {
       },
       data: {
         nome: nome,
-        foto: foto,
-        
-        
+        cnh: cnh,
+        cpf: cpf,
+        rg: rg,
+        nascimento: new Date(nascimento),
+        sexo: sexo,
+        email: email,
+        telefone: telefone,
       },
     });
 
     res.json(motoristaAtualizada);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Erro ao atualizar a motorista." });
+    res.status(500).json({ error: 'Erro ao atualizar a motorista.' });
   }
 });
 

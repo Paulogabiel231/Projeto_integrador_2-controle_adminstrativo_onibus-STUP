@@ -190,10 +190,15 @@
 							<h3 class="panel-title">Cadastro Linha</h3>
 						</div>
 						<div class="panel-body">
-							<form action="" id="form-linha">
+							<form action="" id="form">
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Nome</span>
 									<input class="form-control" placeholder="" id="nome" name="nome" type="text">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Número</span>
+									<input class="form-control" placeholder="" id="numero" name="numero" type="text">
 								</div>
 								<br>
 								<div class="input-group">
@@ -218,44 +223,6 @@
 										type="number">
 								</div>
 								<br>
-								<!-- <div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Nome Inicial, <br>Local Inicial e <br> Trajeto</span>
-								<input class="form-control" placeholder="*Nome Inicial" type="text">
-								
-								<input class="form-control" placeholder="*Bairro Inicial" type="text">
-								<input class="form-control" placeholder="*Endereço Inicial" type="text">
-								<textarea class="form-control" placeholder="*Pontos de Ônibus no Trajeto (Bairro e Endereço de Cada Ponto)" rows="4"></textarea>
-							</div>
-							<br>
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Local de Primeira Parada e Saída, <br> Novo Trajeto e <br> Novo Nome </span>
-								<input class="form-control" placeholder="*Bairro" type="text">
-								<input class="form-control" placeholder="*Endereço" type="text">					
-								<textarea class="form-control" placeholder="*Novo Trajeto e seus Pontos de Ônibus (Bairro e Endereço de Cada Ponto)" rows="4"></textarea>								
-								<input class="form-control" placeholder="*Novo Nome" type="text">
-							</div>
-							<br>
-
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Local de Segunda Parada e Saída, <br> Novo Trajeto e <br> Novo Inicial </span>
-								<input class="form-control" placeholder="*Bairro" type="text">
-								<input class="form-control" placeholder="*Endereço" type="text">					
-								<textarea class="form-control" placeholder="*Novo Trajeto e seus Pontos de Ônibus (Bairro e Endereço de Cada Ponto)" rows="4"></textarea>								
-								<input class="form-control" placeholder="*Nome Inicial" type="text">
-							</div>
-							<br>
-							
-							<div class="input-group">
-								<span class="input-group-addon"><i class=""></i>*Local de Última Parada e <br> Último Trajeto  </span>
-								<input class="form-control" placeholder="*Bairro" type="text">
-								<input class="form-control" placeholder="*Endereço" type="text">					
-								<textarea class="form-control" placeholder="*Novo Trajeto e seus Pontos de Ônibus (Bairro e Endereço de Cada Ponto)" rows="4"></textarea>								
-								<input class="form-control" placeholder='Nome Final é "Garagem"' type="text" readonly>
-							</div>
-							<br>
-							<br> -->
-
-
 								<div class=""><input class="col text-left btn btn-primary" type="submit"></div>
 							</form>
 						</div>
@@ -280,18 +247,19 @@
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 					<script>
-						const form = document.querySelector('#form-linha');
+						const form = document.querySelector('#form');
 						form.addEventListener('submit', async (event) => {
 							event.preventDefault()
 
 							try {
 								const formData = new FormData(form);
 								const nome = document.querySelector("#nome").value;
+								const numero = document.querySelector("#numero").numero;
 								const origem = document.querySelector("#origem").value;
 								const destino = document.querySelector("#destino").value;
 								const horarioPartida = document.querySelector("#horarioPartida").value;
 								const duracao = document.querySelector("#duracao").value;
-								const data = { nome, origem, destino, horarioPartida, duracao };
+								const data = { nome, numero, origem, destino, horarioPartida, duracao };
 								console.log(data);
 								const response = await axios.post('http://localhost:3000/api/linhas/cadastrar', data);
 								const { linha } = response.data;

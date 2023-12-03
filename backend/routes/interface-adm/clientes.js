@@ -92,30 +92,38 @@ router.get("/editar/:id", async function (req, res, next) {
 router.put('/editar/:id', async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
-    const { nome, carteira, usuario_id, cpf, rg, nascimento, tipo, sexo, email, telefone, saldo} = req.body;
-    
+    const { nome, carteira, usuario_id, cpf, rg, nascimento, tipo, sexo, email, telefone, saldo } = req.body;
+
+    // Crie um objeto com os campos que serão atualizados
+    const dadosAtualizacao = {
+      nome: nome,
+      carteira: carteira,
+      usuario_id: parseInt(usuario_id),
+      cpf: cpf,
+      rg: rg,
+      tipo: tipo,
+      sexo: sexo,
+      email: email,
+      telefone: telefone,
+      saldo: parseFloat(saldo),
+    };
+
+    // Adicione o campo 'nascimento' ao objeto de atualização se estiver presente
+    if (nascimento) {
+      dadosAtualizacao.nascimento = new Date(nascimento);
+    }
+
     const clienteAtualizada = await prisma.cliente.update({
       where: {
         id: id,
       },
-      data: {
-        nome: nome,
-        carteira: carteira,
-        usuario_id: parseInt(usuario_id),
-        cpf: cpf,
-        rg: rg,
-        nascimento: new Date(nascimento),
-        tipo: tipo,
-        sexo: sexo,
-        email: email,
-        telefone: telefone,
-        saldo: parseFloat(saldo),
-      },
+      data: dadosAtualizacao,
     });
+
     res.json(clienteAtualizada);
-  } catch (error){
+  } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Erro ao atualizar a cliente.' });
+    res.status(500).json({ error: 'Erro ao atualizar o cliente.' });
   }
 });
 

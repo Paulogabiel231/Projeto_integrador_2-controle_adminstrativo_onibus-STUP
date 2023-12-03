@@ -42,11 +42,12 @@ router.get("/buscar/:id", async function (req, res, next) {
 
 router.post("/cadastrar", async (req, res, next) => {
   try {
-    const { nome, origem, destino, horarioPartida, duracao } = req.body;
+    const { nome, numero, origem, destino, horarioPartida, duracao } = req.body;
 
     const linha = await prisma.linha.create({
       data: {
         nome,
+        numero,
         origem,
         destino,
         horarioPartida: `1970-01-01T${horarioPartida}:00Z`,

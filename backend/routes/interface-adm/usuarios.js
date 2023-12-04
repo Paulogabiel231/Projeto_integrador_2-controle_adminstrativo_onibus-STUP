@@ -5,11 +5,15 @@ const upload = require("../../middlewares/fileUpload");
 const prisma = new PrismaClient();
 
 router.get("/listar", async function (req, res, next) {
-  const usuarios = await prisma.usuario.findMany();
+  const usuarios = await prisma.usuario.findMany({
+    orderBy: {
+      id: 'desc', // Isso ordenará pelos IDs de forma decrescente, você pode usar outro campo de data se preferir
+    },
+  });
   res.json(usuarios);
 });
 
-router.get("/buscar/:id", async function (req, res, next) {
+router.get("/visualizar/:id", async function (req, res, next) {
   const usuarioId = parseInt(req.params.id); 
 
   try {
@@ -52,23 +56,52 @@ router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
   }
 });
 
+router.get("/editar/:id", async function (req, res, next) {
+  const usuarioId = parseInt(req.params.id);
+  try {
+    const usuario = await prisma.usuario.findUnique({
+      where: {
+        id: usuarioId,
+      },
+    });
+
+    if (usuario) {
+      res.json(usuario);
+    } else {
+      res.status(404).json({ error: 'Usuário não encontrado' });
+    }
+  } catch (error) {
+    console.error('Erro ao buscar Usuário por ID:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
 router.put('/editar/:id', async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
-    const { nome, email, senha, token} = req.body;
-    
+    const { nome, cpf, rg, nascimento, sexo, email, telefone, senha } = req.body;
+
+    // Crie um objeto com os campos que serão atualizados
+    const dadosAtualizacao = {
+      nome: nome,
+      cpf: cpf,
+      rg: rg,
+      sexo: sexo,
+      email: email,
+      telefone: telefone,
+      senha: senha,
+   
+    };
+    // Adicione o campo 'nascimento' ao objeto de atualização se estiver presente
+    if (nascimento) {
+      dadosAtualizacao.nascimento = new Date(nascimento);
+    }
     const usuarioAtualizada = await prisma.usuario.update({
       where: {
         id: id,
       },
-      data: {
-        nome: nome,
-        email: email,
-        senha: senha,
-        token: token
-      },
+      data: dadosAtualizacao,
     });
-
     res.json(usuarioAtualizada);
   } catch (error) {
     console.error(error);
@@ -76,24 +109,6 @@ router.put('/editar/:id', async function (req, res, next) {
   }
 });
 
-router.delete("/excluir/:id", async function (req, res, next) {
-  try {
-    const id = parseInt(req.params.id);
-    const usuarioExcluida = await prisma.usuario.delete({
-      where: {
-        id: id,
-      },
-    });
 
-    if (usuarioExcluida) {
-      res.json({ message: "usuario excluído com sucesso." });
-    } else {
-      res.status(404).json({ error: "usuario não encontrado." });
-    }
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Erro ao excluir o usuario." });
-  }
-});
 
 module.exports = router;

@@ -198,7 +198,7 @@
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Número</span>
-									<input class="form-control" placeholder="" id="numero" name="numero" type="text">
+									<input class="form-control" placeholder="" id="numero" name="numero" type="number">
 								</div>
 								<br>
 								<div class="input-group">
@@ -246,31 +246,38 @@
 					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 					<script>
-						const form = document.querySelector('#form');
-						form.addEventListener('submit', async (event) => {
-							event.preventDefault()
+						document.addEventListener('DOMContentLoaded', () => {
 
-							try {
-								const formData = new FormData(form);
-								const nome = document.querySelector("#nome").value;
-								const numero = document.querySelector("#numero").numero;
-								const origem = document.querySelector("#origem").value;
-								const destino = document.querySelector("#destino").value;
-								const horarioPartida = document.querySelector("#horarioPartida").value;
-								const duracao = document.querySelector("#duracao").value;
-								const data = { nome, numero, origem, destino, horarioPartida, duracao };
-								console.log(data);
-								const response = await axios.post('http://localhost:3000/api/linhas/cadastrar', data);
-								const { linha } = response.data;
-								alert("Linha cadastrado com sucesso.");
-								form.reset();
 
-								//   window.location.href = `/motoristas/exibir/${motorista.id}`;
-							} catch (error) {
-								console.log(error);
-								alert(error.response.data.mensagem);
-							}
+							const form = document.querySelector('#form');
+							form.addEventListener('submit', async (event) => {
+								event.preventDefault()
+
+
+								try {
+									const formData = new FormData(form);
+									const data = {
+										nome: formData.get('nome'),
+										origem: formData.get('origem'),
+										numero: formData.get('numero'),
+										destino: formData.get('destino'),
+										horarioPartida: formData.get('horarioPartida'),
+										duracao: formData.get('duracao'),
+
+									};
+
+									const response = await axios.post('http://localhost:3000/api/linhas/cadastrar', data);
+									alert("Linha Cadastrada com Sucesso!")
+									window.location.href = `/adm/onibus/registro`;
+								} catch (error) {
+									console.error("Erro ao enviar requisição:", error);
+									alert("deu ruim");
+								}
+
+								// form.classList.add('was-validated')
+							}, false)
 						});
 					</script>
 					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>

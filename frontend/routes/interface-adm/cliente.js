@@ -1,6 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
+// ROTA INDEX
+router.get('/', function (req, res, next) {
+  res.sendFile('adm/index.html', { root: "views" });
+});
+
+// ROTA RECARGA
+router.get('/recarga', function (req, res, next) {
+  res.sendFile('adm/recarga.html', { root: "views" });
+});
+
+
+
+
 // ROTA CADASTRAR
 router.get('/cadastrar', function(req, res, next) {
   res.sendFile('adm/cliente/cadastro-cliente.html', { root: "views" });

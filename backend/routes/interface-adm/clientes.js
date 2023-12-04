@@ -39,7 +39,6 @@ router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
 
 
 router.get("/listar", async function (req, res, next) {
-  const clientesAtivos = await prisma.cliente.count();
   const clientes = await prisma.cliente.findMany({
     orderBy: {
       id: 'desc', // Isso ordenará pelos IDs de forma decrescente, você pode usar outro campo de data se preferir

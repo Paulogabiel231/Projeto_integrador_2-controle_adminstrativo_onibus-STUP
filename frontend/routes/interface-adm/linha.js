@@ -7,8 +7,16 @@ router.get('/cadastrar', function(req, res, next) {
 });
 
 // ROTA REGISTROS
-router.get('/registros', function(req, res, next) {
+router.get('/registro', function(req, res, next) {
     res.sendFile('adm/linhas/registro-linha.html', { root: "views" });
+});
+
+router.get('/editar/:id', function (req, res, next) {
+  res.sendFile('adm/linhas/editar-linha.html', { root: "views" });
+});
+
+router.get('/visualizar/:id', function (req, res, next) {
+  res.sendFile('adm/linhas/visualizar-linha.html', { root: "views" });
 });
 
 module.exports = router;

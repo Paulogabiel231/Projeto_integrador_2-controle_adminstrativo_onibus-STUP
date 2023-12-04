@@ -30,6 +30,7 @@ const AdmRouterUsuario = require('./routes/interface-adm/usuario');
 const AdmRouterMotorista = require('./routes/interface-adm/motorista');
 const AdmRouterOnibus = require('./routes/interface-adm/onibus');
 
+
 const ScanRouterAproximar = require('./routes/interface-scan/index');
 
 // app self

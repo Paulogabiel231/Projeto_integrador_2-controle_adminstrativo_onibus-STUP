@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 await axios.put(`http://localhost:3000/api/clientes/editar/${id}`, data);
 
                 alert("Cliente editado com sucesso!");
-                window.location.href = `/adm/cliente/registro`;
+                window.location.href = `/adm/cliente/visualizar/${id}`;
             } catch (error) {
                 console.log(error);
                 // alert(error.response.data.mensagem);

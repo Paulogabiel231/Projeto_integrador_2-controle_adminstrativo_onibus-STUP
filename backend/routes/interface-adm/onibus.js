@@ -6,11 +6,15 @@ const prisma = new PrismaClient();
 
 
 router.get("/listar", async function (req, res, next) {
-  const onibus = await prisma.onibus.findMany();
+  const onibus = await prisma.onibus.findMany({
+    orderBy: {
+      id: 'desc', // Isso ordenará pelos IDs de forma decrescente, você pode usar outro campo de data se preferir
+    },
+  });
   res.json(onibus);
 });
 
-router.get("/buscar/:id", async function (req, res, next) {
+router.get("/visualizar/:id", async function (req, res, next) {
   const onibusId = parseInt(req.params.id); 
 
   try {
@@ -48,24 +52,46 @@ router.post("/cadastrar", async (req, res, next) => {
   }
 });
 
+router.get("/editar/:id", async function (req, res, next) {
+  const onibusId = parseInt(req.params.id);
+  try {
+    const onibus = await prisma.onibus.findUnique({
+      where: {
+        id: onibusId,
+      },
+    });
+
+    if (onibus) {
+      res.json(onibus);
+    } else {
+      res.status(404).json({ error: 'onibus não encontrada' });
+    }
+  } catch (error) {
+    console.error('Erro ao buscar onibus por ID:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
 router.put('/editar/:id', async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
     const { placa } = req.body;
-    
-    const onibusAtualizada = await prisma.onibus.update({
+
+    // Crie um objeto com os campos que serão atualizados
+    const dadosAtualizacao = {
+      placa: placa,
+    };
+    const onibusAtualizado = await prisma.onibus.update({
       where: {
         id: id,
       },
-      data: {
-        placa: placa,
-      },
+      data: dadosAtualizacao,
     });
 
-    res.json(onibusAtualizada);
+    res.json(onibusAtualizado);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Erro ao atualizar a onibus.' });
+    res.status(500).json({ error: 'Erro ao atualizar o onibus.' });
   }
 });
 

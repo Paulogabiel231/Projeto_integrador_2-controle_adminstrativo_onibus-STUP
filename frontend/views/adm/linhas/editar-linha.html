@@ -187,18 +187,43 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Cadastro de Ônibus</h3>
+							<h3 class="panel-title">Editar Linha</h3>
 						</div>
 						<div class="panel-body">
-							<form id="form">
-								<br>
+							<form action="" id="form">
 								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Placa</span>
-									<input class="form-control" id="placa" name="placa" maxlength="7" type="text">
+									<span class="input-group-addon"><i class=""></i>*Nome</span>
+									<input class="form-control" placeholder="" id="nome" name="nome" type="text">
 								</div>
 								<br>
-								<input class="col text-left btn btn-primary" type="submit" name="submit">
-
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Número</span>
+									<input class="form-control" placeholder="" id="numero" name="numero" type="number">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Origem</span>
+									<input class="form-control" placeholder="" id="origem" name="origem" type="text">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Destino</span>
+									<input class="form-control" placeholder="" id="destino" name="destino" type="text">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Horário de partida</span>
+									<input class="form-control" placeholder="" id="horarioPartida" name="horarioPartida"
+										type="time">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Duração da partida</span>
+									<input class="form-control" placeholder="" id="duracao" name="duracao"
+										type="number">
+								</div>
+								<br>
+								<div class=""><input class="col text-left btn btn-primary" type="submit"></div>
 							</form>
 						</div>
 
@@ -206,7 +231,7 @@
 						<footer>
 							<div class="container-fluid">
 								<p class="copyright">&copy; 2023 <a href="#" target="_blank">STUP</a>.
-									Todos os Direitos Reservados</p>
+									Todos os Direitos Reservador</p>
 							</div>
 						</footer>
 					</div>
@@ -221,28 +246,8 @@
 					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-					<script>
-						<!-- Altere de #form-onibus para #form -->
-							const form = document.querySelector('#form');
-
-							form.addEventListener('submit', async (event) => {
-								try {
-									const formData = new FormData(form);
-									const placa = formData.get("placa");
-									const data = { placa };
-									console.log(data);
-									const response = await axios.post('http://localhost:3000/api/onibus/cadastrar', data);
-									const { onibus } = response.data;
-									alert("Ônibus cadastrado com Sucesso!");
-									window.location.href = `/adm/onibus/registro`;
-									form.reset();
-								} catch (error) {
-									console.log(error);
-									alert(error.response.data.mensagem);
-								}
-							});
-
-					</script>
+					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+					<script src="/js/js-adm/linhas/editar.js"></script>
 					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 </body>
 

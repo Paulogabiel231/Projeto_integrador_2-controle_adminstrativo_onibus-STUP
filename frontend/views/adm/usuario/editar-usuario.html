@@ -187,18 +187,67 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Cadastro de Ônibus</h3>
+							<h3 class="panel-title">Cadastro de Usuário</h3>
 						</div>
 						<div class="panel-body">
-							<form id="form">
-								<br>
+							<form id="form" novalidate enctype="multipart/form-data">
 								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Placa</span>
-									<input class="form-control" id="placa" name="placa" maxlength="7" type="text">
+									<span class="input-group-addon"><i class=""></i>*Foto 3x4</span>
+									<div class="col-4">
+										<p id="fotoPreview"></p>
+										<label class="form-label text-white " for="customFile1"></label>
+										<input type="file" class="form-control px-0" name="foto" id="foto" />
+									</div>
 								</div>
 								<br>
-								<input class="col text-left btn btn-primary" type="submit" name="submit">
-
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
+									<input class="form-control" id="nome" name="nome" type="text">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Data de Nascimento</span>
+									<input class="form-control" type="date" name="nascimento" id="nascimento">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*CPF</span>
+									<input class="form-control" name="cpf" id="cpf" type="text">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*RG</span>
+									<input class="form-control" name="rg" id="rg" type="text">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>Sexo:</span>
+									<select class="form-control" name="sexo" id="usoSelect">
+										<option value="" disabled selected hidden> Escolha:</option>
+										<option value="1">Masculino</option>
+										<option value="2">Feminino</option>
+										<option value="3">Outro</option>
+										<option value="4">Prefiro não responder</option>
+									</select>
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*E-mail</span>
+									<input class="form-control" id="email" name="email" type="text">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Telefone</span>
+									<input class="form-control" id="telefone" name="telefone" type="text">
+								</div>
+								<br>
+								<div class="input-group">
+									<span class="input-group-addon"><i class=""></i>*Senha</span>
+									<input class="form-control" id="senha" name="senha" type="password">
+								</div>
+								<br>
+								
+								<div class=""><input class="col text-left btn btn-primary" type="submit"></div>
 							</form>
 						</div>
 
@@ -221,29 +270,9 @@
 					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-					<script>
-						<!-- Altere de #form-onibus para #form -->
-							const form = document.querySelector('#form');
-
-							form.addEventListener('submit', async (event) => {
-								try {
-									const formData = new FormData(form);
-									const placa = formData.get("placa");
-									const data = { placa };
-									console.log(data);
-									const response = await axios.post('http://localhost:3000/api/onibus/cadastrar', data);
-									const { onibus } = response.data;
-									alert("Ônibus cadastrado com Sucesso!");
-									window.location.href = `/adm/onibus/registro`;
-									form.reset();
-								} catch (error) {
-									console.log(error);
-									alert(error.response.data.mensagem);
-								}
-							});
-
-					</script>
+					<script src="/js/js-adm/usuarios/editar.js"></script>
 					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

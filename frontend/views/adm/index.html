@@ -194,10 +194,10 @@
 								<div class="row">
 									<div class="col-md-4">
 										<div class="metric">
-											<a href="">
+											<a href="/adm/cliente/registro">
 												<span class="icon"><i class="fa fa-user"></i></span>
 												<p>
-													<span class="number">540</span>
+													<span class="number" id="clientesCount">0</span>
 													<span class="title">Clientes STUP</span>
 												</p>
 											</a>
@@ -205,25 +205,24 @@
 									</div>
 									<div class="col-md-4">
 										<div class="metric">
-											<a href="">
+											<a href="/adm/motorista/registro">
 												<span class="icon"><i class="fa fa-credit-card"></i></span>
 												<p>
-													<span class="number">126</span>
-													<span class="title">Motoristas Cadastrados </span>
+													<span class="number" id="motoristasCount">0</span>
+													<span class="title">Motoristas Cadastrados</span>
 												</p>
 											</a>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="metric">
-											<a href="">
+											<a href="/adm/linhas/registro">
 												<span class="icon"><i class="fa fa-bar-chart"></i></span>
 												<p>
-													<span class="number">10</span>
+													<span class="number" id="linhasCount">0</span>
 													<span class="title">Linhas Cadastradas</span>
 												</p>
 											</a>
-
 										</div>
 									</div>
 								</div>
@@ -493,6 +492,9 @@
 	<script src="/css/css-adm/template/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 	<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="/js/js-adm/index.js"></script>
+	<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 	<script>
 		$(function () {
 			var data, options;
@@ -501,7 +503,7 @@
 			data = {
 				labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'],
 				series: [
-					[111, 25, 18, 34, 29, 38, 44, 99],
+					[111, 25, 18, 34, 29, 38, 44, 1199],
 				]
 			};
 
@@ -610,7 +612,7 @@
 
 		});
 	</script>
-	<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

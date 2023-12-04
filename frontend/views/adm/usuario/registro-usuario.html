@@ -49,7 +49,7 @@
 						<li><a href="/adm" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="/adm/recarga" class=""><i class="lnr lnr-cart"></i> <span>Recarga</span></a></li>
 						<li>
-							<a href="#cadastros" data-toggle="collapse" class="collapsed active"><i
+							<a href="#cadastros" data-toggle="collapse" class="collapsed"><i
 									class="lnr lnr-file-empty"></i>
 								<span>Cadastros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="cadastros" class="collapse ">
@@ -91,7 +91,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="#registros" data-toggle="collapse" class="collapsed"><i
+							<a href="#registros" data-toggle="collapse" class="collapsed active"><i
 									class="lnr lnr lnr-pencil"></i>
 								<span>Registros</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="registros" class="collapse ">
@@ -104,7 +104,8 @@
 										</a>
 									</li>
 									<li>
-										<a href="/adm/motorista/registro" class=""><i class="fa-solid fa-id-card"></i>
+										<a href="/adm/motorista/registro" class="active"><i
+												class="fa-solid fa-id-card"></i>
 											<span>
 												Motorista
 											</span>
@@ -187,28 +188,48 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Cadastro de Ônibus</h3>
+							<h3 class="panel-title">Registro de Usuários</h3>
 						</div>
-						<div class="panel-body">
-							<form id="form">
-								<br>
-								<div class="input-group">
-									<span class="input-group-addon"><i class=""></i>*Placa</span>
-									<input class="form-control" id="placa" name="placa" maxlength="7" type="text">
-								</div>
-								<br>
-								<input class="col text-left btn btn-primary" type="submit" name="submit">
-
-							</form>
-						</div>
-
-						<div class="clearfix"></div>
-						<footer>
-							<div class="container-fluid">
-								<p class="copyright">&copy; 2023 <a href="#" target="_blank">STUP</a>.
-									Todos os Direitos Reservados</p>
+						<div class="row style=" style="margin-left: 1%;">
+							<div class="col-md-1 text-left">
+								<a href="/adm/usuario/cadastrar" class="btn btn-primary ">Novo
+									<i class="fa-solid fa-id-card" style="padding-left: 5px;"></i>
+								</a>
 							</div>
-						</footer>
+							<div class="col-md-6" style="margin-left: 4%;">
+								<div class="input-group">
+									<input id="inputNome" type="text" value="" class="form-control"
+										placeholder="Buscar Motorista por Nome">
+									<span  class="input-group-btn" >
+										<button id="btnBuscar" type="button" class="btn btn-primary">Buscar</button>
+									</span>
+									<span class="input-group-btn">
+										<button id="btnResetar" type="button" class="btn btn-primary" style="margin-left: 4%;">Resetar</button>
+									</span>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<!-- END RECENT PURCHASES -->
+							<div class="col-md-12">
+								<!-- RECENT PURCHASES -->
+								<div class="panel">
+									<table id="usuarios" class="table table-hover">
+										<thead>
+											<th>ID</th>
+											<th>Foto</th>
+											<th>Nome</th>
+											<th>CPF</th>
+											<th>E-mail</th>
+											<th>Opções</th>
+										</thead>
+										<tbody> </tbody>
+									</table>
+								</div>
+								<!-- END RECENT PURCHASES -->
+							</div>
+						</div>
 					</div>
 					<!-- END WRAPPER -->
 					<!-- Javascript -->
@@ -221,28 +242,7 @@
 					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-					<script>
-						<!-- Altere de #form-onibus para #form -->
-							const form = document.querySelector('#form');
-
-							form.addEventListener('submit', async (event) => {
-								try {
-									const formData = new FormData(form);
-									const placa = formData.get("placa");
-									const data = { placa };
-									console.log(data);
-									const response = await axios.post('http://localhost:3000/api/onibus/cadastrar', data);
-									const { onibus } = response.data;
-									alert("Ônibus cadastrado com Sucesso!");
-									window.location.href = `/adm/onibus/registro`;
-									form.reset();
-								} catch (error) {
-									console.log(error);
-									alert(error.response.data.mensagem);
-								}
-							});
-
-					</script>
+					<script src="/js/js-adm/usuarios/listar.js"></script>
 					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 </body>
 

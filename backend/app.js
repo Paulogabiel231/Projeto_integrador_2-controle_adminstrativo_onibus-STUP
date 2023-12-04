@@ -32,8 +32,10 @@ const OnibusRouter = require('./routes/interface-adm/onibus');
 const authRouter = require("./routes/interface-adm/auth");
 const adminRouter = require("./routes/interface-adm/admin");
 const ScanRouter = require("./routes/interface-scan/scan");
+const IndexRouter = require("./routes/interface-adm/index")
 
 app.use('/api/linhas', LinhasRouter);
+app.use('/api/index', IndexRouter);
 app.use('/api/clientes', clientesRouter);
 app.use('/api/usuarios', UsuariosRouter);
 app.use('/api/motoristas', MotoristasRouter);

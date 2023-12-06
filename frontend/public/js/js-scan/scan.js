@@ -1,3 +1,4 @@
+
 leitor.addEventListener("input", async function () {
     const codigoCartao = leitor.value.trim();
   

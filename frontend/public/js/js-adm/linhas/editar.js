@@ -27,23 +27,20 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         alert("Erro ao puxar os dados das linhas");
     }
 
-    const form = document.querySelector("#form");
-
-    form.addEventListener("submit", async (event) => {
+    form.addEventListener('submit', async (event) => {
         event.preventDefault();
-        //coleta dos dados do form
-        const numero = document.querySelector("#numero").value;
-        const nome = document.querySelector("#nome").value;
-        const duracao = parseInt(document.querySelector("#duracao").value);  
-        const origem = document.querySelector("#origem").value;
-        const destino = document.querySelector("#destino").value;
-        let horarioPartida = document.querySelector("#horarioPartida").value;
-        horarioPartida = `0001-01-01T${horarioPartida}:00.000Z`
-
-        const data = { nome, numero, duracao, horarioPartida, origem, destino };
-
         try {
-            const response = await axios.put(`http://localhost:3000/api/linhas/editar/${urlId}`, data);
+            const numero = document.querySelector("#numero").value;
+            const nome = document.querySelector("#nome").value;
+            const duracao = parseInt(document.querySelector("#duracao").value);
+            const origem = document.querySelector("#origem").value;
+            const destino = document.querySelector("#destino").value;
+            let horarioPartida = document.querySelector("#horarioPartida").value;
+            horarioPartida = `0001-01-01T${horarioPartida}:00.000Z`
+
+            const data = { nome, numero, duracao, horarioPartida, origem, destino };
+
+            await axios.put(`http://localhost:3000/api/linhas/editar/${urlId}`, data);
 
             alert("Linha editada com Sucesso!")
             window.location.href = `/adm/linha/visualizar/${urlId}`;

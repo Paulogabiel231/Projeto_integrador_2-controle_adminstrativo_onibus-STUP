@@ -291,25 +291,6 @@
 					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-					<!-- <script>
-						const form = document.querySelector('#form-cliente');
-						form.addEventListener('submit', async (event) => {
-							try {
-								const formData = new FormData(form);
-								const response = await axios.post('http://localhost:3000/api/clientes/cadastrar', formData, {
-									headers: {
-										'Content-Type': 'multipart/form-data'
-									}
-								})
-								alert("Cliente Cadastrado com Sucesso!");
-								form.reset();
-								window.location.href = `/adm/cliente/registro`;
-							} catch (error) {
-								console.log(error);
-								alert(error.response.data.mensagem);
-							}
-						});
-					</script> -->
 					<script>
 						const form = document.querySelector('#form-cliente');
 						form.addEventListener('submit', async (event) => {
@@ -321,8 +302,9 @@
 										'Content-Type': 'multipart/form-data'
 									}
 								});
+								alert("Cliente cadastrado com sucesso!");
 								const { cliente } = response.data;
-								alert("Cliente cadastrado com sucesso.");
+								
 								form.reset();
 								window.location.href = `/adm/cliente/registro`;
 

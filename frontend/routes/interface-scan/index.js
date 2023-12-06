@@ -9,6 +9,14 @@ router.get("/true", function (req, res, next) {
     res.sendFile("scan/true.html", { root: "views" });
 });
 
+router.get("/true/isento", function (req, res, next) {
+    res.sendFile("scan/true-isento.html", { root: "views" });
+});
+
+router.get("/true/meia", function (req, res, next) {
+    res.sendFile("scan/true-meia.html", { root: "views" });
+});
+
 router.get("/false", function (req, res, next) {
     res.sendFile("scan/false.html", { root: "views" });
 });

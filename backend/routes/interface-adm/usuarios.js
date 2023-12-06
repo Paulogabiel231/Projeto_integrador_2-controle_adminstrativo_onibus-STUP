@@ -47,7 +47,8 @@ router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
     const foto = req.file?.path;
     console.log(req.body);
     const data = { nome, email, senha, foto, cpf, rg, nascimento, telefone, sexo};
-    console.log(data);;
+    console.log(data);
+    
     const usuario = await prisma.usuario.create({ data });
     res.json(usuario);
   } catch (error) {

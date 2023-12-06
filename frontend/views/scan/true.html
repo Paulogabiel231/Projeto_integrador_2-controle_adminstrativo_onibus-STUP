@@ -33,7 +33,7 @@
                     <img style="width: 100%;" src="/images/icon-black-arrow.svg" alt="">
                 </div>
                 <div class="row d-flex justify-content-center text-center pt-4">
-                    <h1 class="fw-bold text-dark text-uppercase" style="font-size: 26px;"> Tarifa R$ 2.30</h1>
+                    <h1 class="fw-bold text-dark text-uppercase" style="font-size: 26px;"> Tarifa R$ 5.00</h1>
                 </div>
                 <div class="row d-flex justify-content-center text-center pt-2">
                     <h1 class="fw-bold text-dark text-uppercase" style="font-size: 26px;"> Restam R$ 20.30</h1>
@@ -54,6 +54,35 @@
         </div>
     </div>
 
+    <script>
+        const obterParametroDaUrl = (nome) => {
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            return urlSearchParams.get(nome);
+        };
+
+        // Função para exibir a mensagem e redirecionar após 5 segundos
+        const exibirMensagemEAgendarRedirecionamento = () => {
+            const causa = obterParametroDaUrl("causa");
+            const mensagemParagrafo = document.getElementById("mensagem");
+
+            // Exibir mensagem com base na causa
+            if (causa === "cliente-nao-encontrado") {
+                mensagemParagrafo.innerText = "Cliente não encontrado.";
+            } else if (causa === "saldo-insuficiente") {
+                mensagemParagrafo.innerText = "Saldo insuficiente.";
+            } else if (causa === "saldo-insuficiente") {
+                mensagemParagrafo.innerText = "Pass";
+            }
+
+            // Agendar redirecionamento após 5 segundos
+            setTimeout(() => {
+                window.location.href = "http://localhost:3001/scan";
+            }, 3000);
+        };
+
+        exibirMensagemEAgendarRedirecionamento();
+
+    </script>
 
 </body>
 

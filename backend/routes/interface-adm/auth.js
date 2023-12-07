@@ -6,32 +6,31 @@ const jwt = require("jsonwebtoken");
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-router.post("/entrar", async function (req, res, next) {
-  const { email, senha } = req.body;
+router.post('/entrar', async (req, res) => {
+  const cpf = req.body.cpf;
+  const nascimento = req.body.nascimento;
 
   try {
-    const user = await prisma.usuario.findFirst({
+    const cliente = await prisma.cliente.findFirst({
       where: {
-        email: email
-      }
+        cpf: cpf,
+      },
     });
 
-    if (!user) {
-      return res.status(401).json({ mensagem: "E-mail não encontrado." });
+    // Verificar se o usuário existe e a senha está correta
+    if (cliente.nascimento.toISOString().split('T')[0] != nascimento) {
+      return res.status(401).json({ error: 'Credenciais inválidas' });
     }
 
-    const passwordIsValid = await bcrypt.compare(senha, user.senha);
-    if (!passwordIsValid) {
-      return res.status(401).json({ mensagem: "Senha inválida." });
-    }
+    // Gerar token JWT
+    const token = jwt.sign({ clienteId: cliente.id }, 'seuSegredoSuperSecreto', {
+      expiresIn: '1h', // Expira em 1 hora, ajuste conforme necessário
+    });
 
-    const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY, { expiresIn: 86400 });
-
-    res.status(200).json({ mensagem: "Login realizado com sucesso.", token: token });
+    res.json({ token });
   } catch (error) {
-    console.error('Ocorreu um erro ao realizar o login: ', error);
-
-    res.status(500).json({ mensagem: "Não foi possível realizar o login do usuário." });
+    console.error('Erro durante o login:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
 

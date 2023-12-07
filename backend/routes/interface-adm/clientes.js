@@ -30,8 +30,6 @@ router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
       usuario_id, nascimento
     };
 
-    // data.senha = data.nascimento
-
     const cliente = await prisma.cliente.create({ data: data });
 
     res.json(cliente)

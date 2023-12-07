@@ -22,6 +22,7 @@ const SelfRouterCentralAjuda = require('./routes/interface-self/central-ajuda');
 const SelfRouterEmpresas = require('./routes/interface-self/empresas');
 const SelfRouterIndex = require('./routes/interface-self/index');
 const SelfRouterLogin = require('./routes/interface-self/login');
+const SelfRouterConsultaRecarga = require('./routes/interface-self/consulta-recarga');
 // rotas adm
 const AdmRouterIndex = require('./routes/interface-adm/index');
 const AdmRouterCliente = require('./routes/interface-adm/cliente');
@@ -41,6 +42,7 @@ app.use('/central-ajuda', SelfRouterCentralAjuda);
 app.use('/empresas', SelfRouterEmpresas);
 app.use('/', SelfRouterIndex);
 app.use('/login', SelfRouterLogin);
+app.use('/consulta-recarga', SelfRouterConsultaRecarga);
 
 // app scan
 app.use('/scan', ScanRouterAproximar);

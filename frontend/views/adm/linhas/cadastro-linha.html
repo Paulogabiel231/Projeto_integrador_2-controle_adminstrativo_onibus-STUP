@@ -270,7 +270,7 @@
 
 									const response = await axios.post('http://localhost:3000/api/linhas/cadastrar', data);
 									alert("Linha Cadastrada com Sucesso!")
-									window.location.href = `/adm/onibus/registro`;
+									window.location.href = `/adm/linha/registro`;
 								} catch (error) {
 									console.error("Erro ao enviar requisição:", error);
 									alert("deu ruim");

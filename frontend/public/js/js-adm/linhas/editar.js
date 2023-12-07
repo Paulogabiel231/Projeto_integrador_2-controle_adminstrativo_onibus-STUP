@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         alert("Erro ao puxar os dados das linhas");
     }
 
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
+    form.addEventListener('submit', async () => {
         try {
             const numero = document.querySelector("#numero").value;
             const nome = document.querySelector("#nome").value;

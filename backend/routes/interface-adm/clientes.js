@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
   try {
     console.log(req.body);
-    
+
     const nome = req.body.nome;
     const cpf = req.body.cpf;
     const rg = req.body.rg;
@@ -30,7 +30,11 @@ router.post("/cadastrar", upload.single("foto"), async (req, res, next) => {
       usuario_id, nascimento
     };
 
-    const cliente = await prisma.cliente.create({ data });
+    // data.senha = data.nascimento
+
+    const cliente = await prisma.cliente.create({ data: data });
+
+    res.json(cliente)
   } catch (error) {
     console.error(error);
     res.status(500).json({ mensagem: "Não foi possível realizar o cadastro do Cliente." });
@@ -48,7 +52,7 @@ router.get("/listar", async function (req, res, next) {
 });
 
 router.get("/visualizar/:id", async function (req, res, next) {
-  const clienteId = parseInt(req.params.id); 
+  const clienteId = parseInt(req.params.id);
 
   try {
     const cliente = await prisma.cliente.findUnique({
@@ -69,7 +73,7 @@ router.get("/visualizar/:id", async function (req, res, next) {
 });
 
 router.get("/editar/:id", async function (req, res, next) {
-  const clienteId = parseInt(req.params.id); 
+  const clienteId = parseInt(req.params.id);
   try {
     const cliente = await prisma.cliente.findUnique({
       where: {
@@ -224,80 +228,138 @@ router.put('/tirarsaldo', async (req, res) => {
 
 
 
-router.post('/liberar', async (req, res, next) => {
-  const clienteId = req.body.clienteId; // Mantenha como string
-  console.log(req.body);
-  console.log(clienteId);
+// router.post('/liberar', async (req, res, next) => {
+//   const clienteId = req.body.clienteId; // Mantenha como string
+//   console.log(req.body);
+//   console.log(clienteId);
+//   try {
+//     // Use uma transação Prisma para garantir atomicidade
+//     const novoEmbarque = await prisma.$transaction(async (prisma) => {
+//       // Consulte a tabela cliente para obter informações sobre a isenção e o saldo
+//       const cliente = await prisma.cliente.findUnique({
+//         where: { carteira: clienteId },
+//       });
+//       // Verifique se o cliente existe
+//       if (!cliente) {
+//         throw new Error('Cliente não encontrado');
+//       }
+
+//       console.log(cliente);
+
+//       let valorDaPassagem = 5;  // Valor padrão da passagem
+
+//       if (cliente.tipo === null) {
+//         return res.status(404).json({ error: 'Cliente não encontrado' });
+//       }
+//       else if (cliente.tipo === "1") { // comum
+//         valorDaPassagem = 5;
+//         if (cliente.saldo < valorDaPassagem) {
+//           throw new Error('Saldo insuficiente');
+//         }
+//         const tirarSaldo = await prisma.cliente.update({
+//           where: { carteira: clienteId }, // Atualize pelo campo correto
+//           data: {
+//             saldo: {
+//               decrement: valorDaPassagem,
+//             },
+//           },
+//         }) 
+//         return res.status.json(tirarSaldo)
+//       }
+//       else if (cliente.tipo === "2" && cliente.tipo === "3" &&
+//       cliente.tipo === "4" && cliente.tipo === "5") { 
+//         valorDaPassagem = 2.5;
+//         if (cliente.saldo < valorDaPassagem) {
+//           throw new Error('Saldo insuficiente');
+//         }
+//         const tirarSaldo = await prisma.cliente.update({
+//           where: { carteira: clienteId }, // Atualize pelo campo correto
+//           data: {
+//             saldo: {
+//               decrement: valorDaPassagem,
+//             },
+//           },
+//         }) 
+//         return res.status.json(tirarSaldo)
+//       }
+
+//       // Verifique se o cliente tem saldo suficiente
+
+
+//       // Execute a inserção no banco de dados usando Prisma
+//       const embarque = await prisma.embarque.create({
+//         data: {
+//           cliente_id: cliente.id,
+//           tarifa: valorDaPassagem
+//         },
+//       });
+
+//       // Atualize o saldo do cliente se necessário usando decrement
+
+
+//       return embarque;
+//     });
+
+//     // Envie uma resposta de sucesso
+//     res.status(201).json({ message: 'Embarque cadastrado com sucesso!', embarque: novoEmbarque });
+//   } catch (error) {
+//     console.log('Erro ao cadastrar embarque:', error);
+//     if (error.message === 'Cliente não encontrado') {
+//       return res.status(404).json({ error: 'Cliente não encontrado' });
+//     } else if (error.message === 'Saldo insuficiente') {
+//       return res.status(402).json({ error: 'Saldo insuficiente' }); // 402 Payment Required
+//     } else {
+//       // return res.status(500).json({ error: 'Erro interno do servidor' });
+//     }
+//   }
+// });
+
+router.post('/liberar', async (req, res) => {
+  const codCartao = req.body.clienteId;
+  console.log(req.body)
+  let tarifa = 5
+
   try {
-    // Use uma transação Prisma para garantir atomicidade
-    const novoEmbarque = await prisma.$transaction(async (prisma) => {
-      // Consulte a tabela cliente para obter informações sobre a isenção e o saldo
-      const cliente = await prisma.cliente.findUnique({
-        where: { carteira: clienteId },
-      });
-      // Verifique se o cliente existe
-      if (!cliente) {
-        throw new Error('Cliente não encontrado');
+    const cliente = await prisma.cliente.findUnique({
+      where: {
+        carteira: codCartao
       }
-
-      console.log(cliente);
-      
-      let valorDaPassagem = 5;  // Valor padrão da passagem
-
-      if (cliente.tipo === null) {
-        res.status(404).json({ error: 'Cliente não encontrado' });
-      }
-      else if (cliente.tipo === "1") { // comum
-        valorDaPassagem = 5;
-      }
-      else if (cliente.tipo === "2" && cliente.tipo === "5") { // estudante
-        valorDaPassagem = 2.5;
-      } else { // idoso=3, pcd=4
-        valorDaPassagem = 0;
-      }
-
-      const isento = cliente.tipo === "3" || cliente.tipo === "4";
-
-      // Verifique se o cliente tem saldo suficiente
-      if (!isento && cliente.saldo < valorDaPassagem) {
-        throw new Error('Saldo insuficiente');
-      }
-
-      // Execute a inserção no banco de dados usando Prisma
-      const embarque = await prisma.embarque.create({
-        data: {
-          cliente_id: cliente.id,
-          tarifa: valorDaPassagem
-        },
-      });
-
-      // Atualize o saldo do cliente se necessário usando decrement
-      if (!isento) {
-        await prisma.cliente.update({
-          where: { carteira: clienteId }, // Atualize pelo campo correto
-          data: {
-            saldo: {
-              decrement: valorDaPassagem,
-            },
-          },
-        });
-      }
-
-      return embarque;
     });
 
-    // Envie uma resposta de sucesso
-    res.status(201).json({ message: 'Embarque cadastrado com sucesso!', embarque: novoEmbarque });
-  } catch (error) {
-    console.error('Erro ao cadastrar embarque:', error);
-    if (error.message === 'Cliente não encontrado') {
-      res.status(404).json({ error: 'Cliente não encontrado' });
-    } else if (error.message === 'Saldo insuficiente') {
-      res.status(402).json({ error: 'Saldo insuficiente' }); // 402 Payment Required
-    } else {
-      res.status(500).json({ error: 'Erro interno do servidor' });
+    console.log(cliente.tipo);
+
+    if (cliente.tipo == '2' || cliente.tipo == '3' || cliente.tipo == '4' || cliente.tipo == '5') {
+      tarifa = 2.5
     }
+
+    if (cliente.saldo < tarifa) {
+      return res.status(402).json({
+        message: "saldo insuficiente"
+      })
+    }
+
+    const novoCliente = await prisma.cliente.update({
+      data: {
+        saldo: { decrement: tarifa }
+      },
+      where: {
+        carteira: codCartao
+      }
+    });
+
+    console.log(cliente.saldo);
+    res.status(200).json({
+      tarifa: tarifa,
+      id: cliente.id,
+      tipo: cliente.tipo
+    })
+
+  } catch (exception) {
+    console.log(exception)
+    res.status(400).json({
+      error: error.message
+    })
   }
-});
+})
 
 module.exports = router;

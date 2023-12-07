@@ -64,8 +64,9 @@
           <img class="w-50" src="/images/icon-aproximar.svg" alt="" />
         </div>
         <form id="form" name="form">
-          <input type="text" name="clienteId" id="clienteId" placeholder="Informar o código do cartão."
-            onchange="lerCartao()">
+          <input type="text" name="clienteId" id="clienteId" placeholder="Informar o código do cartão.">
+          <br>
+          <button type="submit" style="visibility: hidden;">enviar</button>
         </form>
 
 
@@ -74,7 +75,16 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
-    const lerCartao = async () => {
+    
+
+    const inputClienteId = document.querySelector("#clienteId");
+    inputClienteId.focus();
+
+    const form = document.querySelector('#form');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+
       try {
         // Obtenha o valor do input
         const clienteId = inputClienteId.value;
@@ -85,10 +95,15 @@
         console.log(data);
         const response = await axios.post(url, data);
 
-        console.log(response.data);
+        const tarifa = response.data.tarifa
+        const id = response.data.id
 
-        // Se a solicitação for bem-sucedida, redirecione para a página de sucesso
-        window.location.href = "http://localhost:3001/scan/true";
+        if (tarifa == 2.5){
+          window.location.href = `http://localhost:3001/scan/true/meia/${id}`;
+        } else {
+          window.location.href = `http://localhost:3001/scan/true/${id}`;
+        }
+        
       } catch (error) {
         console.error("Erro ao cadastrar embarque:", error);
         inputClienteId.style.borderColor = "red";
@@ -98,16 +113,14 @@
           window.location.href = "http://localhost:3001/scan/undefined";
         } else if (error.response && error.response.status === 402) {
           // Se o erro for relacionado a saldo insuficiente, redirecione para a página de aviso indicando a causa
-          window.location.href = "http://localhost:3000/scan/false";
+          window.location.href = "http://localhost:3001/scan/false";
         } else {
           // Para outros erros, redirecione para a página de erro
           window.location.href = "http://localhost:3001/scan/undefined";
         }
       }
-    };
+    });
 
-    const inputClienteId = document.querySelector("#clienteId");
-    inputClienteId.focus();
   </script>
 
 </body>

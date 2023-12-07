@@ -31,15 +31,15 @@
                 </div>
                 <div class="row d-flex justify-content-center pt-3">
                     <img style="width: 100%;" src="/images/icon-black-arrow.svg" alt="">
+                </div> <br>
+                <div class="row d-flex justify-content-center text-center pt-2">
+                    <h1 class="fw-bold text-dark text-uppercase" style="font-size: 32px;"><var id="tipo"></var></h1> 
                 </div>
                 <div class="row d-flex justify-content-center text-center pt-4">
-                    <h1 class="fw-bold text-dark text-uppercase" style="font-size: 26px;"> Tarifa R$ 2.50</h1>
+                    <h1 class="fw-bold text-dark text-uppercase" style="font-size: 26px;"> Tarifa R$ -2.50</h1>
                 </div>
                 <div class="row d-flex justify-content-center text-center pt-2">
-                    <h1 class="fw-bold text-dark text-uppercase" style="font-size: 26px;"> Restam R$ 20.30</h1>
-                </div>
-                <div class="row d-flex justify-content-center text-center pt-2">
-                    <h1 class="fw-bold text-dark text-uppercase" style="font-size: 26px;"> Total R$ 20.30</h1>
+                    <h1 class="fw-bold text-dark text-uppercase" style="font-size: 26px;"> Restam R$ <var id="saldo"></var></h1>
                 </div>
                 <div class="row d-flex justify-content-center text-center pt-5">
                     <h1 class="fw-bold text-dark text-uppercase" style="font-size: 16px;"> Volte sempre!</h1>
@@ -53,7 +53,7 @@
 
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         const obterParametroDaUrl = (nome) => {
             const urlSearchParams = new URLSearchParams(window.location.search);
@@ -74,13 +74,39 @@
                 mensagemParagrafo.innerText = "Pass";
             }
 
-            // Agendar redirecionamento após 5 segundos
             setTimeout(() => {
                 window.location.href = "http://localhost:3001/scan";
-            }, 3000);
+            }, 5000);
         };
 
         exibirMensagemEAgendarRedirecionamento();
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const saldo = document.querySelector('#saldo');
+            const tipo = document.querySelector('#tipo');
+            const id = window.location.href.split('/').pop()
+            let tipoMensagem;
+
+            try {
+                var response = await axios.get(`http://localhost:3000/api/clientes/visualizar/${id}`)
+                const carteiraTipo = response.data.tipo
+                saldo.innerHTML = response.data.saldo
+                
+                if (carteiraTipo == 2) {
+                    tipoMensagem = 'Estudante'
+                } else if (carteiraTipo == 3) {
+                    tipoMensagem = 'Idoso'
+                } else if (carteiraTipo == 4) {
+                    tipoMensagem = 'PCDs'
+                } else if (carteiraTipo == 5) {
+                    tipoMensagem = 'Vale Transporte'
+                }
+
+                tipo.innerHTML = tipoMensagem
+            } catch (error) {
+                console.log(error)
+            }
+        })
 
     </script>
 

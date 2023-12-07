@@ -5,15 +5,11 @@ router.get("/", function (req, res, next) {
     res.sendFile("scan/index.html", { root: "views" });
 });
 
-router.get("/true", function (req, res, next) {
+router.get("/true/:id", function (req, res, next) {
     res.sendFile("scan/true.html", { root: "views" });
 });
 
-router.get("/true/isento", function (req, res, next) {
-    res.sendFile("scan/true-isento.html", { root: "views" });
-});
-
-router.get("/true/meia", function (req, res, next) {
+router.get("/true/meia/:id", function (req, res, next) {
     res.sendFile("scan/true-meia.html", { root: "views" });
 });
 

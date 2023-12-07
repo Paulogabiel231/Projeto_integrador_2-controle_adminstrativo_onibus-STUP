@@ -15,7 +15,7 @@ add column  telefone	varchar(9);
 alter table cliente
 add column  foto        varchar(200),
 add column  rg          varchar(200),
-add column  carteira    varchar(10),
+add column  carteira    varchar(15) unique not null,
 add column  tipo        varchar(1),
 add column  sexo        varchar(1),
 add column  telefone    varchar(9),

@@ -19,4 +19,9 @@ router.get('/visualizar/:id', function (req, res, next) {
   res.sendFile('adm/usuario/visualizar-usuario.html', { root: "views" });
 });
 
+// ROTA ENTRAR 
+router.get('/login', function(req, res, next) {
+  res.sendFile('adm/auth/login.html', { root: "views" });
+});
+
 module.exports = router;

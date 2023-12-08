@@ -291,31 +291,8 @@
 					<script src="/css/css-adm/template/assets/vendor/chartist/js/chartist.min.js"></script>
 					<script src="/css/css-adm/template/assets/scripts/klorofil-common.js"></script>
 					<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-					<script>
-						const form = document.querySelector('#form-cliente');
-						form.addEventListener('submit', async (event) => {
-							event.preventDefault()
-							try {
-								const formData = new FormData(form);
-								const response = await axios.post('http://localhost:3000/api/clientes/cadastrar', formData, {
-									headers: {
-										'Content-Type': 'multipart/form-data'
-									}
-								});
-								alert("Cliente cadastrado com sucesso!");
-								const { cliente } = response.data;
-								
-								form.reset();
-								window.location.href = `/adm/cliente/registro`;
-
-							} catch (error) {
-								console.log(error);
-								alert(error.response.data.mensagem);
-							}
-						});
-
-
-					</script>
+					<script src="/js/js-adm/usuarios/token.js"></script>
+					<script src="/js/js-adm/clientes/cadastrar.js"></script>
 					<script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 </body>
 

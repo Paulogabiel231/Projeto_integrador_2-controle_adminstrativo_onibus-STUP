@@ -117,7 +117,7 @@
       <div class="row text-center">
         <h2 class="text-primary fs-2 fw-bold">PASSES DISPONÍVEIS:</h2>
         <div class="d-flex justify-content-center align-items-center mt-2">
-          <button class="btn btn-primary fw-bold text-secondary w-25 fs-3 p-2">22</button>
+          <button class="btn btn-primary fw-bold text-secondary w-25 fs-3 p-2"></button>
         </div>
         <div class="mt-5 d-flex justify-content-center">
           <div class="row w-75 w-lg-25 border border-primary border-2 rounded p-2 ">
@@ -125,11 +125,11 @@
             <form>
               <div class="mb-4">
                 <label for="exampleInputEmail1" class="form-label ">Id da Carteirinha:</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="exampleInputEmail1" id="ClienteId" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Valor da Recarga:</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="number" class="form-control" id="valorRecarga">
               </div>
 
               <button type="submit" class="btn btn-primary mb-3">RECARREGAR</button>
@@ -350,25 +350,16 @@
     crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/js/js-adm/usuarios/token.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const token = getCookie('token');
+      console.log(decodeToken(token));
 
       if (!token) {
         window.location.href = 'http://localhost:3001/login';
       }
     });
-
-    function getCookie(name) {
-      const cookies = document.cookie.split(';');
-      for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        if (cookie.startsWith(name + '=')) {
-          return cookie.substring(name.length + 1);
-        }
-      }
-      return null;
-    }
   </script>
 
 </body>

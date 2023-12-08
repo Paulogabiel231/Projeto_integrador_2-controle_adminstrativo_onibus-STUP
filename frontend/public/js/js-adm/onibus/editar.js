@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         try {
             const response = await axios.put(`http://localhost:3000/api/linhas/editar/${urlId}`, data);
 
-            alert("Linha editada com Sucesso!")
+            alert("Ônibus editad0 com Sucesso!")
             window.location.href = `/adm/onibus/visualizar/${urlId}`;
 
         } catch (error) {

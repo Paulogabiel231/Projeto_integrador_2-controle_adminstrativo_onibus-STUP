@@ -71,35 +71,39 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const tbody = document.querySelector('#clientesTable tbody');
-        let clientesOriginal = await axios.get('http://localhost:3000/api/clientes/listar');
-        clientesOriginal = [...clientesOriginal.data]; // Criar uma cópia para manter a lista original
-
-        // Função para renderizar a tabela com os clientes fornecidos
-        const renderizarTabela = (clientes) => {
-            tbody.innerHTML = '';
-            clientes.forEach(cliente => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-            <td><a href="#">${cliente.id}</a></td>
-            <td>${cliente.nome}</td>
-            <td>${cliente.cpf}</td>
-            <td>${cliente.tipo}</td>
-            <td><span class="label ${cliente.saldo >= 5 ? 'label-success' : 'label-danger'}">R$ ${cliente.saldo}</span></td>
-          `;
-                tbody.appendChild(tr);
-            });
-        };
-
-        renderizarTabela(clientesOriginal);
-
-
-
+      const tbody = document.querySelector('#clientesTable tbody');
+      const clientes = await axios.get('http://localhost:3000/api/index/clientes/ultimos-cadastrados');
+  
+      tbody.innerHTML = clientes.data.map(cliente => `
+        <tr>
+          <td>${cliente.id}</td>
+          <td>${cliente.nome}</td>
+          <td>${cliente.cpf}</td>
+          <td>${(() => {
+            switch (cliente.tipo) {
+              case '1':
+                return 'Comum';
+              case '2':
+                return 'Estudante';
+              case '3':
+                return 'Idoso';
+              case '4':
+                return 'PCD';
+              case '5':
+                return 'Vale Transporte';
+              default:
+                return 'Não Preenchido';
+            }
+          })()}</td>
+          <td><span class="label ${cliente.saldo >= 5 ? 'label-success' : 'label-danger'}">R$ ${cliente.saldo}</span></td>
+        </tr>
+      `).join('')
     } catch (error) {
-        console.log(error);
-        alert("Erro ao listar clientes");
+      console.log(error);
+      alert("Erro ao listar clientes");
     }
-});
+  });
+  
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {

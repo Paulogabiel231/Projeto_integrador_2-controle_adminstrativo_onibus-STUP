@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-	<title>ADM | STUP</title>
+	<title>STUP | ADM</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -187,64 +187,73 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
-							<h3 class="panel-title">Cadastro Cliente</h3>
+							<h3 class="panel-title" style="font-size: 30px; font-weight: medium;">Cadastro Cliente</h3>
 						</div>
 						<div class="panel-body">
-							<form id="form-cliente" novalidate enctype="multipart/form-data">
+							<form id="form-cliente" data-toggle="validator" role="form" novalidate enctype="multipart/form-data">
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Foto 3x4</span>
-									<div class="col-4"> <br>
+									<div class="col-4">
+										<br>
 										<label class="form-label text-white " for="customFile1"></label>
-										<input type="file" class="form-control px-0" name="foto" id="foto" />
+										<input type="file" class="form-control px-0" name="foto" id="foto" required>
+										<div class="help-block with-errors"></div>
 									</div>
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Nome Completo</span>
-									<input class="form-control" id="nome" name="nome" type="text">
+									<input class="form-control" id="nome" name="nome" type="text" required>
+									<div class="help-block with-errors"></div>
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Código Carteirinha</span>
-									<input class="form-control" id="carteira" name="carteira" type="text">
+									<input class="form-control" id="carteira" name="carteira" type="text" required>
+									<div class="help-block with-errors"></div>
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Seu ID de Usuário</span>
-									<input class="form-control" id="usuario_id" name="usuario_id" type="number">
+									<input class="form-control" id="usuario_id" name="usuario_id" type="number" required>
+									<div class="help-block with-errors"></div>
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*CPF</span>
-									<input class="form-control" name="cpf" id="cpf" type="text">
+									<input class="form-control" name="cpf" id="cpf" type="text" required>
+									<div class="help-block with-errors"></div>
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*RG</span>
-									<input class="form-control" name="rg" id="rg" type="text">
+									<input class="form-control" name="rg" id="rg" type="text" required>
+									<div class="help-block with-errors"></div>
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Data de Nascimento</span>
-									<input class="form-control" type="date" name="nascimento" id="nascimento">
+									<input class="form-control" type="date" name="nascimento" id="nascimento" required>
+									<div class="help-block with-errors"></div>
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Tipo:</span>
-									<select class="form-control" name="tipo" id="tipo">
-										<option value="" disabled selected hidden> Escolha: </option>
+									<select class="form-control" name="tipo" id="tipo" required>
+										<option value="" disabled selected hidden>Escolha:</option>
 										<option value="1">Comum</option>
 										<option value="2">Escolar</option>
 										<option value="3">Idoso</option>
 										<option value="4">PCDs</option>
 										<option value="5">Vale Transporte</option>
 									</select>
+									<div class="help-block with-errors"></div>
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>Sexo:</span>
 									<select class="form-control" name="sexo" id="sexo">
-										<option value="" disabled selected hidden> Escolha:</option>
+										<option value="" disabled selected hidden>Escolha:</option>
 										<option value="1">Masculino</option>
 										<option value="2">Feminino</option>
 										<option value="3">Outro</option>
@@ -254,12 +263,14 @@
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*Número de Telefone</span>
-									<input class="form-control" type="text" name="telefone">
+									<input class="form-control" type="text" name="telefone" required>
+									<div class="help-block with-errors"></div>
 								</div>
 								<br>
 								<div class="input-group">
 									<span class="input-group-addon"><i class=""></i>*E-mail</span>
-									<input class="form-control" type="email" name="email">
+									<input class="form-control" type="email" name="email" required>
+									<div class="help-block with-errors"></div>
 								</div>
 								<br>
 								<div class="input-group">

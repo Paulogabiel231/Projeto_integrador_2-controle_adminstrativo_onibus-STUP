@@ -99,10 +99,8 @@ router.get('/clientes/count-menor-que-5', async (req, res) => {
   }
 });
 
-
 router.get('/clientes/ultimos-cadastrados', async (req, res) => {
   try {
-    // Obter os últimos 5 clientes cadastrados
     const ultimosClientes = await prisma.cliente.findMany({
       take: 5,
       orderBy: {
@@ -110,9 +108,7 @@ router.get('/clientes/ultimos-cadastrados', async (req, res) => {
       },
     });
 
-    console.log(ultimosClientes);  // Imprima os resultados aqui para ver se são os esperados
-
-    res.json({ clientes: ultimosClientes });
+    res.json(ultimosClientes);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Erro ao obter os últimos clientes cadastrados.' });

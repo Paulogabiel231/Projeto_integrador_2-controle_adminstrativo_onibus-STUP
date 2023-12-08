@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-	<title>ADM | STUP</title>
+	<title>STUP | ADM | INDEX</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -198,7 +198,7 @@
 												<span class="icon"><i class="fa fa-user"></i></span>
 												<p>
 													<span class="number" id="clientesCount">0</span>
-													<span class="title">Clientes STUP</span>
+													<span class="title">Clientes STUP Ativos</span>
 												</p>
 											</a>
 										</div>
@@ -272,101 +272,109 @@
 					<!-- REGISTROS CLIENTES-->
 					<div class="row">
 						<div class="panel panel-headline">
-						  <div class="panel-heading">
-							<h3 class="panel-title">Últimos Clientes Cadastrados</h3>
-						  </div>
-						  <div class="panel-body">
-							<div class="col-12">
-							  <table id="clientesTable" class="table table-bordered">
-								<thead>
-								  <tr>
-									<th>ID</th>
-									<th>Nome</th>
-									<th>CPF</th>
-									<th>Uso</th>
-									<th>Saldo</th>
-								  </tr>
-								</thead>
-								<tbody>
-								  <!-- Dados serão inseridos aqui dinamicamente -->
-								</tbody>
-							  </table>
-							  <div class="row">
-								<div class="col-md-6 text-left">
-								  <a href="http://localhost:3001/adm/cliente/registro" class="btn btn-primary">Ver registro completo</a>
-								</div>
-								<div class="col-md-6 text-right">
-								  <span class="panel-note"><i class="fa fa-clock-o"></i> Mais Recentes</span>
-								</div>
-							  </div>
+							<div class="panel-heading">
+								<h3 class="panel-title">Últimos Clientes Cadastrados</h3>
 							</div>
-						  </div>
+							<div class="panel-body">
+								<div class="col-12">
+									<table id="clientesTable" class="table table-bordered">
+										<thead>
+											<tr>
+												<th>ID</th>
+												<th>Nome</th>
+												<th>CPF</th>
+												<th>Uso</th>
+												<th>Saldo</th>
+											</tr>
+										</thead>
+										<tbody>
+
+										</tbody>
+									</table>
+									<div class="row">
+										<div class="col-md-6 text-left">
+											<a href="http://localhost:3001/adm/cliente/registro"
+												class="btn btn-primary">Ver registro completo</a>
+										</div>
+										<div class="col-md-6 text-right">
+											<span class="panel-note"><i class="fa fa-clock-o"></i> Mais Recentes</span>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-					  </div>
-					  <div class="row">
+					</div>
+
+					<div class="row">
 						<div class="panel panel-headline">
-						  <div class="panel-heading">
-							<h3 class="panel-title">Últimas Linhas Cadastradas</h3>
-						  </div>
-						  <div class="panel-body">
-							<div class="col-12">
-							  <table id="linhasTable" class="table table-bordered"> <!-- Adicionado um id à tabela -->
-								<thead>
-								  <tr>
-									<th>Número</th>
-									<th>Nome</th>
-									<th>Origem</th>
-									<th>Destino</th>
-								  </tr>
-								</thead>
-								<tbody>
-								</tbody>
-							  </table>
-							  <div class="row">
-								<div class="col-md-6 text-left"><a href="http://localhost:3001/adm/linha/registro" class="btn btn-primary">Ver registro completo</a></div>
-								<div class="col-md-6 text-right">
-								  <span class="panel-note"><i class="fa fa-clock-o"></i>
-									Mais Recentes
-								  </span>
-								</div>
-							  </div>
+							<div class="panel-heading">
+								<h3 class="panel-title">Últimas Linhas Cadastradas</h3>
 							</div>
-						  </div>
+							<div class="panel-body">
+								<div class="col-12">
+									<table id="linhasTable" class="table table-bordered">
+										<!-- Adicionado um id à tabela -->
+										<thead>
+											<tr>
+												<th>Número</th>
+												<th>Nome</th>
+												<th>Origem</th>
+												<th>Destino</th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+									<div class="row">
+										<div class="col-md-6 text-left"><a
+												href="http://localhost:3001/adm/linha/registro"
+												class="btn btn-primary">Ver registro completo</a></div>
+										<div class="col-md-6 text-right">
+											<span class="panel-note"><i class="fa fa-clock-o"></i>
+												Mais Recentes
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-					  </div>				  
-					  <div class="row">
+					</div>
+					<div class="row">
 						<div class="panel panel-headline">
-						  <div class="panel-heading">
-							<h3 class="panel-title">Últimos Motoristas Cadastrados</h3>
-						  </div>
-						  <div class="panel-body">
-							<div class="col-12">
-							  <table id="motoristasTable" class="table table-bordered"> <!-- Adicionado um id à tabela -->
-								<thead>
-								  <tr>
-									<th>ID</th>
-									<th>Nome Completo</th>
-									<th>CPF</th>
-									<th>Telefone</th>
-								  </tr>
-								</thead>
-								<tbody>
-					  
-								</tbody>
-							  </table>
-							  <div class="row">
-								<div class="col-md-6 text-left"><a href="http://localhost:3001/adm/motorista/registro" class="btn btn-primary">Ver registro completo</a></div>
-								<div class="col-md-6 text-right">
-								  <span class="panel-note"><i class="fa fa-clock-o"></i>
-									Mais Recentes
-								  </span>
-								</div>
-							  </div>
+							<div class="panel-heading">
+								<h3 class="panel-title">Últimos Motoristas Cadastrados</h3>
 							</div>
-						  </div>
+							<div class="panel-body">
+								<div class="col-12">
+									<table id="motoristasTable" class="table table-bordered">
+										<!-- Adicionado um id à tabela -->
+										<thead>
+											<tr>
+												<th>ID</th>
+												<th>Nome Completo</th>
+												<th>CPF</th>
+												<th>Telefone</th>
+											</tr>
+										</thead>
+										<tbody>
+
+										</tbody>
+									</table>
+									<div class="row">
+										<div class="col-md-6 text-left"><a
+												href="http://localhost:3001/adm/motorista/registro"
+												class="btn btn-primary">Ver registro completo</a></div>
+										<div class="col-md-6 text-right">
+											<span class="panel-note"><i class="fa fa-clock-o"></i>
+												Mais Recentes
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-					  </div>
-					  
+					</div>
+
 					<!-- END MULTI CHARTS -->
 				</div>
 			</div>
@@ -404,7 +412,7 @@
 			data = {
 				labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom'],
 				series: [
-					[111, 25, 18, 34, 29, 38, 44, 1199],
+					[111, 25, 18, 34, 29, 38, 1000],
 				]
 			};
 

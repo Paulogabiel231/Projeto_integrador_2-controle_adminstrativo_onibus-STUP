@@ -1,9 +1,10 @@
+console.log("oi");
 const recarregarSaldo = async () => {
     try {
-        const clienteId = document.querySelector("#clienteId").value;
+        const clienteId = document.querySelector("#idCliente").value;
         const valorRecarga = document.querySelector("#valorRecarga").value;
-        const data = { clienteId, valorRecarga };
 
+        const data = { clienteId, valorRecarga };
         console.log(data);
 
         const url = "http://localhost:3000/api/clientes/recarregar-saldo";
@@ -16,11 +17,8 @@ const recarregarSaldo = async () => {
 
         // Limpa o formulário usando o método reset
         form.reset();
-        window.location.href = `/adm/cliente/visualizar/${clienteId}`;
     } catch (error) {
         console.error("Erro ao recarregar saldo:", error);
-
-
         alert("Erro ao recarregar saldo.");
     }
 };

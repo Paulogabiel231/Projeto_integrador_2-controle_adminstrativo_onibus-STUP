@@ -15,7 +15,7 @@ model cliente {
   cpf        String?    @db.Char(11)
   foto       String?    @db.VarChar(200)
   rg         String?    @db.VarChar(200)
-  carteira   String     @unique(map: "carteira")
+  carteira   String     @unique
   tipo       String?    @db.VarChar(1)
   sexo       String?    @db.VarChar(1)
   telefone   String?    @db.VarChar(9)

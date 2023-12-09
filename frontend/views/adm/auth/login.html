@@ -51,30 +51,7 @@
 			</div>
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-		<script>
-		  document.addEventListener('DOMContentLoaded', function () {
-			const form = document.querySelector("#form");
-			form.addEventListener("submit", async function (event) {
-			  event.preventDefault();
-	  
-			  const cpf = document.querySelector("#cpf").value;
-			  const nascimento = document.querySelector("#nascimento").value;
-			  const data = { cpf, nascimento };
-	  
-			  try {
-				const response = await axios.post('http://localhost:3000/api/auth/entrar-adm', data);
-	  
-				const token = response.data.token;
-				document.cookie = `token=${token}; expires=${new Date(response.data.expiresIn)}; path=/`;
-	  
-				alert('Login realizado com sucesso');          
-				window.location.href = 'http://localhost:3001/adm/';
-			  } catch (error) {
-				alert(error);
-			  }
-			});
-		  });
-		</script>
+
 </body>
 
 </html>

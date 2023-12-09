@@ -37,7 +37,7 @@
               <a class="text-secondary text-decoration-none" href="/consulta-recarga">Recarregar</a>
             </button>
             <button type="button" class="w-100 btn rounded-0 btn-primary fw-bold"><a
-                class="text-secondary text-decoration-none " href="/login">Entrar</a></button>
+                class="text-secondary text-decoration-none" id="nome" href="/login">Entrar</a></button>
           </div>
         </div>
       </div>
@@ -122,14 +122,16 @@
         <div class="mt-5 d-flex justify-content-center">
           <div class="row w-75 w-lg-25 border border-primary border-2 rounded p-2 ">
             <h2 class="text-primary fs-3 mb-3 mt-3 fw-bold">RECARREGAR CARTEIRINHA:</h2>
-            <form>
+            <form id="form" name="form">
               <div class="mb-4">
                 <label for="exampleInputEmail1" class="form-label ">Id da Carteirinha:</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" id="ClienteId" aria-describedby="emailHelp">
+                <input type="text" class="form-control text-center" id="idCliente" name="idCliente"
+                  aria-describedby="emailHelp">
+
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Valor da Recarga:</label>
-                <input type="number" class="form-control" id="valorRecarga">
+                <input type="number" class="form-control text-center" id="valorRecarga" name="valorRecarga">
               </div>
 
               <button type="submit" class="btn btn-primary mb-3">RECARREGAR</button>
@@ -350,17 +352,24 @@
     crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="/js/js-adm/usuarios/token.js"></script>
+  <script src="/js/js-adm/clientes/token.js"></script>
+  <script src="/js/js-adm/clientes/recarga-publica.js"></script>
+  </script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const token = getCookie('token');
-      console.log(decodeToken(token));
+      const decodedToken = decodeToken(token);
 
-      if (!token) {
+      console.log(decodedToken);
+
+      if (!token || !decodedToken || !decodedToken.clienteId) {
         window.location.href = 'http://localhost:3001/login';
       }
     });
   </script>
+
+
 
 </body>
 

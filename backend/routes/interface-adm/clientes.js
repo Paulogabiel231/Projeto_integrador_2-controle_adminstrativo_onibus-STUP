@@ -182,6 +182,22 @@ router.post("/recarregar-saldo", async (req, res) => {
   }
 });
 
+router.post('/recarregar/:id', /*authenticateToken,*/ async (req, res) => {
+  const id = parseInt(req.params.id)
+  const dados = req.body
+
+  const cliente = await prisma.cliente.update({
+    data: {
+      saldo: { increment: dados.valor }
+    },
+    where: {
+      id: id
+    }
+  })
+
+  res.json(cliente)
+})
+
 
 router.post('/liberar', async (req, res) => {
   const codCartao = req.body.clienteId;
@@ -221,14 +237,27 @@ router.post('/liberar', async (req, res) => {
       tarifa: tarifa,
       id: cliente.id,
       tipo: cliente.tipo
+
+
     })
 
+    const embarque = await prisma.embarque.create({
+      data: {
+        cliente_id: cliente.id,
+        tarifa: tarifa,
+        horario: new Date() 
+      },
+    });
+
+    console.log(embarque);
+    return embarque;
+
   } catch (exception) {
-    console.log(exception)
+    console.log(exception);
     res.status(400).json({
-      error: error.message
-    })
+      error: exception.message
+    });
   }
-})
+});
 
 module.exports = router;

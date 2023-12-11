@@ -37,7 +37,7 @@
               <a class="text-secondary text-decoration-none" href="/consulta-recarga">Recarregar</a>
             </button>
             <button type="button" class="w-100 btn rounded-0 btn-primary fw-bold"><a
-                class="text-secondary text-decoration-none" id="nome" href="/login">Entrar</a></button>
+                class="text-secondary text-decoration-none" id="nomeHeader" href="/login">Entrar</a></button>
           </div>
         </div>
       </div>
@@ -115,18 +115,28 @@
   <section class="bg-secondary">
     <div class="container pt-5 pb-5">
       <div class="row text-center">
-        <h2 class="text-primary fs-2 fw-bold">PASSES DISPONÍVEIS:</h2>
+        <h2 class="text-primary fs-2 fw-bold">SALDO DISPONÍVEL: </h2>
         <div class="d-flex justify-content-center align-items-center mt-2">
-          <button class="btn btn-primary fw-bold text-secondary w-25 fs-3 p-2"></button>
+          <button class="btn btn-primary fw-bold text-secondary w-25 fs-3 p-2"><var id="saldo"></var></button>
         </div>
         <div class="mt-5 d-flex justify-content-center">
           <div class="row w-75 w-lg-25 border border-primary border-2 rounded p-2 ">
             <h2 class="text-primary fs-3 mb-3 mt-3 fw-bold">RECARREGAR CARTEIRINHA:</h2>
             <form id="form" name="form">
               <div class="mb-4">
+                <label for="exampleInputEmail1" class="form-label ">ID:</label>
+                <input type="text" class="form-control text-center" id="id" name="id" aria-describedby="emailHelp"
+                  readonly>
+              </div>
+              <div class="mb-4">
+                <label for="exampleInputEmail1" class="form-label ">Nome:</label>
+                <input type="text" class="form-control text-center" id="nome" name="nome" aria-describedby="emailHelp"
+                  readonly>
+              </div>
+              <div class="mb-4">
                 <label for="exampleInputEmail1" class="form-label ">Id da Carteirinha:</label>
-                <input type="text" class="form-control text-center" id="idCliente" name="idCliente"
-                  aria-describedby="emailHelp">
+                <input type="text" class="form-control text-center" id="carteiraCliente" name="carteiraCliente"
+                  aria-describedby="emailHelp" readonly>
 
               </div>
               <div class="mb-3">
@@ -353,22 +363,15 @@
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="/js/js-adm/clientes/token.js"></script>
-  <script src="/js/js-adm/clientes/recarga-publica.js"></script>
-  </script>
-
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const token = getCookie('token');
-      const decodedToken = decodeToken(token);
-
-      console.log(decodedToken);
-
-      if (!token || !decodedToken || !decodedToken.clienteId) {
+      if (!token) {
         window.location.href = 'http://localhost:3001/login';
       }
-    });
+    }); 
   </script>
-
+  <script src="/js/js-adm/clientes/recarga-site.js"></script>
 
 
 </body>

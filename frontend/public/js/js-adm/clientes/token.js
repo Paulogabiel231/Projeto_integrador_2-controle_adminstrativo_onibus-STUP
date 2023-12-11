@@ -1,9 +1,6 @@
-
 document.addEventListener('DOMContentLoaded', function () {
   const token = getCookie('token');
-    if (!token) {
-        window.location.href = 'http://localhost:3001/login';
-    }
+
 });
 
 function getCookie(name) {

@@ -6,11 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100;0,200;1,100;1,200&family=Open+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Montserrat:ital,wght@0,100;0,200;1,100;1,200&family=Open+Sans:ital,wght@0,300;1,300&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/css/css-self/style.css" />
   <link rel="icon" type="image/x-icon" href="/images/icon-title.svg">
   <title>STUP</title>
@@ -33,7 +38,7 @@
               <a class="text-secondary text-decoration-none" href="/consulta-recarga">Recarregar</a>
             </button>
             <button type="button" class="w-100 btn rounded-0 btn-primary fw-bold"><a
-                class="text-secondary text-decoration-none " href="/login">Entrar</a></button>
+                class="text-secondary text-decoration-none " id="nomeHeader" href="/login">Entrar</a></button>
           </div>
         </div>
       </div>
@@ -148,9 +153,9 @@
       <p class="fs-5 fw-light text-secondary ">
         Sua vida mais rápida e ágil.
       </p>
-        <img class="pe-3" src="/images/index-baixar-apple.png" alt="">
-        <img class="" src="/images/index-baixar-google.png" alt=""> <br>
-        <img class="pt-3" src="/images/aplicativo-banner4.png" alt="">
+      <img class="pe-3" src="/images/index-baixar-apple.png" alt="">
+      <img class="" src="/images/index-baixar-google.png" alt=""> <br>
+      <img class="pt-3" src="/images/aplicativo-banner4.png" alt="">
     </div>
     </div>
   </section>
@@ -172,12 +177,15 @@
                   Como baixar o APP?
                 </button>
               </h2>
-              <div id="flush-collapseNineteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">No momento, não possuímos um aplicativo da STUP (Sistema de Transporte Urbano
+              <div id="flush-collapseNineteen" class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">No momento, não possuímos um aplicativo da STUP (Sistema de Transporte
+                  Urbano
                   Público) disponível em Caraguatatuba (CEP
                   11665-071). A empresa pode estar planejando desenvolver um aplicativo no futuro, mas atualmente, não
                   está disponível
-                  para download. Caso haja planos futuros para lançar um aplicativo, é recomendável verificar regularmente
+                  para download. Caso haja planos futuros para lançar um aplicativo, é recomendável verificar
+                  regularmente
                   as atualizações
                   e informações fornecidas pela STUP para ficar por dentro das novidades e possíveis lançamentos.
                 </div>
@@ -351,6 +359,57 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async function () {
+      function getCookie(name) {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.startsWith(name + '=')) {
+            return cookie.substring(name.length + 1);
+          }
+        }
+        return null;
+      }
+
+      const decodeToken = (token) => {
+        try {
+          const base64Url = token.split('.')[1];
+          const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+          const payload = JSON.parse(atob(base64));
+          return payload;
+        } catch (error) {
+          throw Error('Token inválido.');
+        }
+      }
+      const token = getCookie('token');
+      const decodedToken = decodeToken(token);
+
+      console.log(decodedToken);
+
+
+      const tokenDecodificado = decodeToken(token);
+      console.log(tokenDecodificado);
+
+      try {
+        const clienteId = decodedToken.clienteId;
+        const response = await axios.get(`http://localhost:3000/api/clientes/visualizar/${clienteId}`);
+        const cliente = response.data;
+        console.log(response.data);
+        const primeiroNome = extrairPrimeiroNome(cliente.nome);
+        document.querySelector("#nomeHeader").textContent = primeiroNome;
+      } catch (error) {
+        alert(error.message);
+      }
+
+      function extrairPrimeiroNome(nomeCompleto) {
+        const partesNome = nomeCompleto.split(' ');
+        return partesNome[0];
+      }
+
+    })
+  </script>
 </body>
 
 </html>

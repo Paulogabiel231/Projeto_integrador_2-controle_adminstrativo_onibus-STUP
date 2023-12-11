@@ -39,7 +39,7 @@
               <a class="text-secondary text-decoration-none" href="/consulta-recarga">Recarregar</a>
             </button>
             <button type="button" class="w-100 btn rounded-0 btn-primary fw-bold"><a
-                class="text-secondary text-decoration-none " href="/login">Entrar</a></button>
+                class="text-secondary text-decoration-none" href="/login">Entrar</a></button>
           </div>
         </div>
       </div>
@@ -106,7 +106,7 @@
             <h2 class="fs-3 fw-bold text-primary">
               Entre na sua <br>
               Conta STUP
-              
+
             </h2>
             <p class="fw-light fs-6"> Digite seus dados como cliente para entrar na sua conta.</p>
             <form class="pt-4" id="form">
@@ -132,35 +132,45 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script>
+<script src="/js/js-adm/clientes/token.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Verificar se existe um token válido
+    const token = getCookie('token');
+rs
     document.addEventListener('DOMContentLoaded', function () {
-      const form = document.querySelector("#form");
-      form.addEventListener("submit", async function (event) {
-        event.preventDefault();
-
-        const cpf = document.querySelector("#cpf").value;
-        const nascimento = document.querySelector("#nascimento").value;
-        const data = { cpf, nascimento };
-
-        try {
-          const response = await axios.post('http://localhost:3000/api/auth/entrar', data);
-
-          const token = response.data.token;
-          document.cookie = `token=${token}; expires=${new Date(response.data.expiresIn)}; path=/`;
-
-          alert('Login realizado com sucesso');          
-          window.location.href = 'http://localhost:3001/consulta-recarga';
-        } catch (error) {
-          alert(error);
-        }
-      });
+      const token = getCookie('token');
     });
-  </script>
+
+
+    // Se não houver token, continue com o código de login
+    const form = document.querySelector("#form");
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const cpf = document.querySelector("#cpf").value;
+      const nascimento = document.querySelector("#nascimento").value;
+      const data = { cpf, nascimento };
+
+      try {
+        const response = await axios.post('http://localhost:3000/api/auth/entrar', data);
+
+        const token = response.data.token;
+        document.cookie = `token=${token}; expires=${new Date(response.data.expiresIn)}; path=/`;
+
+        alert('Login realizado com sucesso');
+        window.location.href = 'http://localhost:3001/consulta-recarga';
+      } catch (error) {
+        alert(error);
+      }
+    });
+  });
+
+
+</script>
+
 
 </body>
-
-
-
 <script src="https://kit.fontawesome.com/66b39b2469.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

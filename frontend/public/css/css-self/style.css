@@ -11858,6 +11858,7 @@ textarea.form-control-lg {
 body {
   font-family: "Inria Sans", sans-serif;
   overflow-x: none;
+  overflow-x: hidden;
 }
 
 html,

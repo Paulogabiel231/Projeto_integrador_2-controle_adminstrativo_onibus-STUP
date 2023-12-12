@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         document.querySelector("#nomeHeader").textContent = primeiroNome;
 
-        document.querySelector("#id").innerHTML = cliente.id;
+        document.querySelector("#id").value = cliente.id;
         console.log(cliente.id);
-        document.querySelector("#carteiraCliente").innerHTML = cliente.carteira;
+        document.querySelector("#carteiraCliente").value = cliente.carteira;
         console.log(cliente.carteira);
         document.querySelector("#saldo").innerHTML = cliente.saldo;
         console.log(cliente.saldo);
-        document.querySelector("#nome").innerHTML = cliente.nome;
+        document.querySelector("#nome").value = cliente.nome;
         console.log(cliente.nome);
 
 

@@ -36,8 +36,32 @@
             <button type="button" class="w-100 btn rounded-0 border text-secondary btn-outline-secondary">
               <a class="text-secondary text-decoration-none" href="/consulta-recarga">Recarregar</a>
             </button>
-            <button type="button" class="w-100 btn rounded-0 btn-primary fw-bold"><a
-                class="text-secondary text-decoration-none" id="nomeHeader" href="/login">Entrar</a></button>
+            <button type="button" class="w-100 btn rounded-0 btn-primary fw-bold">
+              <li class="nav-item dropdown" style="list-style-type: none;">
+                <a class="nav-link dropdown-toggle text-secondary text-decoration-none" id="nomeHeader" href="/login"
+                  data-bs-toggle="dropdown" aria-expanded="false">Entrar</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" id="deleteToken">Sair</a></li>
+                </ul>
+              </li>
+            </button>
+
+            <!-- Modal de Confirmação -->
+            <div class="modal fade" id="confirmacaoModal" tabindex="-1" aria-labelledby="confirmacaoModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="confirmacaoModalLabel">Tem certeza que deseja sair?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="confirmarSaida">Sim</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -361,8 +385,9 @@
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="/js/js-adm/clientes/token.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/js-adm/clientes/token.js"></script>
+    <script src="/js/js-adm/clientes/recarga-site.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const token = getCookie('token');
@@ -370,8 +395,48 @@
         window.location.href = 'http://localhost:3001/login';
       }
     }); 
-  </script>
-  <script src="/js/js-adm/clientes/recarga-site.js"></script>
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const deleteTokenButton = document.getElementById('deleteToken');
+    const confirmarSaidaButton = document.getElementById('confirmarSaida');
+
+    deleteTokenButton.addEventListener('click', function () {
+      // Mostra o modal de confirmação
+      const confirmacaoModal = new bootstrap.Modal(document.getElementById('confirmacaoModal'));
+      confirmacaoModal.show();
+    });
+
+    confirmarSaidaButton.addEventListener('click', function () {
+      // Deleta o token
+      deleteToken();
+
+      // Recarrega a página
+      location.reload();
+    });
+
+    function deleteToken() {
+      const token = getCookie('token');
+      if (token) {
+        // Lógica para deletar o token (substitua com sua lógica real)
+        document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        alert('Token deletado!');
+      }
+    }
+
+    function getCookie(name) {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith(name + '=')) {
+          return cookie.substring(name.length + 1);
+        }
+      }
+      return null;
+    }
+  });
+</script>
 
 
 </body>

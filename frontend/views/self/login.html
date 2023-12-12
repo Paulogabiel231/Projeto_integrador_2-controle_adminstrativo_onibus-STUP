@@ -132,18 +132,27 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="/js/js-adm/clientes/token.js"></script>
+  <script src="/js/js-adm/clientes/token.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', async function () {
     // Verificar se existe um token válido
     const token = getCookie('token');
-rs
-    document.addEventListener('DOMContentLoaded', function () {
-      const token = getCookie('token');
-    });
 
+    if (token) {
+      try {
+        const decodedToken = await decodeToken(token);
 
-    // Se não houver token, continue com o código de login
+        console.log(decodedToken);
+
+        if (decodedToken && decodedToken.clienteId) {
+          window.location.href = 'http://localhost:3001/consulta-recarga';
+        }
+      } catch (error) {
+        console.error('Erro ao decodificar o token:', error);
+      }
+    }
+
+    // Restante do seu código de login
     const form = document.querySelector("#form");
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
@@ -165,9 +174,8 @@ rs
       }
     });
   });
-
-
 </script>
+
 
 
 </body>

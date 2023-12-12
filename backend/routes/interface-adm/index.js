@@ -150,6 +150,19 @@ router.get('/motoristas/ultimos-cadastrados', async (req, res) => {
   }
 });
 
+router.get('/embarques/soma-tarifas', async (req, res) => {
+  try {
+    // Calcular a soma das tarifas diretamente no banco de dados usando o Prisma
+    const resultado = await prisma.$queryRaw`SELECT SUM(tarifa) as somaTarifas FROM Embarque`;
+
+    const somaTarifas = resultado[0].somaTarifas || 0;
+
+    res.json({ somaTarifas });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erro ao obter a soma das tarifas de embarques.' });
+  }
+});
 
 
 

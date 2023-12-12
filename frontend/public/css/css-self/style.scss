@@ -7,11 +7,13 @@ $dark: #212121;
 $warning: #757575;
 
 
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
 body {
     font-family: 'Inria Sans', sans-serif;
     overflow-x: none;
+        overflow-x: hidden;
+
 }
 
 html,

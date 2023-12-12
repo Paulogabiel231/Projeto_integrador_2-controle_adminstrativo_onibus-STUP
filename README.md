@@ -1,4 +1,6 @@
-0001171339 - João Gabriel
-0001184203 - Roberto Criscuolo
+**STUP**
 
-https://1000hz.github.io/bootstrap-validator/
+Projeto Feito por:
+- João Gabriel de Faria Beserra : jgabrielfbeserra@gmail.com
+- Roberto Criscuolo
+

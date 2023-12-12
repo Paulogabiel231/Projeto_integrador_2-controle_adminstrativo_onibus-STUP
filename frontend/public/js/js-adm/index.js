@@ -71,6 +71,33 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
+        const response = await axios.get('http://localhost:3000/api/index/embarques/soma-tarifas');
+        const tarifasTotal = parseFloat(response.data.somaTarifas);
+
+        if (!isNaN(tarifasTotal)) {
+            // Formatar o valor para ter apenas uma casa decimal
+            const tarifasTotalFormatado = tarifasTotal.toFixed(1);
+
+            // Adicionar "R$" antes do valor formatado
+            const tarifasTotalComSimbolo = `R$ ${tarifasTotalFormatado}`;
+
+            // Atualizar o conteúdo do elemento com a soma formatada e o símbolo
+            const tarifasTotalSpan = document.getElementById('tarifasTotal');
+            tarifasTotalSpan.textContent = tarifasTotalComSimbolo;
+        } else {
+            console.error('Valor retornado não é um número válido.');
+        }
+    } catch (error) {
+        console.error(error);
+        alert('Erro ao obter a soma das tarifas.');
+    }
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
       const tbody = document.querySelector('#clientesTable tbody');
       const clientes = await axios.get('http://localhost:3000/api/index/clientes/ultimos-cadastrados');
   
